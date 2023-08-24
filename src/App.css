@@ -12,6 +12,13 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+/* 
+#header{
+  background-image: url('../public/images/robert-bye-OlZ1nWLEEgM-unsplash.jpg');
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+} */
 
 .App-header {
   background-color: #282c34;

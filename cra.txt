@@ -1,0 +1,100 @@
+npx create-react-app mfsclient
+npm i react-router-dom
+open index.html file in public directory and add the bootstrap CDN inside <head></head> section.
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+
+Navigation.jsx
+import React from "react";
+import { NavLink } from "react-router-dom";
+
+
+files: src/components/Navigation; Footer; other pages
+
+function Navigation() {
+  return (
+    <div className="navigation">
+      <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <div className="container">
+          <NavLink className="navbar-brand" to="/">
+            React Multi-Page Website
+          </NavLink>
+          <div>
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/">
+                  Home
+                  <span className="sr-only">(current)</span>
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/about">
+                  About
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/contact">
+                  Contact
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/blog">
+                  Blog
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  );
+}
+
+export default Navigation;
+
+Footer.jsx
+import React from "react";
+
+function Footer() {
+  return (
+    <div className="footer">
+      <footer class="py-5 bg-dark fixed-bottom">
+        <div class="container">
+          <p class="m-0 text-center text-white">
+            Copyright &copy; Your Website 2020
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+import React from "react";
+
+function Home() {
+  return (
+    <div className="home">
+      <div class="container">
+        <div class="row align-items-center my-5">
+          <div class="col-lg-7">
+            <img
+              class="img-fluid rounded mb-4 mb-lg-0"
+              src="http://placehold.it/900x400"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-5">
+            <h1 class="font-weight-light">Home</h1>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Home;

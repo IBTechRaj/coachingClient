@@ -1,0 +1,20 @@
+.sermon-image {
+    /* display: table; */
+    width: 100%;
+    height: 60vh;
+    margin-top: -100px;
+    /* padding-bottom: 200px; */
+    /* background: url('../../public/images/aaron-burden-9zsHNt5OpqE-unsplash.jpg') center center no-repeat; */
+    /* background: url(https://www.shutterstock.com/image-photo/mountain-landscape-lake-range-large-panorama-1017466240.jpg) center center no-repeat; */
+    /* background-color: #e5e5e5; */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: 100%;
+    -o-background-size: cover;
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%
+}

@@ -1,0 +1,11 @@
+export { default as Navigation } from "./Navigation";
+export { default as StudentEmailVerified } from "./StudentEmailVerified";
+export { default as Footer } from "./Footer";
+export { default as Home } from "./Home";
+export { default as CreateProfile } from "./CreateProfile";
+export { default as Profile } from "./Profile";
+export { default as StudentSignup } from "./StudentSignup";
+export { default as StudentLogin } from "./StudentLogin";
+export { default as StudentLogout } from "./StudentLogout";
+export { default as Dashboard } from "./Dashboard";
+export { default as MyDash } from "./MyDash";
