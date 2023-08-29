@@ -1,10 +1,33 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+
+import user1 from "../assets/images/users/user4.jpg";
+import {
+  Navbar,
+  Collapse,
+  Nav,
+  NavItem,
+  NavbarBrand,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  Dropdown,
+  Button,
+} from "reactstrap";
+
 // import { ReactComponent as Logo } from './Logo.jpeg'
 
 const Navigation = ({ signedIn, setSignedIn }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
 
-  console.log('i', signedIn)
+  const [dropdownOpen, setDropdownOpen] = React.useState(false);
+
+  const toggle = () => setDropdownOpen((prevState) => !prevState);
+  const Handletoggle = () => {
+    setIsOpen(!isOpen);
+  };
+  // console.log('i', signedIn)
 
   return (
     <div className="navigation fixed-top">
@@ -48,9 +71,39 @@ const Navigation = ({ signedIn, setSignedIn }) => {
                 </li>
               )
               }
-              {console.log('x', signedIn)}
+              {/* {console.log('x', signedIn)} */}
             </ul>
           </div>
+          <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+            <DropdownToggle color="transparent">
+              <img
+                src={user1}
+                alt="profile"
+                className="rounded-circle"
+                width="30"
+              ></img>
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem header>Info</DropdownItem>
+              <DropdownItem >
+                <NavLink
+                  to="/DashPage"
+                >
+                  My Dashboard
+                </NavLink>
+              </DropdownItem>
+              <DropdownItem>
+                <NavLink
+                  to="/Profile"
+                >
+                  Edit Profile
+                </NavLink></DropdownItem>
+              <DropdownItem divider />
+              <DropdownItem>My Balance</DropdownItem>
+              <DropdownItem>Inbox</DropdownItem>
+              <DropdownItem>Logout</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
         </div>
       </nav>
     </div>
@@ -58,4 +111,3 @@ const Navigation = ({ signedIn, setSignedIn }) => {
 }
 
 export default Navigation;
-{/* <img style={{ borderRadius: '50%', borderStyle: '5px solid red' }} src={image.preview} alt="NoImg" /> */ }

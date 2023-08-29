@@ -8,4 +8,6 @@ export { default as StudentSignup } from "./StudentSignup";
 export { default as StudentLogin } from "./StudentLogin";
 export { default as StudentLogout } from "./StudentLogout";
 export { default as Dashboard } from "./Dashboard";
-export { default as MyDash } from "./MyDash";
+export { default as DashPage } from "./DashPage";
+export { default as SideBarPage } from "./SideBarPage";
+export { default as Alerts } from "./Alerts";
