@@ -8,7 +8,7 @@ const SidePage = () => {
 
     return (
         <React.Fragment>
-            <section className='bg-secondary py-3' style={{ height: '800px' }}>
+            <section className='bg-primary py-3' style={{ height: '600px' }}>
                 {/* <h1> This is sidepage</h1> */}
                 <div >
                     {

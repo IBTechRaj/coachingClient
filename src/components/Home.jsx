@@ -1,7 +1,8 @@
 import React from "react";
 import './home.css';
 
-function Home() {
+function Home(signedIn, setSignedIn) {
+  // console.log('hom', signedIn)
   return (
     <div className="home" id="header">
       <div className="container">

@@ -19,6 +19,11 @@ const sidebarData = [
         path: "dashpage/mytests",
         // icon: "bi bi-patch-check",
     },
+    {
+        title: "Take self assessment test",
+        path: "dashpage/test",
+        // icon: "bi bi-patch-check",
+    },
 ]
 
 export default sidebarData

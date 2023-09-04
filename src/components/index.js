@@ -11,3 +11,6 @@ export { default as Dashboard } from "./Dashboard";
 export { default as DashPage } from "./DashPage";
 export { default as SideBarPage } from "./SideBarPage";
 export { default as Alerts } from "./Alerts";
+export { default as Test } from "./Test";
+export { default as ForgotPassword } from "./ForgotPassword";
+export { default as ResetPassword } from "./ResetPassword";

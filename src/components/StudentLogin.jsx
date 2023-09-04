@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TextField, Button } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 
 const StudentLogin = ({ signedIn, setSignedIn }) => {
     const [email, setEmail] = useState("")
@@ -48,7 +48,7 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
                     localStorage.setItem("token", res.meta.token);
                     console.log('login token', res.meta.token);
                     alert("Login success")
-                    navigate('/dashboard', { replace: true });
+                    navigate('/DashPage', { replace: true });
                 } else {
                     setErrorMessage(res.errors)
                     console.log(res.errors); // Process the response data here
@@ -95,9 +95,19 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
                             fullWidth
                             sx={{ mb: 3 }}
                         />
+                        <NavLink
+                            to='/ForgotPassword'
+                            // className='nav-links'
+                            style={{ color: 'blue' }}
+                        // onClick={
+                        //     onCloseLoginModal
+                        // }
+                        >
+                            Forgot Password
+                        </NavLink>
                         <Button variant="contained" color="primary" type="submit">Login</Button>
                     </form>
-                    <small>Need an account? <Link to="/StudentSignup">Register here</Link></small>
+                    <small>Need an account? <NavLink to="/StudentSignup" style={{ color: 'blue' }}>Register here</NavLink></small>
                 </div>
 
                 <div className="col-md-3"></div>

@@ -5,6 +5,7 @@ import axios from 'axios'
 import './style.css'
 
 const CreateProfile = ({ signedIn, setSignedIn }) => {
+    console.log('cre Prof', signedIn)
 
 
     const navigate = useNavigate();
@@ -26,6 +27,10 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
     const [country, setCountry] = useState("")
     const [uniqid, setUniqid] = useState("")
     const [id, setId] = useState(0)
+    const [study, setStudy] = useState('')
+    const [institution, setInstitution] = useState('')
+    const [work, setWork] = useState('')
+    const [office, setOffice] = useState('')
     // const [isLoading, setIsLoading] = useState(true)
 
     // const [emailError, setEmailError] = useState(false)
@@ -34,6 +39,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
     const [image, setImage] = useState({ preview: '', raw: '' })
     const location = useLocation()
     const token = location.state
+    console.log('t', token)
     if (token) {
         localStorage.setItem("token", token.token);
     }
@@ -103,7 +109,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
 
     return (
         <>
-            <div className="row py-1">
+            <div className="row py-5">
                 <div className="col-md-3 py-5" style={{ borderRadius: '50%', borderStyle: '5px solid red' }}>
                     {/* <img className="circle"
                         alt="ad-img"
@@ -132,7 +138,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
                     /> */}
                 </div>
                 {/* {console.log('tok', token)} */}
-                <div className='col-md-6'>
+                <div className='col-md-6 py-5'>
                     <h2 className="text-center py-5">Profile</h2>
                     <form onSubmit={handleSubmit} action={<Link to="/login" />}>
                         <Stack spacing={1} direction="row" sx={{ marginBottom: 0 }}>
@@ -207,6 +213,50 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
                             label="Country"
                             onChange={e => setCountry(e.target.value)}
                             value={student.country}
+                            required
+                            fullWidth
+                            sx={{ mb: 4 }}
+                        />
+                        <TextField
+                            type="text"
+                            variant='outlined'
+                            color='secondary'
+                            label="Study"
+                            onChange={e => setStudy(e.target.value)}
+                            value={student.study}
+                            required
+                            fullWidth
+                            sx={{ mb: 4 }}
+                        />
+                        <TextField
+                            type="text"
+                            variant='outlined'
+                            color='secondary'
+                            label="Institution"
+                            onChange={e => setInstitution(e.target.value)}
+                            value={student.institution}
+                            required
+                            fullWidth
+                            sx={{ mb: 4 }}
+                        />
+                        <TextField
+                            type="text"
+                            variant='outlined'
+                            color='secondary'
+                            label="Job Role"
+                            onChange={e => setWork(e.target.value)}
+                            value={student.work}
+                            required
+                            fullWidth
+                            sx={{ mb: 4 }}
+                        />
+                        <TextField
+                            type="text"
+                            variant='outlined'
+                            color='secondary'
+                            label="Office"
+                            onChange={e => setOffice(e.target.value)}
+                            value={student.office}
                             required
                             fullWidth
                             sx={{ mb: 4 }}

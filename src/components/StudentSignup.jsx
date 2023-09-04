@@ -6,6 +6,8 @@ import axios from 'axios'
 
 
 const StudentSignup = ({ signedIn, setSignedIn }) => {
+    console.log('signup', signedIn)
+
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -47,6 +49,26 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                 console.error(error);
             });
     };
+    function handlePassword(event) {
+        // let new_pass = event.target.value;
+        setPassword(event.target.value);
+
+        // regular expressions to validate password
+        var lowerCase = /[a-z]/g;
+        var upperCase = /[A-Z]/g;
+        var numbers = /[0-9]/g;
+        if (!password.match(lowerCase)) {
+            setErrorMessage("Password should contains lowercase letters!");
+        } else if (!password.match(upperCase)) {
+            setErrorMessage("Password should contain uppercase letters!");
+        } else if (!password.match(numbers)) {
+            setErrorMessage("Password should contains numbers also!");
+        } else if (password.length < 8) {
+            setErrorMessage("Password length should be more than 10.");
+        } else {
+            setErrorMessage("Password is strong!");
+        }
+    }
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -206,7 +228,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                             <Checkbox /> I agree to Terms and Conditions<br></br>
                             <Button variant="contained" color="primary" type="submit">Sign up</Button>
                         </form>
-                        <small>Already have an account? <Link to="/StudentLogin">Login Here</Link></small>
+                        <small>Already have an account? <Link to="/StudentLogin" style={{ color: 'blue' }}>Login Here</Link></small>
                     </div>
                     <div className="col-md-3"></div>
                 </div>

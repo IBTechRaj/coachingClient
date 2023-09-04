@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Routes, NavLink } from "react-router-dom";
+import { Route, Routes, Redirec, NavLink } from "react-router-dom";
 import sidebarData from './sidebarData'
 import Apple from './components/MyClasses'
 import Bat from './components/MyProgs'
@@ -17,7 +17,10 @@ import {
   StudentEmailVerified,
   Dashboard,
   DashPage,
-  Alerts
+  Test,
+  Alerts,
+  ForgotPassword,
+  ResetPassword
 
 } from "./components";
 
@@ -35,8 +38,10 @@ export default function App() {
         <Route path="/StudentLogout" element={<StudentLogout signedIn={signedIn} setSignedIn={setSignedIn} />} />
         <Route path="/CreateProfile" element={<CreateProfile signedIn={signedIn} setSignedIn={setSignedIn} />} />
         <Route path="/Profile" element={<Profile signedIn={signedIn} setSignedIn={setSignedIn} />} />
-        <Route path="/dashboard" element={<Dashboard signedIn={signedIn} setSignedIn={setSignedIn} />} />
+        {/* <Route path="/dashboard" element={<Dashboard signedIn={signedIn} setSignedIn={setSignedIn} />} /> */}
         <Route path="/DashPage/*" element={<DashPage signedIn={signedIn} setSignedIn={setSignedIn} />} />
+        <Route path="/ForgotPassword" element={<ForgotPassword />} />
+        <Route path="/ResetPassword" element={<ResetPassword />} />
 
         {/* <Route path="/apple" element={<Apple signedIn={signedIn} setSignedIn={setSignedIn} />} /> */}
         {/* <Route path="/bat" element={<Bat signedIn={signedIn} setSignedIn={setSignedIn} />} /> */}

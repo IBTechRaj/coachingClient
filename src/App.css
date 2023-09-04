@@ -108,12 +108,12 @@ a:focus {
 
 .nav-item:hover {
   color: #7386d5;
-  background: #fff;
+  background: #20d0b9;
 }
 
 .items-menu {
   color: #fff;
-  background: #6d7fcc;
+  background: #244af0;
 }
 
 li a.dropdown-toggle::after {

@@ -51,18 +51,24 @@ const StudentLogout = ({ signedIn, setSignedIn }) => {
             <div className="row py-5">
                 <div className="col-md-3"></div>
 
-                <div className='col-md-6'>
+                <div className='col-md-6 py-5 text-center'>
                     {/* {setSignedIn(false)} */}
-
+                    {/* <h3>Are you sure to logout ?</h3> */}
 
                     {console.log('pre', signedIn)}
                     {(signedIn) ?
+                        (<h3>Are you sure to logout ?</h3>) :
+                        null}
+                    {(signedIn) ?
 
-                        (<Button variant="contained" color="primary" type="submit" onClick={handleSubmit}>Are you sure to logout ?</Button>)
+                        (
+                            <Button variant="contained" color="primary" type="submit" onClick={handleSubmit}>Yes, I want to logout</Button>)
                         :
-                        (<h5 >Logged out successfully</h5>)}
+                        (<h3 >Logged out successfully</h3>)}
                     {console.log('aft', signedIn)}
-                    <small>? <Link to="/StudentLogin">Login again</Link></small>
+                    <div className="py-5">
+                        <h5 ><Link to="/StudentLogin" style={{ color: 'blue' }}>Login again</Link></h5>
+                    </div>
                 </div>
 
                 <div className="col-md-3"></div>

@@ -4,6 +4,7 @@ import MyClasses from './MyClasses'
 import MyDoubts from './MyDoubts'
 import MyProgs from './MyProgs'
 import MyTests from './MyTests'
+import Test from './Test'
 // import Git from '../pages/Git'
 // import Home from '../pages/Home'
 // import Java from '../pages/Java'
@@ -14,9 +15,9 @@ import MyTests from './MyTests'
 const NavPage = () => {
     return (
         <React.Fragment>
-            <section className=' py-5 text-center' style={{ height: '800px' }} >
+            <section className=' py-5 text-center' style={{ height: '600px' }} >
 
-                <h1 className="py-5"> Dashboard</h1>
+                <h5 className="py-2"> Dashboard</h5>
                 <Routes>
 
                     {/* <Route path="/" element={<Home />} /> */}
@@ -24,6 +25,7 @@ const NavPage = () => {
                     <Route path="/DashPage/mytests" element={<MyTests />} />
                     <Route path="/DashPage/myprogs" element={<MyProgs />} />
                     <Route path="/dashpage/mydoubts" element={<MyDoubts />} />
+                    <Route path="/dashpage/test" element={<Test />} />
                     {/* <Route path="/git" element={<Git />} />
                     <Route path="/node" element={<Node />} />
                     <Route path="/react" element={<PageReact />} />
