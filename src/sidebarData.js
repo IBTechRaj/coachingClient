@@ -20,6 +20,11 @@ const sidebarData = [
         // icon: "bi bi-patch-check",
     },
     {
+        title: "Change Password",
+        path: "dashpage/changePassword",
+        // icon: "bi bi-patch-check",
+    },
+    {
         title: "Take self assessment test",
         path: "dashpage/test",
         // icon: "bi bi-patch-check",

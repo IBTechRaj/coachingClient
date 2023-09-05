@@ -20,7 +20,8 @@ import {
   Test,
   Alerts,
   ForgotPassword,
-  ResetPassword
+  ResetPassword,
+  ChangePassword
 
 } from "./components";
 
@@ -42,6 +43,7 @@ export default function App() {
         <Route path="/DashPage/*" element={<DashPage signedIn={signedIn} setSignedIn={setSignedIn} />} />
         <Route path="/ForgotPassword" element={<ForgotPassword />} />
         <Route path="/ResetPassword" element={<ResetPassword />} />
+        <Route path="/ChangePassword" element={<ChangePassword />} />
 
         {/* <Route path="/apple" element={<Apple signedIn={signedIn} setSignedIn={setSignedIn} />} /> */}
         {/* <Route path="/bat" element={<Bat signedIn={signedIn} setSignedIn={setSignedIn} />} /> */}

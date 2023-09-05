@@ -3,6 +3,7 @@ import { TextField, Button, Stack, Checkbox } from '@mui/material';
 import { Link } from "react-router-dom"
 import axios from 'axios'
 // import { ClassNames } from '@emotion/react';
+import PasswordChecklist from "react-password-checklist";
 
 
 const StudentSignup = ({ signedIn, setSignedIn }) => {
@@ -12,12 +13,20 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     // const [dateOfBirth, setDateOfBirth] = useState('')
-    const [password, setPassword] = useState('')
-    const [passwordConfirmation, setPasswordConfirmation] = useState('')
+    const [password, setPassword] = useState("")
+    const [passwordAgain, setPasswordAgain] = useState("")
+    // const [passwordConfirmation, setPasswordConfirmation] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
     const [message, setMessage] = useState('')
 
-
+    const [matchPassword, setMatchPassword] = useState("");
+    // const [errorMessage, setErrorMessage] = useState("");
+    function handleSetPassword(event) {
+        setPassword(event.target.value);
+    }
+    function handleSetMatchPassword(event) {
+        setMatchPassword(event.target.value);
+    }
     // axios.get(servicesUrl, {
     //     headers: { Authorization: `Bearer ${jwt}` },
     // })
@@ -49,33 +58,33 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                 console.error(error);
             });
     };
-    function handlePassword(event) {
-        // let new_pass = event.target.value;
-        setPassword(event.target.value);
+    // function handlePassword(event) {
+    //     // let new_pass = event.target.value;
+    //     setPassword(event.target.value);
 
-        // regular expressions to validate password
-        var lowerCase = /[a-z]/g;
-        var upperCase = /[A-Z]/g;
-        var numbers = /[0-9]/g;
-        if (!password.match(lowerCase)) {
-            setErrorMessage("Password should contains lowercase letters!");
-        } else if (!password.match(upperCase)) {
-            setErrorMessage("Password should contain uppercase letters!");
-        } else if (!password.match(numbers)) {
-            setErrorMessage("Password should contains numbers also!");
-        } else if (password.length < 8) {
-            setErrorMessage("Password length should be more than 10.");
-        } else {
-            setErrorMessage("Password is strong!");
-        }
-    }
+    //     // regular expressions to validate password
+    //     var lowerCase = /[a-z]/g;
+    //     var upperCase = /[A-Z]/g;
+    //     var numbers = /[0-9]/g;
+    //     if (!password.match(lowerCase)) {
+    //         setErrorMessage("Password should contains lowercase letters!");
+    //     } else if (!password.match(upperCase)) {
+    //         setErrorMessage("Password should contain uppercase letters!");
+    //     } else if (!password.match(numbers)) {
+    //         setErrorMessage("Password should contains numbers also!");
+    //     } else if (password.length < 8) {
+    //         setErrorMessage("Password length should be more than 10.");
+    //     } else {
+    //         setErrorMessage("Password is strong!");
+    //     }
+    // }
 
     function handleSubmit(event) {
         event.preventDefault();
         setErrorMessage('')
         // console.log(firstName, lastName, email, password)
 
-        if (password === passwordConfirmation) {
+        if (password === passwordAgain) {
             console.log('signing up')
             const signUpUrl = (process.env.REACT_APP_SERVER) ? `https://motorwash-backend-lfxt.onrender.com/signup` : `http://localhost:3001/students`
             fetch(signUpUrl, {
@@ -101,7 +110,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                         setLastName('')
                         setEmail('')
                         setPassword('')
-                        setPasswordConfirmation('')
+                        setPasswordAgain('')
                         localStorage.setItem("token", res.meta.token);
                         console.log('s', res.meta.token);
                     } else {
@@ -160,11 +169,11 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
 
                     <div className='col-md-6'>
 
-                        <h2 className='py-3 text-center'>Signup</h2>
-                        <p className='text-center' style={{ fontSize: 24 }}>Create Your Account as a Student</p>
+                        <h3 className='py-1 text-center'>Signup</h3>
+                        <p className='text-center' style={{ fontSize: 18 }}>Create Your Account as a Student</p>
                         <div> <p className='text-center' style={{ color: 'red' }}> {errorMessage}</p></div>
                         <form onSubmit={handleSubmit} action={<Link to="/login" />}>
-                            <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }}>
+                            <Stack spacing={2} direction="row" sx={{ marginBottom: 3 }}>
                                 {/* <div> */}
 
                                 {/* <button onClick={fetchData}>Fetch Data</button> */}
@@ -201,7 +210,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                                 value={email}
                                 fullWidth
                                 required
-                                sx={{ mb: 4 }}
+                                sx={{ mb: 3 }}
                             />
                             <TextField
                                 type="password"
@@ -209,21 +218,28 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                                 color='secondary'
                                 label="Create Password"
                                 onChange={e => setPassword(e.target.value)}
-                                value={password}
+                                // value={password}
                                 required
                                 fullWidth
-                                sx={{ mb: 4 }}
+                                sx={{ mb: 3 }}
                             />
                             <TextField
                                 type="password"
                                 variant='outlined'
                                 color='secondary'
                                 label="Re-enter Password"
-                                onChange={e => setPasswordConfirmation(e.target.value)}
-                                value={passwordConfirmation}
+                                onChange={e => setPasswordAgain(e.target.value)}
+                                // value={passwordConfirmation}
                                 required
                                 fullWidth
-                                sx={{ mb: 4 }}
+                                sx={{ mb: 3 }}
+                            />
+                            <PasswordChecklist
+                                rules={["capital", "match", "specialChar", "minLength", "number"]}
+                                minLength={8}
+                                value={password}
+                                valueAgain={passwordAgain}
+                                onChange={(isValid) => { }}
                             />
                             <Checkbox /> I agree to Terms and Conditions<br></br>
                             <Button variant="contained" color="primary" type="submit">Sign up</Button>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { TextField, Button } from "@mui/material";
 
+import PasswordChecklist from "react-password-checklist";
 import { useSearchParams, useNavigate } from "react-router-dom";
 
 const ResetPassword = (props) => {
@@ -12,7 +13,8 @@ const ResetPassword = (props) => {
     const baseURL = (process.env.REACT_APP_SERVER) ? `https://groomwell-backend.onrender.com/` : `http://localhost:3001/`
 
     const [password, setPassword] = useState('')
-    const [passwordConfirmation, setPasswordConfirmation] = useState('')
+    const [passwordAgain, setPasswordAgain] = useState("")
+    // const [passwordConfirmation, setPasswordConfirmation] = useState('')
     const [email, setEmail] = useState('')
     // const [token, setToken] = useState('')
     const navigate = useNavigate();
@@ -51,7 +53,7 @@ const ResetPassword = (props) => {
             email: email,
             password: password
         }
-        if (password !== passwordConfirmation) {
+        if (password !== passwordAgain) {
             alert("Passwords don't match");
 
         } else {
@@ -124,16 +126,22 @@ const ResetPassword = (props) => {
 
                         <TextField
                             label="Confirm Password"
-                            onChange={e => setPasswordConfirmation(e.target.value)}
+                            onChange={e => setPasswordAgain(e.target.value)}
                             required
                             variant="outlined"
                             color="secondary"
                             type="password"
-                            value={passwordConfirmation}
+                            value={passwordAgain}
                             fullWidth
                             sx={{ mb: 3 }}
                         />
-
+                        <PasswordChecklist
+                            rules={["capital", "match", "specialChar", "minLength", "number"]}
+                            minLength={8}
+                            value={password}
+                            valueAgain={passwordAgain}
+                            onChange={(isValid) => { }}
+                        />
                         <Button variant="contained" color="primary" type="submit">Reset My Password</Button>
                     </form>
                     {/* <small>Need an account? <NavLink to="/StudentSignup">Register here</NavLink></small> */}

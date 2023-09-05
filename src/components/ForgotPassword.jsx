@@ -80,9 +80,9 @@ const ForgotPassword = () => {
     return (
         <>
 
-            <h1 className='text-center'>Forgot Password</h1>
+            <h1 className='text-center' >Forgot Password</h1>
 
-            <div className="row py-5">
+            <div className="row py-5" style={{ minHeight: "600px" }}>
                 <div className="col-md-4"></div>
 
                 <div className='col-md-4'>
