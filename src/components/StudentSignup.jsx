@@ -151,12 +151,12 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
 
                     <div> <p className='text-center' style={{ color: 'green', fontSize: 24, fontWeight: 600 }}> {message}</p></div>
                 </div >
-                {/* {
+                {
                     setTimeout(() => {
                         setSignedIn(false)
                     }
-                        , 3000)
-                } */}
+                        , 15000)
+                }
             </>
         )
     else
