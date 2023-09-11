@@ -13,7 +13,7 @@ const StudentLogout = ({ signedIn, setSignedIn }) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         const jwt = localStorage.getItem('token')
-        const logoutUrl = (process.env.REACT_APP_SERVER) ? `https://motorwash-backend-lfxt.onrender.com/logout` : `http://localhost:3001/students/logout`
+        const logoutUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students/logout` : `http://localhost:3001/students/logout`
         fetch(logoutUrl, {
             method: "post",
             headers: {

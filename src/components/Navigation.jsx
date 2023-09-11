@@ -55,7 +55,7 @@ const Navigation = ({ signedIn, setSignedIn }) => {
     console.log('jwt', (jwt !== null))
 
     if (jwt !== null) {
-      axios.get('http://localhost:3001/students/profile', {
+      axios.get('http://coaching-q9o7.onrender.com/students/profile', {
         headers: {
           'Content-Type': 'application/json',
           'token': `${jwt}`,

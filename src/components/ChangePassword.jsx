@@ -10,7 +10,7 @@ import { useSearchParams, useNavigate } from "react-router-dom";
 
 function ChangePassword() {
 
-    const baseURL = (process.env.REACT_APP_SERVER) ? `https://groomwell-backend.onrender.com/` : `http://localhost:3001/`
+    const baseURL = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/` : `http://localhost:3001/`
 
     const [currentPassword, setCurrentPassword] = useState("")
     const [password, setPassword] = useState('')

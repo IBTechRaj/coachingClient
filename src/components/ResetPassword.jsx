@@ -10,7 +10,7 @@ const ResetPassword = (props) => {
 
     const [searchParams, setSearchParams] = useSearchParams()
 
-    const baseURL = (process.env.REACT_APP_SERVER) ? `https://groomwell-backend.onrender.com/` : `http://localhost:3001/`
+    const baseURL = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/` : `http://localhost:3001/`
 
     const [password, setPassword] = useState('')
     const [passwordAgain, setPasswordAgain] = useState("")

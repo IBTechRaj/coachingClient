@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Route, Routes, Redirec, NavLink } from "react-router-dom";
-import sidebarData from './sidebarData'
-import Apple from './components/MyClasses'
-import Bat from './components/MyProgs'
-import Camel from './components/MyTests'
+// import sidebarData from './sidebarData'
+// import Apple from './components/MyClasses'
+// import Bat from './components/MyProgs'
+// import Camel from './components/MyTests'
 import './App.css'
 import {
   Navigation,
@@ -15,10 +15,10 @@ import {
   CreateProfile,
   StudentSignup,
   StudentEmailVerified,
-  Dashboard,
+  // Dashboard,
   DashPage,
-  Test,
-  Alerts,
+  // Test,
+  // Alerts,
   ForgotPassword,
   ResetPassword,
   ChangePassword

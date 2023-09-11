@@ -37,7 +37,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
         console.log('jwt=p', jwt)
 
         if (jwt !== null) {
-            axios.get('http://localhost:3001/students/profile', {
+            axios.get('http://coaching-q9o7.onrender.com/students/profile', {
                 headers: {
                     'Content-Type': 'application/json',
                     'token': `${jwt}`,
@@ -88,7 +88,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
 
             const jwt = localStorage.getItem('token');
 
-            const studentsUrl = (process.env.REACT_APP_SERVER) ? `https://groomwell-backend.onrender.com/salons` : `http://localhost:3001/students/${student.id}`
+            const studentsUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students/${student.id}` : `http://localhost:3001/students/${student.id}`
 
             fetch(studentsUrl, {
                 headers: {

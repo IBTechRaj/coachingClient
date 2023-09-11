@@ -86,13 +86,13 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
 
         if (password === passwordAgain) {
             console.log('signing up')
-            const signUpUrl = (process.env.REACT_APP_SERVER) ? `https://motorwash-backend-lfxt.onrender.com/signup` : `http://localhost:3001/students`
+            const signUpUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students` : `http://localhost:3001/students`
             fetch(signUpUrl, {
                 method: "post",
                 headers: {
                     'Access-Control-Allow-Credentials': 'true',
                     "Content-Type": "application/json",
-                    'origin': 'http://localhost:3000',
+                    // 'origin': 'http://localhost:3000',
                 },
                 body: JSON.stringify({
                     "email": email,
@@ -100,8 +100,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                     "first_name": firstName,
                     "last_name": lastName,
                 }),
-            })
-                .then((res) => res.json())
+            }).then((res) => res.json())
                 .then(res => {
                     // console.log('res', res)
                     if (res.data) {

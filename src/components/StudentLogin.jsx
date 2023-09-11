@@ -27,13 +27,13 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
             console.log(email, password)
         }
         console.log('Log in')
-        const loginUrl = (process.env.REACT_APP_SERVER) ? `https://motorwash-backend-lfxt.onrender.com/login` : `http://localhost:3001/students/login`
+        const loginUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students/login` : `http://localhost:3001/students/login`
         fetch(loginUrl, {
             method: "post",
             headers: {
                 'Access-Control-Allow-Credentials': 'true',
                 "Content-Type": "application/json",
-                'origin': 'http://localhost:3000',
+                // 'origin': 'http://localhost:3000',
             },
             body: JSON.stringify({
                 "email": email,

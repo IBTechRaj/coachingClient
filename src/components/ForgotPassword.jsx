@@ -35,7 +35,7 @@ const ForgotPassword = () => {
         event.preventDefault();
         setMessage('')
         setErrorMessage('')
-        const forgotUrl = (process.env.REACT_APP_SERVER) ? `https://groomwell-backend.onrender.com/forgot_password` : `http://localhost:3001/forgot_password`
+        const forgotUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/forgot_password` : `http://localhost:3001/forgot_password`
 
         // console.log('forgot 1', forgotUrl)
 

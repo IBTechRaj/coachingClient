@@ -61,7 +61,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
 
         const jwt = localStorage.getItem('token');
 
-        const studentsUrl = (process.env.REACT_APP_SERVER) ? `https://groomwell-backend.onrender.com/salons` : `http://localhost:3001/students/${student.id}`
+        const studentsUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/salons` : `http://localhost:3001/students/${student.id}`
 
         fetch(studentsUrl, {
             headers: {
@@ -85,7 +85,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
         const jwt = localStorage.getItem('token')
         console.log('jwt', jwt)
 
-        axios.get('http://localhost:3001/students/send_names', {
+        axios.get('http://coaching-q9o7.onrender.com/students/send_names', {
             headers: {
                 'Content-Type': 'application/json',
                 // 'origin': 'http://localhost:3000',

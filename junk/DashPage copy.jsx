@@ -1,7 +1,7 @@
 import React from "react";
 // import Navbar from "./Navbar";
-import NavPage from "./NavPage";
-import SidePage from './SidePage'
+import NavPage from "../src/components/NavPage";
+import SidePage from '../src/components/SidePage'
 
 const DashPage = () => {
     return (
