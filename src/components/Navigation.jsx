@@ -50,35 +50,35 @@ const Navigation = ({ signedIn, setSignedIn }) => {
     })
   }
 
-  useEffect(() => {
-    const jwt = localStorage.getItem('token')
-    console.log('jwt', (jwt !== null))
+  // useEffect(() => {
+  //   const jwt = localStorage.getItem('token')
+  //   console.log('jwt', (jwt !== null))
 
-    if (jwt !== null) {
-      axios.get('http://coaching-q9o7.onrender.com/students/profile', {
-        headers: {
-          'Content-Type': 'application/json',
-          'token': `${jwt}`,
-          Authorization: `Bearer ${jwt}`
-        },
-      })
-        .then(response => {
-          console.log('ress', response.data);
-          setStudent(response.data)
-          setFirstName(response.data.first_name)
-          setLastName(response.data.last_name)
-          setEmail(response.data.email)
-          setMobile(response.data.mobile)
-          setCity(response.data.city)
-          setCountry(response.data.country)
-          setId(response.data.id)
-          setSignedIn(true)
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    }
-  }, [])
+  //   if (jwt !== null) {
+  //     axios.get('http://coaching-q9o7.onrender.com/students/profile', {
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         'token': `${jwt}`,
+  //         Authorization: `Bearer ${jwt}`
+  //       },
+  //     })
+  //       .then(response => {
+  //         console.log('ress', response.data);
+  //         setStudent(response.data)
+  //         setFirstName(response.data.first_name)
+  //         setLastName(response.data.last_name)
+  //         setEmail(response.data.email)
+  //         setMobile(response.data.mobile)
+  //         setCity(response.data.city)
+  //         setCountry(response.data.country)
+  //         setId(response.data.id)
+  //         setSignedIn(true)
+  //       })
+  //       .catch(error => {
+  //         console.error(error);
+  //       });
+  //   }
+  // }, [])
 
   return (
     <div className="navigation fixed-top">
