@@ -48,7 +48,7 @@ const StudentLogout = ({ signedIn, setSignedIn }) => {
 
     return (
         <>
-            <div className="row py-5">
+            <div className="row py-5" style={{ height: '600px' }}>
                 <div className="col-md-3"></div>
 
                 <div className='col-md-6 py-5 text-center'>

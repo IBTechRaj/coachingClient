@@ -30,7 +30,7 @@ const DashPage = (signedIn, setSignedIn) => {
         const jwt = localStorage.getItem('token')
         console.log('jwt', jwt)
         if (jwt !== null) {
-            axios.get('http://coaching-q9o7.onrender.com/students/profile', {
+            axios.get('https://coaching-q9o7.onrender.com/students/profile', {
                 headers: {
                     'Content-Type': 'application/json',
                     'token': `${jwt}`,

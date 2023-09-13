@@ -51,7 +51,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
     }
     const handleSubmit = (event) => {
         event.preventDefault()
-
+        console.log('h', student.id)
         const formData = new FormData();
         formData.append('mobile', mobile)
         formData.append('city', city)
@@ -74,7 +74,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
             .then((res) => res.json())
             .then((res) => {
                 alert("Your profile created successfully!")
-                navigate('/dashboard', { replace: true });
+                navigate('/dashpage', { replace: true });
             })
             .catch((err) => alert(err));
     }
