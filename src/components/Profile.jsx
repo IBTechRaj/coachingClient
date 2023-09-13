@@ -37,7 +37,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
         console.log('jwt=p', jwt)
 
         if (jwt !== null) {
-            axios.get('http://coaching-q9o7.onrender.com/students/profile', {
+            axios.get('https://coaching-q9o7.onrender.com/students/profile', {
                 headers: {
                     'Content-Type': 'application/json',
                     'token': `${jwt}`,
