@@ -37,11 +37,12 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
 
     const handleClick = () => {
         const jwt = localStorage.getItem('token')
+        const baseUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com` : `http://localhost:3001`
         console.log('em', email)
         const payload = {
             "email": email,
         }
-        axios.get('http://localhost:3001/students/resend_email', { params: payload }, {
+        axios.get(`${baseUrl}/students/resend_email`, { params: payload }, {
             headers: {
                 'Content-Type': 'application/json',
                 'origin': 'http://localhost:3000',

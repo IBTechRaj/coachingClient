@@ -28,9 +28,11 @@ const DashPage = (signedIn, setSignedIn) => {
     }
     useEffect(() => {
         const jwt = localStorage.getItem('token')
+
+        const baseUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com` : `http://localhost:3001`
         console.log('jwt', jwt)
         if (jwt !== null) {
-            axios.get('https://coaching-q9o7.onrender.com/students/profile', {
+            axios.get(`${baseUrl}/students/profile`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'token': `${jwt}`,

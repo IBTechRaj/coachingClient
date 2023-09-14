@@ -56,6 +56,10 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
         formData.append('mobile', mobile)
         formData.append('city', city)
         formData.append('country', country)
+        formData.append('study', study)
+        formData.append('institution', institution)
+        formData.append('work', work)
+        formData.append('office', office)
         formData.append('image', image.raw)
 
 
@@ -84,8 +88,9 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
     useEffect(() => {
         const jwt = localStorage.getItem('token')
         console.log('jwt', jwt)
+        const baseUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com` : `http://localhost:3001`
 
-        axios.get('https://coaching-q9o7.onrender.com/students/send_names', {
+        axios.get(`${baseUrl}/students/send_names`, {
             headers: {
                 'Content-Type': 'application/json',
                 // 'origin': 'http://localhost:3000',
@@ -126,7 +131,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
                             onChange={onImageChange}
                         />
 
-                        <img style={{ borderRadius: '50%', borderStyle: '5px solid red' }} src={image.preview} alt="NoImg" />
+                        <img style={{ borderRadius: '50%', borderStyle: '5px solid red' }} src={image.preview} alt="Upload Image" />
                     </label>
                     {/* <img
                         alt="ad-img"
