@@ -1,4 +1,6 @@
-body {
+@import url('https://fonts.googleapis.com/css?family=Barlow Semi Condensed');
+
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,8 +12,18 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
 body {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+  /* font-family: Roboto, Helvetica, Arial, sans-serif; */
+  font-family: 'Barlow Semi Condensed', sans-serif;
 }
+
+/* p.a { */
+/* font-family: "Barlo Semi Cnndensed", Times, serif; */
+/* font-size: 64px; */
+/* } */
+
+/* p.b { */
+/* font-family: Arial, Helvetica, sans-serif; */
+/* } */

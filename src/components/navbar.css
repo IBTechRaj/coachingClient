@@ -1,0 +1,4 @@
+.navbar__gradient {
+    /* global 92%+ browsers support */
+    background: radial-gradient(circle at 3% 25%, rgba(106, 17, 203, 1) 0%, rgba(40, 43, 173, 1) 100%);
+}
