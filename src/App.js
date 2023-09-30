@@ -11,6 +11,7 @@ import {
   StudentLogin,
   StudentLogout,
   Home,
+  AdminPage,
   Profile,
   CreateProfile,
   StudentSignup,
@@ -33,6 +34,7 @@ export default function App() {
       <Navigation signedIn={signedIn} setSignedIn={setSignedIn} />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/AdminPage" element={<AdminPage />} />
         <Route path="/StudentSignup" element={<StudentSignup signedIn={signedIn} setSignedIn={setSignedIn} />} />
         <Route path="/StudentEmailVerified" element={<StudentEmailVerified />} />
         <Route path="/StudentLogin" element={<StudentLogin signedIn={signedIn} setSignedIn={setSignedIn} />} />

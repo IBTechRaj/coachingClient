@@ -46,9 +46,14 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
                 if (res.data) {
                     setSignedIn(true)
                     localStorage.setItem("token", res.meta.token);
-                    console.log('login token', res.meta.token);
-                    alert("Login success")
-                    navigate('/DashPage', { replace: true });
+                    console.log('login token', res.meta.token, email);
+
+                    if (email === 'krs30018@gmail.com')
+                        navigate('/AdminPage', { replace: true })
+                    else {
+                        alert("Login success")
+                        navigate('/DashPage', { replace: true })
+                    }
                 } else {
                     setErrorMessage(res.errors)
                     console.log(res.errors); // Process the response data here
