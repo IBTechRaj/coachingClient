@@ -14,36 +14,37 @@ import { StrikethroughS, StrikethroughSTwoTone } from "@mui/icons-material";
 
 function Home(signedIn, setSignedIn) {
 
-  // const [students, setStudents] = useState([])
+  const [students, setStudents] = useState([])
 
-  // useEffect(() => {
-  //   const jwt = localStorage.getItem('token')
-  //   console.log('jwt', jwt)
-  //   const baseUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com` : `http://localhost:3001`
+  useEffect(() => {
+    const jwt = localStorage.getItem('token')
+    console.log('jwt', jwt)
+    const baseUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com` : `http://localhost:3001`
 
-  //   axios.get(`${baseUrl}/students`, {
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       // 'origin': 'http://localhost:3000',
-  //       // 'token': token.token,
-  //       // 'token': `${jwt}`,
-  //       // Authorization: `Bearer ${jwt}`
-  //     },
-  //   })
-  //     .then(response => {
-  //       console.log('students', response.data);
-  //       setStudents(response.data)
-  //       // setSignedIn(true)
-  //     })
-  //     .catch(error => {
-  //       console.error(error);
-  //     });
-  // }, [])
+    axios.get(`${baseUrl}/students`, {
+      headers: {
+        'Content-Type': 'application/json',
+        // 'origin': 'http://localhost:3000',
+        // 'token': token.token,
+        // 'token': `${jwt}`,
+        // Authorization: `Bearer ${jwt}`
+      },
+    })
+      .then(response => {
+        console.log('students', response.data);
+        setStudents(response.data)
+
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, [])
 
   const handleSubmit = () => {
     console.log('submitted')
   }
-  // console.log('hom', signedIn)
+  // console.log('hom', signedIn) 
+  console.log('stu', students)
   return (
     <div id="header">
       <div className="container-fluid homepage__gradient">
@@ -229,17 +230,17 @@ function Home(signedIn, setSignedIn) {
 
           <div className="row py-5">
             <Grid container spacing={{ xs: 1, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-              {feedbackData.map((item, index) => {
+              {students.map((student, index) => {
                 return (
                   <div key={index}>
-                    <div className="testimonial-card " style={{ marginTop: 100 }}>
+                    <div className="testimonial-card " style={{ marginTop: 50 }}>
                       <div className="text-center my-1">
-                        <img style={{ borderRadius: '50%', borderStyle: '5px solid red', width: "80px", height: "80px" }} src={coach} alt="NoImg" />
+                        <img style={{ borderRadius: '50%', borderStyle: '5px solid red', width: "80px", height: "80px" }} src={student.get_image_url} alt="NoImg" />
                       </div>
-                      <p className="testimonial-content" >{item.name}</p>
-                      <span>{item.studyRole}</span>
-                      <span>{item.collegeOffice}</span>
-                      <div style={{ margin: 50 }}>"{item.comment}"</div>
+                      <p className="testimonial-content" >{student.first_name + ' ' + student.last_name}</p>
+                      <span>{student.study}</span>
+                      <span>{student.institution}</span>
+                      <div style={{ margin: 50 }}>"{student.feedback}"</div>
                     </div>
                   </div>
                 )

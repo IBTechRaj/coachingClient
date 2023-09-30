@@ -5,6 +5,7 @@ import MyDoubts from './MyDoubts'
 import MyProgs from './MyProgs'
 import MyTests from './MyTests'
 import Test from './Test'
+import MyFeedback from './MyFeedback'
 import ChangePassword from "./ChangePassword";
 // import Git from '../pages/Git'
 // import Home from '../pages/Home'
@@ -27,6 +28,7 @@ const NavPage = () => {
                     <Route path="/DashPage/myprogs" element={<MyProgs />} />
                     <Route path="/dashpage/mydoubts" element={<MyDoubts />} />
                     <Route path="/dashpage/test" element={<Test />} />
+                    <Route path="/dashpage/myfeedback" element={<MyFeedback />} />
                     <Route path="/dashpage/changePassword" element={<ChangePassword />} />
                     {/* <Route path="/git" element={<Git />} />
                     <Route path="/node" element={<Node />} />

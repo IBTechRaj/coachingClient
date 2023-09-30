@@ -29,6 +29,11 @@ const sidebarData = [
         path: "dashpage/test",
         // icon: "bi bi-patch-check",
     },
+    {
+        title: "My Feedback (After course)",
+        path: "dashpage/myFeedback",
+        // icon: "bi bi-patch-check",
+    },
 ]
 
 export default sidebarData

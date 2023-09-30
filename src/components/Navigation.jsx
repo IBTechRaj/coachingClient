@@ -116,7 +116,7 @@ const Navigation = ({ signedIn, setSignedIn }) => {
                   </NavLink>
                 </li>
               ) : (
-                <li>
+                <li className="nav-item">
                   <NavLink className="nav-link text-white" to="/StudentLogin">
                     Login
                     {/* <span className="sr-only">(current)</span> */}
