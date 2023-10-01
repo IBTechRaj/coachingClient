@@ -68,12 +68,12 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
 
     return (
         <>
-            <div className="row py-5" style={{ height: '600px' }}>
+            <div className="row py-5" style={{ height: '650px' }}>
                 <div className="col-md-4"></div>
 
                 <div className='col-md-4'>
                     <form autoComplete="off" onSubmit={handleSubmit}>
-                        <h2 className='py-3 text-center'>Login</h2>
+                        <h2 className='py-5 text-center'>Login</h2>
 
                         <div> <p className='text-center' style={{ color: 'red' }}> {errorMessage}</p></div>
                         <TextField
@@ -110,7 +110,7 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
                         >
                             Forgot Password
                         </NavLink>
-                        <Button variant="contained" color="primary" type="submit">Login</Button>
+                        <Button variant="contained" style={{ backgroundColor: '#4E1CBE', marginTop: 50 }} type="submit">Login</Button>
                     </form>
                     <small>Need an account? <NavLink to="/StudentSignup" style={{ color: 'blue' }}>Register here</NavLink></small>
                 </div>

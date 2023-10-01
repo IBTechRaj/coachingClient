@@ -48,10 +48,10 @@ const StudentLogout = ({ signedIn, setSignedIn }) => {
 
     return (
         <>
-            <div className="row py-5" style={{ height: '800px' }}>
+            <div className="row py-5" style={{ height: '650px' }}>
                 <div className="col-md-3"></div>
 
-                <div className='col-md-6 py-5 text-center'>
+                <div className='col-md-6 py-5 text-center' style={{ marginTop: 100 }}>
                     {/* {setSignedIn(false)} */}
                     {/* <h3>Are you sure to logout ?</h3> */}
 
@@ -62,12 +62,18 @@ const StudentLogout = ({ signedIn, setSignedIn }) => {
                     {(signedIn) ?
 
                         (
-                            <Button variant="contained" color="primary" type="submit" onClick={handleSubmit}>Yes, I want to logout</Button>)
+                            <Button variant="contained" style={{ backgroundColor: '#4E1CBE', marginTop: 100 }} type="submit" onClick={handleSubmit}>Yes, I want to logout</Button>)
                         :
-                        (<h3 >Logged out successfully</h3>)}
+                        (
+                            <div className="py-5">
+                                <h3 >Logged out successfully</h3>
+                                <h5 ><Link to="/StudentLogin" style={{ color: 'blue', marginTop: 100 }}>Login again</Link></h5>
+                            </div>
+                        )
+                    }
                     {console.log('aft', signedIn)}
                     <div className="py-5">
-                        <h5 ><Link to="/StudentLogin" style={{ color: 'blue' }}>Login again</Link></h5>
+                        {/* <h5 ><Link to="/StudentLogin" style={{ color: 'blue' }}>Login again</Link></h5> */}
                     </div>
                 </div>
 

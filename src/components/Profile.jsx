@@ -312,7 +312,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
                     <div className="row">
                         <div className="col-12">
                             <div className="d-grid gap-2 col-6 mx-auto">
-                                <button className="btn btn-primary btn-block" type="submit" onClick={handleSubmit}>
+                                <button className="btn btn-block" style={{ backgroundColor: '#4E1CBE', color: 'white' }} type="submit" onClick={handleSubmit}>
                                     {isDisabled ? 'Edit ' : 'Save'}
                                 </button>
                                 {/* <button class="btn btn-primary" type="button">Button</button> */}

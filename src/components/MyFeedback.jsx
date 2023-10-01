@@ -107,7 +107,7 @@ function MyFeedback() {
                 <div className="row py-2">
                     <div className="col-12">
                         <div className="d-grid gap-2 col-6 mx-auto">
-                            <button className="btn btn-primary btn-block" type="submit" onClick={handleSubmit}>
+                            <button className="btn btn-primary btn-block" style={{ backgroundColor: '#4E1CBE' }} type="submit" onClick={handleSubmit}>
                                 Submit{/* {isDisabled ? 'Edit ' : 'Save'} */}
                             </button>
                             {/* <button class="btn btn-primary" type="button">Button</button> */}
