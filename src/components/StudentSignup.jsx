@@ -242,7 +242,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                                 onChange={(isValid) => { }}
                             />
                             <Checkbox /> I agree to Terms and Conditions<br></br>
-                            <Button variant="contained" color="primary" type="submit">Sign up</Button>
+                            <Button variant="contained" style={{ backgroundColor: '#4E1CBE', color: 'white' }} type="submit">Sign up</Button>
                         </form>
                         <small>Already have an account? <Link to="/StudentLogin" style={{ color: 'blue' }}>Login Here</Link></small>
                     </div>
