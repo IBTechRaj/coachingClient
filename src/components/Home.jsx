@@ -11,11 +11,13 @@ import { blue } from "@mui/material/colors";
 import img1 from '../assets/images/image1.webp'
 import coach from '../assets/images/coach.jpg'
 import { StrikethroughS, StrikethroughSTwoTone } from "@mui/icons-material";
+import Spinner from './Spinner'
 
 function Home(signedIn, setSignedIn) {
 
   const [students, setStudents] = useState([])
 
+  let content = '';
   useEffect(() => {
     const jwt = localStorage.getItem('token')
     console.log('jwt', jwt)
@@ -229,24 +231,31 @@ function Home(signedIn, setSignedIn) {
 
 
           <div className="row py-5">
-            <Grid container spacing={{ xs: 1, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-              {students.map((student, index) => {
-                return (
-                  <div key={index}>
-                    <div className="testimonial-card " style={{ marginTop: 50 }}>
-                      <div className="text-center my-1">
-                        <img style={{ borderRadius: '50%', borderStyle: '5px solid red', width: "80px", height: "80px" }} src={student.get_image_url} alt="NoImg" />
+
+            {content = students.length === 0 ? (
+              <div>
+                <Spinner />
+              </div>
+            ) : (
+              <Grid container spacing={{ xs: 1, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                {students.map((student, index) => {
+                  return (
+                    <div key={index}>
+                      <div className="testimonial-card " style={{ marginTop: 50 }}>
+                        <div className="text-center my-1">
+                          <img style={{ borderRadius: '50%', borderStyle: '5px solid red', width: "80px", height: "80px" }} src={student.get_image_url} alt="NoImg" />
+                        </div>
+                        <p className="testimonial-content" >{student.first_name + ' ' + student.last_name}</p>
+                        <span>{student.study}</span>
+                        <span>{student.institution}</span>
+                        <div style={{ margin: 50 }}>"{student.feedback}"</div>
                       </div>
-                      <p className="testimonial-content" >{student.first_name + ' ' + student.last_name}</p>
-                      <span>{student.study}</span>
-                      <span>{student.institution}</span>
-                      <div style={{ margin: 50 }}>"{student.feedback}"</div>
                     </div>
-                  </div>
-                )
-              })
-              }
-            </Grid>
+                  )
+                })
+                }
+              </Grid>
+            )}
           </div>
 
 
