@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { TextField, Button } from "@mui/material";
 import { NavLink, useNavigate } from "react-router-dom"
+import { Spinner } from "reactstrap";
 
 const StudentLogin = ({ signedIn, setSignedIn }) => {
+    const [loggedInState, setLoggedInState] = useState()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [emailError, setEmailError] = useState(false)
@@ -12,6 +14,7 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        setLoggedInState("logging in")
 
         setEmailError(false)
         setPasswordError(false)
@@ -68,6 +71,9 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
 
     return (
         <>
+            <div className="justify-content-center">
+                {loggedInState === "logging in" ? <Spinner /> : ""}
+            </div>
             <div className="row py-5" style={{ height: '650px' }}>
                 <div className="col-md-4"></div>
 

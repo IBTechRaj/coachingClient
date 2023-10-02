@@ -233,7 +233,7 @@ function Home(signedIn, setSignedIn) {
           <div className="row py-5">
 
             {content = students.length === 0 ? (
-              <div>
+              <div className="justify-content-center">
                 <Spinner />
               </div>
             ) : (

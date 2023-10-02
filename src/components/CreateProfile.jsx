@@ -267,7 +267,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
                             sx={{ mb: 4 }}
                         />
                         {/* <Checkbox /> I agree to Terms and Conditions<br></br> */}
-                        <Button variant="contained" color="primary" type="submit">Create Profile</Button>
+                        <Button variant="contained" style={{ backgroundColor: '#4E1CBE', color: 'white' }} type="submit">Create Profile</Button>
                     </form>
                 </div>
 
