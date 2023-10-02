@@ -5,7 +5,7 @@ function Spinner() {
     return (
         <div>
             <img
-                src={"assets/myspinner.gif"}
+                src={"../assets/myspinner.gif"}
                 style={{ width: '100px', margin: 'auto', display: 'block' }}
                 alt="Loading..."
             />
