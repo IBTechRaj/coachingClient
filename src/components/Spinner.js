@@ -3,9 +3,9 @@ import React from 'react';
 
 function Spinner() {
     return (
-        <div>
+        <div className='text-center'>
             <img
-                src={"../assets/myspinner.gif"}
+                src={"myspinner.gif"}
                 style={{ width: '100px', margin: 'auto', display: 'block' }}
                 alt="Loading..."
             />

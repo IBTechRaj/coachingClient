@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { TextField, Button } from "@mui/material";
 import { NavLink, useNavigate } from "react-router-dom"
-import { Spinner } from "reactstrap";
+import Spinner from './Spinner' // from "reactstrap";
 
 const StudentLogin = ({ signedIn, setSignedIn }) => {
-    const [loggedInState, setLoggedInState] = useState()
+    const [loggingIn, setLoggingIn] = useState()
+    const [disabled, setDisabled] = useState(false)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [emailError, setEmailError] = useState(false)
@@ -14,7 +15,9 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        setLoggedInState("logging in")
+        // setLoggedInState("logging in")
+        // setSignedIn(false)
+        setLoggingIn(true)
 
         setEmailError(false)
         setPasswordError(false)
@@ -45,6 +48,7 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
         })
             .then((res) => res.json())
             .then(res => {
+                setLoggingIn(false)
                 console.log('res', res)
                 if (res.data) {
                     setSignedIn(true)
@@ -72,58 +76,60 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
     return (
         <>
 
-            {loggedInState === "logging in" ? <Spinner /> : (
+            {/* {!(signedIn) ? <Spinner /> : ( */}
 
-                <div className="row py-5" style={{ height: '650px' }}>
-                    <div className="col-md-4"></div>
+            <div className="row py-5" style={{ height: '650px' }}>
+                <div className="col-md-4"></div>
 
-                    <div className='col-md-4'>
-                        <form autoComplete="off" onSubmit={handleSubmit}>
-                            <h2 className='py-5 text-center'>Login</h2>
+                <div className='col-md-4'>
+                    <form autoComplete="off" onSubmit={handleSubmit}>
+                        <h2 className='py-5 text-center'>Login</h2>
 
-                            <div> <p className='text-center' style={{ color: 'red' }}> {errorMessage}</p></div>
-                            <TextField
-                                label="Email"
-                                onChange={e => setEmail(e.target.value)}
-                                required
-                                variant="outlined"
-                                color="secondary"
-                                type="email"
-                                sx={{ mb: 3 }}
-                                fullWidth
-                                value={email}
-                                error={emailError}
-                            />
-                            <TextField
-                                label="Password"
-                                onChange={e => setPassword(e.target.value)}
-                                required
-                                variant="outlined"
-                                color="secondary"
-                                type="password"
-                                value={password}
-                                error={passwordError}
-                                fullWidth
-                                sx={{ mb: 3 }}
-                            />
-                            <NavLink
-                                to='/ForgotPassword'
-                                // className='nav-links'
-                                style={{ color: 'blue' }}
-                            // onClick={
-                            //     onCloseLoginModal
-                            // }
-                            >
-                                Forgot Password
-                            </NavLink>
-                            <Button variant="contained" style={{ backgroundColor: '#4E1CBE', marginTop: 50 }} type="submit">Login</Button>
-                        </form>
-                        <small>Need an account? <NavLink to="/StudentSignup" style={{ color: 'blue' }}>Register here</NavLink></small>
-                    </div>
-
-                    <div className="col-md-3"></div>
+                        <div> <p className='text-center' style={{ color: 'red' }}> {errorMessage}</p></div>
+                        <TextField
+                            label="Email"
+                            onChange={e => setEmail(e.target.value)}
+                            required
+                            variant="outlined"
+                            color="secondary"
+                            type="email"
+                            sx={{ mb: 3 }}
+                            fullWidth
+                            value={email}
+                            error={emailError}
+                        />
+                        <TextField
+                            label="Password"
+                            onChange={e => setPassword(e.target.value)}
+                            required
+                            variant="outlined"
+                            color="secondary"
+                            type="password"
+                            value={password}
+                            error={passwordError}
+                            fullWidth
+                            sx={{ mb: 3 }}
+                        />
+                        <NavLink
+                            to='/ForgotPassword'
+                            // className='nav-links'
+                            style={{ color: 'blue' }}
+                        // onClick={
+                        //     onCloseLoginModal
+                        // }
+                        >
+                            Forgot Password
+                        </NavLink>
+                        {(loggingIn) ? <Spinner /> : (
+                            <Button variant="contained" style={{ backgroundColor: '#4E1CBE', marginTop: 50 }} type="submit" disabled={disabled}>Login</Button>
+                        )}
+                    </form>
+                    <small>Need an account? <NavLink to="/StudentSignup" style={{ color: 'blue' }}>Register here</NavLink></small>
                 </div>
-            )}
+
+                <div className="col-md-3"></div>
+            </div>
+            {/* )} */}
         </>
     );
 }
