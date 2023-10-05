@@ -15,6 +15,7 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        setErrorMessage('')
         // setLoggedInState("logging in")
         // setSignedIn(false)
         setLoggingIn(true)

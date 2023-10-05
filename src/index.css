@@ -17,6 +17,7 @@ code {
 body {
   /* font-family: Roboto, Helvetica, Arial, sans-serif; */
   font-family: 'Barlow Semi Condensed', sans-serif;
+  min-width: 25%;
 }
 
 /* p.a { */

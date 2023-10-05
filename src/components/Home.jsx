@@ -10,7 +10,7 @@ import Grid from '@mui/material/Unstable_Grid2'
 import { blue } from "@mui/material/colors";
 import img1 from '../assets/images/image1.webp'
 import coach from '../assets/images/coach.jpg'
-import { StrikethroughS, StrikethroughSTwoTone } from "@mui/icons-material";
+import { Bloodtype, StrikethroughS, StrikethroughSTwoTone } from "@mui/icons-material";
 import Spinner from './Spinner'
 
 function Home(signedIn, setSignedIn) {
@@ -52,20 +52,20 @@ function Home(signedIn, setSignedIn) {
       <div className="container-fluid homepage__gradient">
         <div className="row justify-content-center  bg-white " style={{ marginTop: 0 }}>
           {/* <div className="col-lg-7"> */}
-          <p className="a" style={{ color: 'blue', fontSize: 64, }}> The C Learning Hub</p>
+          <p className="a" style={{ color: 'blue' }}> The C Learning Hub</p>
 
         </div>
         <div className="row">
 
-          <div className="col-6 px-5" style={{ height: 400, color: 'black' }}>
+          <div className="col-sm-6 px-5" style={{ height: 400, color: 'black' }}>
             {/* "Master C Programming Online" */}
             <p className="a text-center">Learn C Language Coding from Scratch</p>
 
-            <p className="text-center a" style={{ fontSize: 24, marginLeft: 100 }}>Discover the world of programming through C with our interactive course</p>
+            <p className="text-center b" >Discover the world of programming through C with our interactive course</p>
 
 
           </div>
-          <div className="col-6" style={{ backgroundImage: "image1.webp" }}>
+          <div className="col-sm-6" style={{ backgroundImage: "image1.webp" }}>
             <img src={img1} alt="" height="400" />
           </div>
         </div>
@@ -76,7 +76,7 @@ function Home(signedIn, setSignedIn) {
 
 
         <div className="row py-5">
-          <div className="col-4 ">
+          <div className="col-sm-4 ">
             <div className="card-a " style={{ marginTop: 100 }}>
               <div className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: '#0076F9' }}>cloud</i></div>
               <div className="card-content" > Interactive Course</div>
@@ -84,7 +84,7 @@ function Home(signedIn, setSignedIn) {
             </div>
           </div>
 
-          <div className="col-4 ">
+          <div className="col-sm-4 ">
             <div className="card-a " style={{ height: 400, marginLeft: 100 }}>
               <div className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: '#0076F9' }}>cloud</i></div>
               <div className="card-content"> Assessment Tests</div>
@@ -92,7 +92,7 @@ function Home(signedIn, setSignedIn) {
             </div>
           </div>
 
-          <div className="col-4 ">
+          <div className="col-sm-4 ">
             <div className="card-a " style={{ height: 400, marginTop: 100, marginLeft: 100 }}>
               <div className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: '#0076F9' }}>cloud</i></div>
               <div className="card-content"> Topicwise Exercises</div>
@@ -111,12 +111,12 @@ function Home(signedIn, setSignedIn) {
           <div className="col-12 px-5 my-5" style={{ height: 400, color: 'black' }}>
             <p className="a text-center my-5">Features of the Course</p>
             <div className=" card-full navbar__gradient" style={{ height: 450, marginBottom: 100 }}>
-              <div className="b" style={{ margin: 'auto', fontSize: 36 }}>
-                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: 'red' }}>check</i>
+              <div className="b" style={{ margin: 'auto' }}>
+                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>
                   Beginner-friendly lessons for all skill levels</p>
-                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: 'red' }}>check</i>Hands-on coding exercises</p>
-                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: 'red' }}>check</i>Experienced instructors with real-world expertise</p>
-                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: 'red' }}>check</i>Flexible scheduling to fit your busy life</p>
+                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Hands-on coding exercises</p>
+                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Experienced instructors with real-world expertise</p>
+                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Flexible scheduling to fit your busy life</p>
               </div>
               <div style={{ margin: 'auto' }}>
                 <button className="cta" onClick={handleSubmit}>Enroll Now</button>
@@ -131,13 +131,13 @@ function Home(signedIn, setSignedIn) {
             {/* "Master C Programming Online" */}
             <p className="a text-center  py-5">Course Content</p>
             <div className=" card-full my-3" style={{ backgroundColor: 'white', color: 'black' }}>
-              <div className="b" style={{ margin: 'auto', fontSize: 36 }}>
-                <p><i className="material-icons" style={{ fontSize: 40, color: 'red' }}>arrow_forward_ios</i>Fundamentals of C</p>
-                <p><i className="material-icons" style={{ fontSize: 40, color: 'red' }}>arrow_forward_ios</i>Data Types and Variables</p>
-                <p><i className="material-icons" style={{ fontSize: 40, color: 'red' }}>arrow_forward_ios</i>Control Flow</p>
-                <p><i className="material-icons" style={{ fontSize: 40, color: 'red' }}>arrow_forward_ios</i>Functions and Pointers</p>
-                <p><i className="material-icons" style={{ fontSize: 40, color: 'red' }}>arrow_forward_ios</i>Structures</p>
-                <p><i className="material-icons" style={{ fontSize: 40, color: 'red' }}>arrow_forward_ios</i>File Handling</p>
+              <div className="b" style={{ margin: 'auto' }}>
+                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Fundamentals of C</p>
+                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Data Types and Variables</p>
+                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Control Flow</p>
+                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Functions and Pointers</p>
+                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Structures</p>
+                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>File Handling</p>
               </div>
               <div style={{ margin: 'auto' }}>
                 <button className="cta" onClick={handleSubmit}>Enroll Now</button>
@@ -173,16 +173,16 @@ function Home(signedIn, setSignedIn) {
           <div className="col-12 px-5 my-5">
             <p className="a text-center my-1"> How does it work</p>
             <div className="card-full navbar__gradient" style={{ height: 600, marginTop: 60 }}>
-              <div className="b" style={{ margin: 'auto', fontSize: 30 }}>
+              <div className="b" style={{ margin: 'auto' }}>
                 {/* <div className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: 'blue' }}>cloud</i></div> */}
                 {/* <div className="card-full-content text-center" style={{ fontSize: 64 }}> How does it work </div> */}
-                <p><i className="material-icons" style={{ fontSize: 48, color: 'red' }}>keyboard_double_arrow_right</i>Register on line</p>
-                <p><i className="material-icons" style={{ fontSize: 48, color: 'red' }}>keyboard_double_arrow_right</i>We will announce the starting date of the next batch</p>
-                <p><i className="material-icons" style={{ fontSize: 48, color: 'red' }}>keyboard_double_arrow_right</i>We will also inform you by email</p>
-                <p><i className="material-icons" style={{ fontSize: 48, color: 'red' }}>keyboard_double_arrow_right</i>Join the course paying fee online</p>
-                <p><i className="material-icons" style={{ fontSize: 48, color: 'red' }}>keyboard_double_arrow_right</i>We will send a zoom link to all those who join </p>
-                <p><i className="material-icons" style={{ fontSize: 48, color: 'red' }}>keyboard_double_arrow_right</i>Join the class on the given link</p>
-                <p><i className="material-icons" style={{ fontSize: 48, color: 'red' }}>keyboard_double_arrow_right</i>Browse your Dashboard for all the activity that starts happening</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>Register on line</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>We will announce the starting date of the next batch</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>We will also inform you by email</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>Join the course paying fee online</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>We will send a zoom link to all those who join </p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>Join the class on the given link</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>Browse your Dashboard for all the activity that starts happening</p>
               </div>
             </div>
           </div>
@@ -204,18 +204,19 @@ function Home(signedIn, setSignedIn) {
         </div> */}
 
         <div className="row">
-          <div className="col-6" >
-            <p className="a card " style={{ backgroundColor: ' #A1D2FA', height: 400, color: 'black' }}>Meet the Instructor</p>
+          <div className="col-sm-6" style={{ height: 450 }}>
+            <p className="a card " style={{ backgroundColor: ' #A1D2FA', height: 450, color: 'black' }}>Meet the Instructor</p>
           </div>
 
-          <div className="col-5 card" style={{ height: 400 }}>
-            <div className="text-center my-1">
-              <img style={{ borderRadius: '50%', borderStyle: '5px solid red', width: "150px", height: "150px" }} src={coach} alt="NoImg" />
-            </div>
+          <div className="col-sm-6 " style={{ height: 450 }}>
 
-            <div className="b" style={{ marginTop: 20, textAlign: 'center' }}>
+
+            <div className="c card" style={{ textAlign: 'center' }}>
+              <div className="text-center">
+                <img className="image" src={coach} alt="NoImg" />
+              </div>
               <h3 style={{ textDecoration: 'underline' }}>Usha Madam</h3>
-              <p>An ex-NIIT faculty with passion to teach, who trained hundreds of Engineering students along with others during the past several years in the cities of Vijayawada and Hyderabad </p>
+              <p style={{ marginTop: 28 }}>An ex-NIIT faculty with passion to teach, who trained hundreds of Engineering students along with others during the past several years in the cities of Vijayawada and Hyderabad </p>
 
             </div>
             {/* <div>
@@ -226,7 +227,8 @@ function Home(signedIn, setSignedIn) {
 
 
         <div className="row my-5">
-          <div className="col-12 text-center"><p style={{ fontSize: 48 }}>Here is what our students are saying !  </p>
+          <div className="col-12 px-5 my-5">
+            <p className="a text-center my-1"> Here is what our students are saying !</p>
           </div>
 
 
@@ -320,10 +322,10 @@ function Home(signedIn, setSignedIn) {
           <div className="col-8 offset-2 px-5" style={{ height: 600, color: 'black' }}>
             <p className="a text-center  py-5">Pricing</p>
             <div className=" card-full my-3 navbar__gradient" style={{ backgroundColor: 'white', color: 'black' }}>
-              <div className="b pricing" style={{ margin: 'auto', fontSize: 36 }}>
+              <div className="b pricing" style={{ margin: 'auto' }}>
                 <h3 className="text-center">Course Fee</h3>
-                <h3 className="pricing text-center" style={{ textDecoration: 'line-through' }}> Rs.4,000</h3>
-                <h1 className="pricing" style={{ fontSize: 64, color: 'yellow' }}>Introductory offer Rs.3000</h1>
+                <h3 className="text-center" style={{ textDecoration: 'line-through' }}> Rs.4,000</h3>
+                <h3 className="text-center" style={{ fontWeight: 600 }}>Introductory offer Rs.3000</h3>
               </div>
               <div style={{ margin: 'auto' }}>
                 <button className="cta" onClick={handleSubmit}>Enroll Now</button>
@@ -337,12 +339,12 @@ function Home(signedIn, setSignedIn) {
             {/* "Master C Programming Online" */}
             <p className="a text-center  py-5">F A Q</p>
             <div className=" card-full my-3" style={{ backgroundColor: 'white', color: 'black', height: 600 }}>
-              <div style={{ margin: 'auto', fontSize: 24 }}>
-                <h3><i className="material-icons" style={{ fontSize: 48, color: 'red' }}>question_mark</i> "Is prior programming experience required" </h3>
+              <div className="c" style={{ margin: 'auto' }}>
+                <p style={{ fontWeight: 'bold' }}><i className="material-icons" style={{ color: 'red' }}>question_mark</i> "Is prior programming experience required" </p>
                 <p>No, previous programming experience is not at all required. You will learn everything from scratch.</p>
-                <h3><i className="material-icons" style={{ fontSize: 48, color: 'red' }}>question_mark</i> "How does the online learning process work"</h3>
+                <p style={{ fontWeight: 'bold' }}><i className="material-icons" style={{ color: 'red' }}>question_mark</i> "How does the online learning process work"</p>
                 <p>For every session, a zoom link will be provided. You will listen to the lecture, note the doubts if any, and at the end you can clarify everything. </p>
-                <h3><i className="material-icons" style={{ fontSize: 48, color: 'red' }}>question_mark</i> "Are there any hands-on sessions"</h3>
+                <p style={{ fontWeight: 'bold' }}><i className="material-icons" style={{ color: 'red' }}>question_mark</i> "Are there any hands-on sessions"</p>
                 <p>Yes, after finishing each topic there would be programs to make the concepts understandable. Each program would be explained so that students understand the code line by line. </p>
 
               </div>

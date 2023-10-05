@@ -61,6 +61,8 @@
 body {
   font-family: "Poppins", sans-serif;
   background: #fafafa;
+  min-width: 200px;
+  overflow-y: auto;
 }
 
 a,
@@ -75,8 +77,8 @@ a:focus {
     SIDEBAR STYLE
 ----------------------------------------------------- */
 .sidebar {
-  min-width: 250px;
-  max-width: 250px;
+  min-width: 200px;
+  max-width: 200px;
   background: #7386d5;
   color: #fff;
   margin-left: -250px;
@@ -161,7 +163,7 @@ li a.dropdown-toggle::after {
 
 @media only screen and (max-width: 500px) {
   body {
-    overflow: hidden;
+    overflow: auto;
   }
 
   .content.is-open {
