@@ -50,19 +50,27 @@
 } */
 
 /* xxxxxxxxxxxxx*/
-.App {
+/* .App {
   display: flex;
   width: 100%;
   align-items: stretch;
+} */
+
+/* @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"; */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* font-family: 'PT Sans', sans-serif; */
 }
 
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-
-body {
+/* body {
   font-family: "Poppins", sans-serif;
   background: #fafafa;
   min-width: 200px;
   overflow-y: auto;
+  width: 100%;
 }
 
 a,
@@ -73,9 +81,6 @@ a:focus {
   transition: all 0.3s;
 }
 
-/* ---------------------------------------------------
-    SIDEBAR STYLE
------------------------------------------------------ */
 .sidebar {
   min-width: 200px;
   max-width: 200px;
@@ -152,9 +157,6 @@ li a.dropdown-toggle::after {
   background: #3a4c99;
 }
 
-/* ---------------------------------------------------
-    CONTENT STYLE
------------------------------------------------------ */
 .content {
   padding: 20px;
   margin-left: 0;
@@ -186,4 +188,4 @@ li a.dropdown-toggle::after {
     position: relative;
     left: 68%;
   }
-}
+} */
