@@ -12,6 +12,7 @@ import img1 from '../assets/images/image1.webp'
 import coach from '../assets/images/coach.jpg'
 import { Bloodtype, StrikethroughS, StrikethroughSTwoTone } from "@mui/icons-material";
 import Spinner from './Spinner'
+import { NavLink } from "react-router-dom";
 
 function Home(signedIn, setSignedIn) {
 
@@ -59,14 +60,14 @@ function Home(signedIn, setSignedIn) {
 
           <div className="col-sm-6 px-5" style={{ height: 400, color: 'black' }}>
             {/* "Master C Programming Online" */}
-            <p className="a text-center">Learn C Language Coding from Scratch</p>
+            <p className="header-1 text-left">Learn C Language Coding from Scratch</p>
 
-            <p className="text-center b" >Discover the world of programming through C with our interactive course</p>
+            <p className="header-2 text-left " >Discover the world of programming through C with our interactive course</p>
 
 
           </div>
           <div className="col-sm-6" style={{ backgroundImage: "image1.webp" }}>
-            <img src={img1} alt="" height="400" />
+            <img className="imgsize" src={img1} alt="" height="400" />
           </div>
         </div>
 
@@ -77,26 +78,28 @@ function Home(signedIn, setSignedIn) {
 
         <div className="row py-5">
           <div className="col-sm-4 ">
-            <div className="card-a " style={{ marginTop: 100 }}>
-              <div className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: '#0076F9' }}>cloud</i></div>
+            <div className="card-a " >
+              <div className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: '#0076F9' }}>layers</i></div>
               <div className="card-content" > Interactive Course</div>
               <div style={{ margin: 50 }}>Facilitates students to clear doubts on the spot enabling them to move forward confidently</div>
             </div>
           </div>
 
           <div className="col-sm-4 ">
-            <div className="card-a " style={{ height: 400, marginLeft: 100 }}>
-              <div className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: '#0076F9' }}>cloud</i></div>
+            <div className="card-a " >
+              {/* style={{ height: 400, marginLeft: 55, marginRight: 0 }} */}
+              <div className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: '#0076F9' }}>quiz</i></div>
               <div className="card-content"> Assessment Tests</div>
               <div style={{ margin: 50 }}>To help students test their understanding and focus more on the required areas</div>
             </div>
           </div>
 
           <div className="col-sm-4 ">
-            <div className="card-a " style={{ height: 400, marginTop: 100, marginLeft: 100 }}>
-              <div className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: '#0076F9' }}>cloud</i></div>
+            <div className="card-a " >
+              {/* style={{ height: 400, marginLeft: 5 }} */}
+              <div className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: '#0076F9' }}>fitness_center</i></div>
               <div className="card-content"> Topicwise Exercises</div>
-              <div style={{ margin: 50 }}>To gain understanding on all the concepts and put their into practice</div>
+              <div style={{ margin: 50 }}>To gain understanding on all the concepts and put them into practice</div>
             </div>
           </div>
 
@@ -107,9 +110,9 @@ function Home(signedIn, setSignedIn) {
             <p className="a card-a " style={{ height: 400, color: 'black', marginTop: 100 }}>Benefits of the course</p>
           </div> */}
         </div>
-        <div className="row my-5">
-          <div className="col-12 px-5 my-5" style={{ height: 400, color: 'black' }}>
-            <p className="a text-center my-5">Features of the Course</p>
+        <div className="row">
+          <div className="col-12 " style={{ height: 400, color: 'black' }}>
+            <p className="a text-center my-3">Features of the Course</p>
             <div className=" card-full navbar__gradient" style={{ height: 450, marginBottom: 100 }}>
               <div className="b" style={{ margin: 'auto' }}>
                 <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>
@@ -119,7 +122,8 @@ function Home(signedIn, setSignedIn) {
                 <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Flexible scheduling to fit your busy life</p>
               </div>
               <div style={{ margin: 'auto' }}>
-                <button className="cta" onClick={handleSubmit}>Enroll Now</button>
+                <NavLink to="/StudentSignup" className="btn btn-success cta" >Enroll Now</NavLink>
+                {/* <button className="btn btn-success cta" onClick={handleSubmit}>Enroll Now</button> */}
               </div>
             </div>
           </div>
@@ -127,9 +131,9 @@ function Home(signedIn, setSignedIn) {
 
 
         <div className="row my-5 py-5">
-          <div className="col-8 offset-2 px-5 my-5 py-5" style={{ height: 600, color: 'black' }}>
-            {/* "Master C Programming Online" */}
-            <p className="a text-center  py-5">Course Content</p>
+          <div className="col-12  my-5 py-5" style={{ height: 600, color: 'black' }}>
+
+            <p className="a text-center  mt-5">Course Content</p>
             <div className=" card-full my-3" style={{ backgroundColor: 'white', color: 'black' }}>
               <div className="b" style={{ margin: 'auto' }}>
                 <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Fundamentals of C</p>
@@ -140,7 +144,8 @@ function Home(signedIn, setSignedIn) {
                 <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>File Handling</p>
               </div>
               <div style={{ margin: 'auto' }}>
-                <button className="cta" onClick={handleSubmit}>Enroll Now</button>
+                <NavLink to="/StudentSignup" className="btn btn-success cta" >Enroll Now</NavLink>
+                {/* <button className="btn btn-success cta" onClick={handleSubmit}>Enroll Now</button> */}
               </div>
             </div>
           </div>
@@ -170,7 +175,7 @@ function Home(signedIn, setSignedIn) {
           </div>
         </div> */}
         <div className="row my-5">
-          <div className="col-12 px-5 my-5">
+          <div className="col-12  my-5">
             <p className="a text-center my-1"> How does it work</p>
             <div className="card-full navbar__gradient" style={{ height: 600, marginTop: 60 }}>
               <div className="b" style={{ margin: 'auto' }}>
@@ -204,19 +209,20 @@ function Home(signedIn, setSignedIn) {
         </div> */}
 
         <div className="row">
-          <div className="col-sm-6" style={{ height: 450 }}>
+
+          {/* <div className="col-sm-6" style={{ height: 450 }}>
             <p className="a card " style={{ backgroundColor: ' #A1D2FA', height: 450, color: 'black' }}>Meet the Instructor</p>
-          </div>
+          </div> */}
 
-          <div className="col-sm-6 " style={{ height: 450 }}>
+          <div className="col-12  " style={{ height: 350, color: 'black' }}>
 
-
-            <div className="c card" style={{ textAlign: 'center' }}>
+            <p className="a text-center my-1"> Meet the Instructor</p>
+            <div className="card-full " style={{ textAlign: 'center', color: 'black', height: 350 }}>
               <div className="text-center">
                 <img className="image" src={coach} alt="NoImg" />
               </div>
-              <h3 style={{ textDecoration: 'underline' }}>Usha Madam</h3>
-              <p style={{ marginTop: 28 }}>An ex-NIIT faculty with passion to teach, who trained hundreds of Engineering students along with others during the past several years in the cities of Vijayawada and Hyderabad </p>
+              <h3 style={{ textDecoration: 'underline' }}>Usha Rani Katakamsetty</h3>
+              <p style={{ marginTop: 28 }}>An ex-NIIT faculty, expert in C and C++, with a passion to teach,  who trained hundreds of Engineering students along with others during the past several years in the cities of Vijayawada and Hyderabad </p>
 
             </div>
             {/* <div>
@@ -226,13 +232,13 @@ function Home(signedIn, setSignedIn) {
         </div>
 
 
-        <div className="row my-5">
-          <div className="col-12 px-5 my-5">
-            <p className="a text-center my-1"> Here is what our students are saying !</p>
+        <div className="row mt-5">
+          <div className="col-12 mt-5 ">
+            <p className="a text-center mt-5"> Here's what our students are saying !</p>
           </div>
 
 
-          <div className="row py-5">
+          <div className="row ">
 
             {/* {content = students.length === 0 ? (
               <div className="justify-content-center">
@@ -319,26 +325,27 @@ function Home(signedIn, setSignedIn) {
 
 
         <div className="row my-5">
-          <div className="col-8 offset-2 px-5" style={{ height: 600, color: 'black' }}>
-            <p className="a text-center  py-5">Pricing</p>
-            <div className=" card-full my-3 navbar__gradient" style={{ backgroundColor: 'white', color: 'black' }}>
+          <div className="col-8 offset-2 px-5" style={{ height: 500, color: 'black' }}>
+            <p className="a text-center  py-2">Pricing</p>
+            <div className=" card-full my-3 navbar__gradient" style={{ backgroundColor: 'white', color: 'black', height: 400 }}>
               <div className="b pricing" style={{ margin: 'auto' }}>
                 <h3 className="text-center">Course Fee</h3>
                 <h3 className="text-center" style={{ textDecoration: 'line-through' }}> Rs.4,000</h3>
                 <h3 className="text-center" style={{ fontWeight: 600 }}>Introductory offer Rs.3000</h3>
               </div>
               <div style={{ margin: 'auto' }}>
-                <button className="cta" onClick={handleSubmit}>Enroll Now</button>
+                <NavLink to="/StudentSignup" className="btn btn-success cta" >Enroll Now</NavLink>
+                {/* <button className="btn btn-success cta" onClick={handleSubmit}>Enroll Now</button> */}
               </div>
             </div>
           </div>
         </div>
 
         <div className="row">
-          <div className="col-10 offset-1 px-5 my-5" style={{ height: 700, color: 'black' }}>
+          <div className="col-12 my-3" style={{ height: 700, color: 'black' }}>
             {/* "Master C Programming Online" */}
-            <p className="a text-center  py-5">F A Q</p>
-            <div className=" card-full my-3" style={{ backgroundColor: 'white', color: 'black', height: 600 }}>
+            <p className="a text-center  py-2">F A Q</p>
+            <div className=" card-full" style={{ backgroundColor: 'white', color: 'black', height: 600 }}>
               <div className="c" style={{ margin: 'auto' }}>
                 <p style={{ fontWeight: 'bold' }}><i className="material-icons" style={{ color: 'red' }}>question_mark</i> "Is prior programming experience required" </p>
                 <p>No, previous programming experience is not at all required. You will learn everything from scratch.</p>
@@ -349,7 +356,8 @@ function Home(signedIn, setSignedIn) {
 
               </div>
               <div style={{ margin: 'auto' }}>
-                <button className="cta" onClick={handleSubmit}>Enroll Now</button>
+                <NavLink to="/StudentSignup" className="btn btn-success cta" >Enroll Now</NavLink>
+                {/* <NavLink to="/StudentSignup" style={{ color: 'blue' }}>Register here</NavLink> */}
               </div>
             </div>
           </div>
