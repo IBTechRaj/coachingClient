@@ -116,31 +116,8 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
         <>
             <div className="row py-5">
                 <div className="col-md-3 py-5" style={{ borderRadius: '50%', borderStyle: '5px solid red' }}>
-                    {/* <img className="circle"
-                        alt="ad-img"
 
-                        src={image}
-                    /> */}
-                    {/* <input type="file" onChange={handleChange} />
-                    <img style={{ borderRadius: '50%', borderStyle: '5px solid red' }} src={file} /> */}
 
-                    <label>
-                        <input type="file"
-                            accept="image/*"
-                            multiple={false}
-                            onChange={onImageChange}
-                        />
-
-                        <img style={{ borderRadius: '50%', borderStyle: '5px solid red' }} src={image.preview} alt="Upload Image" />
-                    </label>
-                    {/* <img
-                        alt="ad-img"
-                        width={100}
-                        height={100}
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS1hIjBaj0A0XNB_xAozRAcFs6Gr0DQhWTGiQ&usqp=CAU"
-                        style={{ display: isLoading ? "none" : "block" }}
-                        onLoad={onLoad}
-                    /> */}
                 </div>
                 {/* {console.log('tok', token)} */}
                 <div className='col-md-6 py-5'>
@@ -266,6 +243,14 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
                             fullWidth
                             sx={{ mb: 4 }}
                         />
+                        <label>
+                            <input type="file"
+                                accept="image/*"
+                                multiple={false}
+                                onChange={onImageChange}
+                            />
+                            <img style={{ borderRadius: '50%', borderStyle: '5px solid red' }} src={image.preview} alt="Upload Image" />
+                        </label>
                         {/* <Checkbox /> I agree to Terms and Conditions<br></br> */}
                         <Button variant="contained" style={{ backgroundColor: '#4E1CBE', color: 'white' }} type="submit">Create Profile</Button>
                     </form>

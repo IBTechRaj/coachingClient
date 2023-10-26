@@ -76,16 +76,16 @@ function Home(signedIn, setSignedIn) {
 
 
 
-        <div className="row py-5">
-          <div className="col-sm-4 ">
+        <div className="row col-10 offset-1 py-5 d-flex justify-content-around">
+          <div className="col-sm-4 d-flex justify-content-center">
             <div className="card-a " >
               <div className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: '#0076F9' }}>layers</i></div>
               <div className="card-content" > Interactive Course</div>
-              <div style={{ margin: 50 }}>Facilitates students to clear doubts on the spot enabling them to move forward confidently</div>
+              <div style={{ margin: 25 }}>Facilitates students to clear doubts on the spot enabling them to move forward confidently</div>
             </div>
           </div>
 
-          <div className="col-sm-4 ">
+          <div className="col-sm-4 d-flex justify-content-center ">
             <div className="card-a " >
               {/* style={{ height: 400, marginLeft: 55, marginRight: 0 }} */}
               <div className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: '#0076F9' }}>quiz</i></div>
@@ -94,7 +94,7 @@ function Home(signedIn, setSignedIn) {
             </div>
           </div>
 
-          <div className="col-sm-4 ">
+          <div className="col-sm-4 d-flex justify-content-center">
             <div className="card-a " >
               {/* style={{ height: 400, marginLeft: 5 }} */}
               <div className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: '#0076F9' }}>fitness_center</i></div>
