@@ -59,7 +59,8 @@ function MyFeedback() {
             .then((res) => res.json())
             .then((res) => {
                 console.log('res', res)
-                alert(res.meta.message)
+                alert('Feedback submitted successfully')
+                // alert(res.meta.message)
 
                 // setIsDisabled(!isDisabled)
                 // navigate('/dashboard', { replace: true });

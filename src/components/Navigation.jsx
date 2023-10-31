@@ -128,7 +128,7 @@ const Navigation = ({ signedIn, setSignedIn }) => {
             </ul>
           </div>
           <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-            <DropdownToggle color="red">
+            <DropdownToggle color="#3028B1">
               {(signedIn) ?
                 (
                   <img

@@ -244,7 +244,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
                                     </div>
                                 </div>
                                 <div className="form-group">
-                                    <label className="col-sm-2 control-label">Study </label>
+                                    <label className="col-sm-3 control-label">Study/Job Role </label>
                                     <div className="col-sm-10">
                                         <input type="text"
                                             className="form-control"
@@ -259,7 +259,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
                                     </div>
                                 </div>
                                 <div className="form-group">
-                                    <label className="col-sm-2 control-label">Institution </label>
+                                    <label className="col-sm-2 control-label">College/Office </label>
                                     <div className="col-sm-10">
                                         <input type="text"
                                             className="form-control"
@@ -273,7 +273,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
                                         />
                                     </div>
                                 </div>
-                                <div className="form-group">
+                                {/* <div className="form-group">
                                     <label className="col-sm-6 control-label">Job Role(if working) </label>
                                     <div className="col-sm-10">
                                         <input type="text"
@@ -287,8 +287,8 @@ const Profile = ({ signedIn, setSignedIn }) => {
                                             required
                                         />
                                     </div>
-                                </div>
-                                <div className="form-group">
+                                </div> */}
+                                {/* <div className="form-group">
                                     <label className="col-sm-4 control-label">Office(if working) </label>
                                     <div className="col-sm-10">
                                         <input type="text"
@@ -302,7 +302,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
                                             required
                                         />
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
 

@@ -73,7 +73,7 @@ const DashPage = (signedIn, setSignedIn) => {
                             <img style={{ borderRadius: '50%', borderStyle: '5px solid red', width: "150px", height: "150px" }} src={student.get_image_url} alt="NoImg" />
 
                         </div>
-                        <div className="bg-dark text-white text-center p-2 opacity-75" style={{ height: "40px" }}>{student.first_name}</div>
+                        <div className="bg-dark text-white text-center p-2" style={{ height: "40px" }}>{student.first_name}</div>
                         {/* </div> */}
                         <SidePage />
                     </div>

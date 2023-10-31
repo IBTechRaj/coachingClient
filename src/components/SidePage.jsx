@@ -15,7 +15,7 @@ const SidePage = () => {
                         sidebarData.map((item, index) => {
                             return (
 
-                                <div key={index}>
+                                <div className="pl-2 " key={index}>
                                     <div className='hover:bg-red-500 pl-5 mt-7 w-full justify-start items-center  text-white text-2xl fpace-x-1 font-bold'></div>
                                     <NavLink to={item.path}
                                         className={({ isActive }) =>

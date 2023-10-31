@@ -127,11 +127,12 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
 
                             {/* <label>First Name */}
                             <TextField
+                                InputLabelProps={{ shrink: true }}
                                 type="text"
                                 variant='outlined'
                                 color='secondary'
                                 label="First Name"
-                                // onChange={e => setFirstName(e.target.value)}
+                                onChange={e => setFirstName(e.target.value)}
                                 value={student.first_name}
                                 readOnly={false}
                                 fullWidth
@@ -140,20 +141,22 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
                             {/* </label> */}
                             {/* <label>Last Name */}
                             <TextField
+                                InputLabelProps={{ shrink: true }}
                                 type="text"
                                 variant='outlined'
                                 color='secondary'
                                 label="Last Name"
-                                // onChange={e => setLastName(e.target.value)}
+                                onChange={e => setLastName(e.target.value)}
                                 value={student.last_name}
                                 readOnly={false}
                                 fullWidth
-                                required
+                            // required
                             />
                             {/* </label> */}
                         </Stack>
                         {/* <label>Email */}
                         <TextField
+                            InputLabelProps={{ shrink: true }}
                             type="email"
                             variant='outlined'
                             color='secondary'
@@ -162,7 +165,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
                             value={student.email}
                             readOnly={false}
                             fullWidth
-                            required
+                            // required
                             sx={{ mb: 4 }}
                         />
                         {/* </label> */}
@@ -203,7 +206,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
                             type="text"
                             variant='outlined'
                             color='secondary'
-                            label="Study"
+                            label="If study - course name/if work - job role"
                             onChange={e => setStudy(e.target.value)}
                             value={student.study}
                             required
@@ -214,14 +217,14 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
                             type="text"
                             variant='outlined'
                             color='secondary'
-                            label="Institution"
+                            label="if study - college name and Place/if work - office name and Place"
                             onChange={e => setInstitution(e.target.value)}
                             value={student.institution}
                             required
                             fullWidth
                             sx={{ mb: 4 }}
                         />
-                        <TextField
+                        {/* <TextField
                             type="text"
                             variant='outlined'
                             color='secondary'
@@ -231,8 +234,8 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
                             required
                             fullWidth
                             sx={{ mb: 4 }}
-                        />
-                        <TextField
+                        /> */}
+                        {/* <TextField
                             type="text"
                             variant='outlined'
                             color='secondary'
@@ -242,12 +245,13 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
                             required
                             fullWidth
                             sx={{ mb: 4 }}
-                        />
+                        /> */}
                         <label>
                             <input type="file"
                                 accept="image/*"
                                 multiple={false}
                                 onChange={onImageChange}
+
                             />
                             <img style={{ borderRadius: '50%', borderStyle: '5px solid red' }} src={image.preview} alt="Upload Image" />
                         </label>
