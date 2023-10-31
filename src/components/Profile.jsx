@@ -150,7 +150,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
                             <div className="panel-body">
 
                                 {/* <div className="form-group"> */}
-                                <label className="col-sm-2 control-label">First name</label>
+                                <label className="col-sm-4 control-label">First name</label>
                                 <div className="col-sm-10">
                                     <input type="text"
                                         className="form-control"
@@ -166,7 +166,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
                                 </div>
                                 {/* </div> */}
                                 <div className="form-group">
-                                    <label className="col-sm-2 control-label">Last Name</label>
+                                    <label className="col-sm-4 control-label">Last Name</label>
                                     <div className="col-sm-10">
                                         <input type="text"
                                             className="form-control"

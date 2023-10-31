@@ -128,8 +128,12 @@ const Navigation = ({ signedIn, setSignedIn }) => {
             </ul>
           </div>
           <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-            <DropdownToggle color="#3028B1">
-              {(signedIn) ?
+            <DropdownToggle caret
+              color="#3028B1"
+            // color="#FFFFFF"
+            >
+
+              {/* {(signedIn) ?
                 (
                   <img
                     src={student.get_image_url}
@@ -137,9 +141,9 @@ const Navigation = ({ signedIn, setSignedIn }) => {
                     className="rounded-circle"
                     width="30"
                   ></img>
-                ) : (
-                  null
-                )}
+                ) : ( */}
+              <i className="material-icons" style={{ fontSize: 36, color: 'white' }}>person</i>
+              {/* )} */}
             </DropdownToggle>
             <DropdownMenu>
               {/* <DropdownItem header>Info</DropdownItem> */}
