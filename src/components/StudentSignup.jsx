@@ -169,7 +169,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
 
                     <div className='col-md-6'>
 
-                        <h3 className='py-1 text-center'>Signup</h3>
+                        <h3 className='py-5 text-center'>Signup</h3>
                         <p className='text-center' style={{ fontSize: 18 }}>Create Your Account as a Student</p>
                         <div> <p className='text-center' style={{ color: 'red' }}> {errorMessage}</p></div>
                         <form onSubmit={handleSubmit} action={<Link to="/login" />}>
