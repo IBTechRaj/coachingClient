@@ -60,7 +60,7 @@ function Home(signedIn, setSignedIn) {
 
           <div className="col-sm-6 px-5" style={{ height: 400, color: 'black' }}>
             {/* "Master C Programming Online" */}
-            <p className="header-1 text-left">Learn C Language Coding from Scratch</p>
+            <p className="header-1 text-left">Learn C Language Programming from Scratch</p>
 
             <p className="header-2 text-left " >Discover the world of programming through C with our interactive course</p>
 
@@ -99,7 +99,7 @@ function Home(signedIn, setSignedIn) {
               {/* style={{ height: 400, marginLeft: 5 }} */}
               <div className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: '#0076F9' }}>fitness_center</i></div>
               <div className="card-content"> Topicwise Exercises</div>
-              <div style={{ margin: 50 }}>To gain understanding on all the concepts and put them into practice</div>
+              <div style={{ margin: 50 }}>To gain understanding on all the concepts and implement them through programs</div>
             </div>
           </div>
 
@@ -111,15 +111,18 @@ function Home(signedIn, setSignedIn) {
           </div> */}
         </div>
         <div className="row">
-          <div className="col-12 " style={{ height: 400, color: 'black' }}>
+          <div className="col-12 " style={{ height: 500, color: 'black' }}>
             <p className="a text-center my-3">Features of the Course</p>
-            <div className=" card-full navbar__gradient" style={{ height: 450, marginBottom: 100 }}>
+            <div className=" card-full navbar__gradient" style={{ height: 500, marginBottom: 100 }}>
               <div className="b" style={{ margin: 'auto' }}>
                 <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>
                   Beginner-friendly lessons for all skill levels</p>
                 <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Hands-on coding exercises</p>
-                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Experienced instructors with real-world expertise</p>
+                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Experienced instructors who simplify the concepts</p>
+                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Support to develop logic to write programs on their own</p>
                 <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Flexible scheduling to fit your busy life</p>
+                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Students are encouraged to clarify doubts</p>
+                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Live supervision while students work with programs</p>
               </div>
               <div style={{ margin: 'auto' }}>
                 <NavLink to="/StudentSignup" className="btn btn-success cta" >Enroll Now</NavLink>
@@ -131,15 +134,20 @@ function Home(signedIn, setSignedIn) {
 
 
         <div className="row my-5 py-5">
-          <div className="col-12  my-5 py-5" style={{ height: 600, color: 'black' }}>
+          <div className="col-12  my-5 py-5" style={{ height: 950, color: 'black' }}>
 
             <p className="a text-center  mt-5">Course Content</p>
-            <div className=" card-full my-3" style={{ backgroundColor: 'white', color: 'black' }}>
+            <div className=" card-full my-3" style={{ backgroundColor: 'white', color: 'black', height: 900 }}>
               <div className="b" style={{ margin: 'auto' }}>
+                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Introduction to Programming</p>
+                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Features of C Language</p>
                 <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Fundamentals of C</p>
-                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Data Types and Variables</p>
-                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Control Flow</p>
-                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Functions and Pointers</p>
+                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Control Flow Statement - If .. else</p>
+                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Loops</p>
+                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Arrays</p>
+                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Pointers</p>
+                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Functions</p>
+                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Storage Classes</p>
                 <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Structures</p>
                 <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>File Handling</p>
               </div>
@@ -183,10 +191,10 @@ function Home(signedIn, setSignedIn) {
                 {/* <div className="card-full-content text-center" style={{ fontSize: 64 }}> How does it work </div> */}
                 <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>Register on line</p>
                 <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>We will announce the starting date of the next batch</p>
-                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>We will also inform you by email</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>We will also inform the registered students by email</p>
                 <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>Join the course paying fee online</p>
                 <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>We will send a zoom link to all those who join </p>
-                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>Join the class on the given link</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>Join the class using the given link</p>
                 <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>Browse your Dashboard for all the activity that starts happening</p>
               </div>
             </div>
@@ -222,7 +230,7 @@ function Home(signedIn, setSignedIn) {
                 <img className="image" src={coach} alt="NoImg" />
               </div>
               <h3 style={{ textDecoration: 'underline' }}>Usha Rani Katakamsetty</h3>
-              <p style={{ marginTop: 28 }}>An ex-NIIT faculty, expert in C and C++, with a passion to teach,  who trained hundreds of Engineering students along with others during the past several years in the cities of Vijayawada and Hyderabad </p>
+              <p style={{ marginTop: 28 }}>An ex-NIIT faculty, expert in C and C++, with a passion to teach,  trained hundreds of Engineering students along with others during the past several years in  Vijayawada and Hyderabad </p>
 
             </div>
             {/* <div>
@@ -326,10 +334,10 @@ function Home(signedIn, setSignedIn) {
 
         <div className="row my-5">
           <div className="col-8 offset-2 px-5" style={{ height: 500, color: 'black' }}>
-            <p className="a text-center  py-2">Pricing</p>
+            <p className="a text-center  py-2">Course Fee</p>
             <div className=" card-full my-3 navbar__gradient" style={{ backgroundColor: 'white', color: 'black', height: 400 }}>
               <div className="b pricing" style={{ margin: 'auto' }}>
-                <h3 className="text-center">Course Fee</h3>
+                <h3 className="text-center"></h3>
                 <h3 className="text-center" style={{ textDecoration: 'line-through' }}> Rs.4,000</h3>
                 <h3 className="text-center" style={{ fontWeight: 600 }}>Introductory offer Rs.3000</h3>
               </div>
@@ -348,11 +356,11 @@ function Home(signedIn, setSignedIn) {
             <div className=" card-full" style={{ backgroundColor: 'white', color: 'black', height: 600 }}>
               <div className="c" style={{ margin: 'auto' }}>
                 <p style={{ fontWeight: 'bold' }}><i className="material-icons" style={{ color: 'red' }}>question_mark</i> "Is prior programming experience required" </p>
-                <p>No, previous programming experience is not at all required. You will learn everything from scratch.</p>
+                <p>No, previous programming experience is not at all required. You will be taught everything from scratch.</p>
                 <p style={{ fontWeight: 'bold' }}><i className="material-icons" style={{ color: 'red' }}>question_mark</i> "How does the online learning process work"</p>
                 <p>For every session, a zoom link will be provided. You will listen to the lecture, note the doubts if any, and at the end you can clarify everything. </p>
                 <p style={{ fontWeight: 'bold' }}><i className="material-icons" style={{ color: 'red' }}>question_mark</i> "Are there any hands-on sessions"</p>
-                <p>Yes, after finishing each topic there would be programs to make the concepts understandable. Each program would be explained so that students understand the code line by line. </p>
+                <p>Yes, after finishing each topic students would practice programs to improve their understanding of the concepts. Each program would be explained so that students understand the code line by line. </p>
 
               </div>
               <div style={{ margin: 'auto' }}>

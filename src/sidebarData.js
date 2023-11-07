@@ -20,6 +20,11 @@ const sidebarData = [
         // icon: "bi bi-patch-check",
     },
     {
+        title: "My Payment",
+        path: "dashpage/myPayment",
+        // icon: "bi bi-patch-check",
+    },
+    {
         title: "Change Password",
         path: "dashpage/changePassword",
         // icon: "bi bi-patch-check",
