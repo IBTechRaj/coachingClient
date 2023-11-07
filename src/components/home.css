@@ -238,7 +238,8 @@ p.a {
     height: 140px;
 }
 
-@media screen and (max-width: 1079px) {
+/* 1079 */
+@media screen and (max-width: 1223px) {
     p.header-1 {
 
         font-size: 28px;
@@ -316,7 +317,8 @@ p.a {
     }
 }
 
-@media screen and (max-width: 979px) {
+/* 979 */
+@media screen and (max-width: 1062px) {
     p.header-1 {
         font-size: 24px;
         margin-top: 80px;

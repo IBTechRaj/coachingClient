@@ -119,7 +119,7 @@ function Home(signedIn, setSignedIn) {
                   Beginner-friendly lessons for all skill levels</p>
                 <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Hands-on coding exercises</p>
                 <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Experienced instructors who simplify the concepts</p>
-                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Support to develop logic to write programs on their own</p>
+                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Support to  develop own logic to write programs</p>
                 <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Flexible scheduling to fit your busy life</p>
                 <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Students are encouraged to clarify doubts</p>
                 <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Live supervision while students work with programs</p>
@@ -142,7 +142,7 @@ function Home(signedIn, setSignedIn) {
                 <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Introduction to Programming</p>
                 <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Features of C Language</p>
                 <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Fundamentals of C</p>
-                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Control Flow Statement - If .. else</p>
+                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Control Flow Statement - If .. else, etc.</p>
                 <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Loops</p>
                 <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Arrays</p>
                 <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Pointers</p>
