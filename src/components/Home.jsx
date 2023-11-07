@@ -113,7 +113,7 @@ function Home(signedIn, setSignedIn) {
         <div className="row">
           <div className="col-12 " style={{ height: 500, color: 'black' }}>
             <p className="a text-center my-3">Features of the Course</p>
-            <div className=" card-full navbar__gradient" style={{ height: 500, marginBottom: 100 }}>
+            <div className=" card-full navbar__gradient" style={{ height: 600, marginBottom: 100 }}>
               <div className="b" style={{ margin: 'auto' }}>
                 <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>
                   Beginner-friendly lessons for all skill levels</p>
