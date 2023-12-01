@@ -13,13 +13,13 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-export default function ShowStudents(props) {
+export default function UpdateStatus(props) {
 
     const [studentsData, setStudentsData] = useState(null);
 
     // const usersUrl = (process.env.REACT_APP_SERVER) ? `https://motorwash-backend-lfxt.onrender.com/list_users/` : `http://localhost:3001/list_users/`
     const studentsUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students` : `http://localhost:3001/students`
-    const studentDelUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students/` : `http://localhost:3001/students/`
+    const studentUpdUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students/` : `http://localhost:3001/students/`
 
     const getUsers = () => {
         axios.get(studentsUrl,)
@@ -36,12 +36,25 @@ export default function ShowStudents(props) {
 
     const theme = createTheme();
 
-    const handleDelete = async (id) => {
+    const handleUpdate = async (id) => {
+        const jwt = localStorage.getItem('token');
         try {
-            const response = await axios.delete(
-                studentDelUrl + id
-            );
+            const response = await axios.put(
+                studentUpdUrl + id,
+                { student_status: 1 },
+                { headers: { "Authorization": `Bearer ${jwt}` } }
+            )
             getUsers()
+            // fetch(studentUpdUrl + id, {
+            //     headers: {
+            //         "Authorization": `Bearer ${jwt}`,
+            //         "Accept": "application/json"
+            //     },
+            //     method: 'PATCH',
+            //     status: 1
+            // })
+
+
         } catch (err) {
             console.log('e', err.message)
             // setError(err.message);
@@ -71,7 +84,7 @@ export default function ShowStudents(props) {
                         {studentsData &&
                             studentsData.map(({ id, first_name, last_name, email }) => (
                                 <li key={id}>
-                                    <p> First Name: {first_name},  {'   '} Last Name: {last_name}, {'   '} Email: {email} <Button onClick={() => handleDelete(id)}>Delete</Button>
+                                    <p> First Name: {first_name},  {'   '} Last Name: {last_name}, {'   '} Email: {email} <Button onClick={() => handleUpdate(id)}>Update</Button>
                                     </p>
                                 </li>
 

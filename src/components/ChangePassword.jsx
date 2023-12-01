@@ -62,7 +62,7 @@ function ChangePassword() {
         <>
             <h1 className='text-center'>Change Password</h1>
             {/* {console.log('token', searchParams.get('token'))} */}
-            <div className="row py-5">
+            <div className="row ">
                 <div className="col-md-3"></div>
 
                 <div className='col-md-6'>

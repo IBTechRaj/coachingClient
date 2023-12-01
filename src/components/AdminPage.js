@@ -7,35 +7,37 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 // import ServiceDetails from './ServiceDetails'
 // import ServiceAgents from './ServiceAgents'
 import ShowStudents from './ShowStudents'
-// import Bookings from './Bookings'
-// import AddAreas from './AddAreas'
+import UpdateStatus from './UpdateStatus'
+import Batch from './Batch'
+import Course from './Course'
+import Programs from './Programs'
 
 export default function AdminPage(props) {
     console.log('prop', props)
-    const [showServices, setShowServices] = useState(false)
-    const [showServiceAgents, setShowServiceAgents] = useState(false)
+    const [showStatus, setShowStatus] = useState(false)
+    const [showPrograms, setShowPrograms] = useState(false)
     const [showStudents, setShowStudents] = useState(false)
-    const [showBookings, setShowBookings] = useState(false)
+    const [showCourse, setShowCourse] = useState(false)
+    const [showBatch, setShowBatch] = useState(false)
 
-    const [showAddAreas, setShowAddAreas] = useState(false)
-
-    const closeServices = () => {
-        setShowServices(false)
-    };
-    const closeServiceAgents = () => {
-        setShowServiceAgents(false)
+    const closeStatus = () => {
+        setShowStatus(false)
     };
     const closeStudents = () => {
         setShowStudents(false)
     };
-    const closeBookings = () => {
-        setShowBookings(false)
+
+    const closePrograms = () => {
+        setShowPrograms(false)
     };
 
-    const closeAddAreas = () => {
-        setShowAddAreas(false)
+    const closeBatch = () => {
+        setShowBatch(false)
     };
 
+    const closeCourse = () => {
+        setShowCourse(false)
+    };
     return (
         <div>
             <Container className="container">
@@ -46,7 +48,7 @@ export default function AdminPage(props) {
                 </Row>
                 <Row className="row">
                     <div className="section-header">
-                        <h2 className="section-title text-center wow fadeInDown mt-3" style={{ color: 'black' }}>Admin Dashboard</h2>
+                        <h2 className="section-title text-center wow fadeInDown mt-5" style={{ color: 'black' }}>Admin Dashboard</h2>
                     </div>
                 </Row>
 
@@ -62,26 +64,13 @@ export default function AdminPage(props) {
                             // setShowServices(true)
                             // setShowBookings(false)
                             // setShowServiceAgents(false)
-                            setShowStudents(false)
+                            setShowStatus(true)
                         }}
                     >
-                        Manage Services
+                        Update Status
                     </Button>
 
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        sx={{ mt: 3, mb: 2, mr: 5, ml: 5 }}
-                        onClick={() => {
-                            // setShowServiceAgents(true)
-                            // setShowServices(false)
-                            // setShowBookings(false)
-                            setShowStudents(false)
-                        }}
-                    >
-                        Manage Service Agents
-                    </Button>
+
                     <Button
                         type="submit"
                         fullWidth
@@ -102,15 +91,28 @@ export default function AdminPage(props) {
                         variant="contained"
                         sx={{ mt: 3, mb: 2, mr: 5, ml: 5 }}
                         onClick={() => {
-                            // setShowBookings(true)
+                            setShowBatch(true)
                             // setShowServices(false)
                             // setShowServiceAgents(false)
-                            setShowStudents(false)
+                            // setShowStudents(false)
                         }}
                     >
-                        View Bookings
+                        Create Batch
                     </Button>
-
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2, mr: 5, ml: 5 }}
+                        onClick={() => {
+                            setShowCourse(true)
+                            // setShowServices(false)
+                            // setShowServiceAgents(false)
+                            // setShowStudents(false)
+                        }}
+                    >
+                        Create Course
+                    </Button>
                     <Button
                         type="submit"
                         fullWidth
@@ -121,30 +123,32 @@ export default function AdminPage(props) {
                             // setShowServices(false)
                             // setShowBookings(false)
                             // setShowServiceAgents(false)
-                            setShowStudents(false)
+                            setShowPrograms(true)
                         }}
                     >
-                        Add Areas
+                        Program Exercises
                     </Button>
                 </ButtonGroup>
 
 
-                {/* {showServices &&
-                    <ServiceDetails onClose={closeServices} />
+                {showStatus &&
+                    <UpdateStatus onClose={closeStatus} />
                 }
-                {showServiceAgents &&
-                    <ServiceAgents onClose={closeServiceAgents} />
-                } */}
+
                 {showStudents &&
                     <ShowStudents onClose={closeStudents} />
                 }
-                {/* {showBookings &&
-                    <Bookings onClose={closeBookings} />
+                {showBatch &&
+                    <Batch onClose={closeBatch} />
                 }
 
-                {showAddAreas &&
-                    <AddAreas onClose={closeAddAreas} />
-                } */}
+                {showCourse &&
+                    <Course onClose={closeCourse} />
+                }
+
+                {showPrograms &&
+                    <Programs onClose={closePrograms} />
+                }
             </Container>
         </div >
     )

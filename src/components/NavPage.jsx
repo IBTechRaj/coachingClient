@@ -20,7 +20,7 @@ const NavPage = () => {
         <React.Fragment>
             <section className=' py-5 text-center' style={{ height: '600px' }} >
 
-                <h5 className="py-3"> Dashboard</h5>
+                <h5 className="py-5"> Dashboard</h5>
                 <Routes>
 
                     {/* <Route path="/" element={<Home />} /> */}

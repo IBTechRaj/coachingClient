@@ -19,6 +19,7 @@ const DashPage = (signedIn, setSignedIn) => {
     const [country, setCountry] = useState("")
     const [uniqid, setUniqid] = useState("")
     const [id, setId] = useState(0)
+    const [status, setStatus] = useState(0)
     const [image, setImage] = useState({ preview: '', raw: '' })
     const onImageChange = (event) => {
         setImage({
