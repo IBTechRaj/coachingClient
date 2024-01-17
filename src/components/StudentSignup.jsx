@@ -155,7 +155,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                     setTimeout(() => {
                         setSignedIn(false)
                     }
-                        , 15000)
+                        , 30000)
                 }
             </>
         )
