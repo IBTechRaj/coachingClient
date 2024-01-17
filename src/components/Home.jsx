@@ -9,7 +9,7 @@ import { TextField, Stack, Button, Checkbox } from "@mui/material";
 import Grid from '@mui/material/Unstable_Grid2'
 import { blue } from "@mui/material/colors";
 import img1 from '../assets/images/image1.webp'
-import coach from '../assets/images/coach.jpg'
+import instructor from '../assets/images/instructor.jpg'
 import { Bloodtype, StrikethroughS, StrikethroughSTwoTone } from "@mui/icons-material";
 import Spinner from './Spinner'
 import { NavLink } from "react-router-dom";
@@ -232,7 +232,7 @@ function Home(signedIn, setSignedIn) {
             <p className="a text-center my-1"> Meet the Instructor</p>
             <div className="card-full " style={{ textAlign: 'center', color: 'black', height: 350 }}>
               <div className="text-center">
-                <img className="image" src={coach} alt="NoImg" />
+                <img className="image" src={instructor} alt="NoImg" />
               </div>
               <h3 style={{ textDecoration: 'underline' }}>Usha Rani Katakamsetty</h3>
               <p style={{ marginTop: 28 }}>An ex-NIIT faculty, expert in C and C++, with a passion to teach,  trained hundreds of Engineering students along with others during the past several years in  Vijayawada and Hyderabad </p>
