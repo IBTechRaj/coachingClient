@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-export default function UpdateStatus(props) {
+export default function UpdateCompletionStatus(props) {
 
     const [studentsData, setStudentsData] = useState(null);
 
@@ -39,9 +39,9 @@ export default function UpdateStatus(props) {
     const handleUpdate = async (id) => {
         const jwt = localStorage.getItem('token');
         try {
-            const response = await axios.patch(
+            const response = await axios.put(
                 studentUpdUrl + id,
-                { student_status: 1 },
+                { student_status: 2 },
                 { headers: { "Authorization": `Bearer ${jwt}` } }
             )
             getUsers()
@@ -79,12 +79,12 @@ export default function UpdateStatus(props) {
 
                 </Box>
                 <div>
-                    <h3 className='text-center'>Update Payment</h3>
+                    <h3 className='text-center'>Update Completion</h3>
                     <ul>
                         {studentsData &&
                             studentsData.map(({ id, first_name, last_name, email, student_status }) => (
                                 <li key={id}>
-                                    <p> First Name: {first_name},  {'   '} Last Name: {last_name}, {'   '} Email: {email}, (' ') Status: {student_status} <Button onClick={() => handleUpdate(id)}>Update</Button>
+                                    <p> First Name: {first_name},  {'   '} Last Name: {last_name}, {'   '} Email: {email}, {''} Status: {student_status} <Button onClick={() => handleUpdate(id)}>Update</Button>
                                     </p>
                                 </li>
 

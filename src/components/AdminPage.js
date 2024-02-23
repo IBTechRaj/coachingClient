@@ -8,6 +8,7 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 // import ServiceAgents from './ServiceAgents'
 import ShowStudents from './ShowStudents'
 import UpdateStatus from './UpdateStatus'
+import UpdateCompletionStatus from './UpdateCompletionStatus'
 import Batch from './Batch'
 import Course from './Course'
 import Programs from './Programs'
@@ -15,6 +16,7 @@ import Programs from './Programs'
 export default function AdminPage(props) {
     console.log('prop', props)
     const [showStatus, setShowStatus] = useState(false)
+    const [showCompletionStatus, setShowCompletionStatus] = useState(false)
     const [showPrograms, setShowPrograms] = useState(false)
     const [showStudents, setShowStudents] = useState(false)
     const [showCourse, setShowCourse] = useState(false)
@@ -23,6 +25,11 @@ export default function AdminPage(props) {
     const closeStatus = () => {
         setShowStatus(false)
     };
+
+    const closeCompletionStatus = () => {
+        setShowCompletionStatus(false)
+    };
+
     const closeStudents = () => {
         setShowStudents(false)
     };
@@ -67,7 +74,22 @@ export default function AdminPage(props) {
                             setShowStatus(true)
                         }}
                     >
-                        Update Status
+                        Update Payment Status
+                    </Button>
+
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2, mr: 5, ml: 5 }}
+                        onClick={() => {
+                            // setShowServices(true)
+                            // setShowBookings(false)
+                            // setShowServiceAgents(false)
+                            setShowCompletionStatus(true)
+                        }}
+                    >
+                        Update Course Completion
                     </Button>
 
 
@@ -133,6 +155,10 @@ export default function AdminPage(props) {
 
                 {showStatus &&
                     <UpdateStatus onClose={closeStatus} />
+                }
+
+                {showCompletionStatus &&
+                    <UpdateCompletionStatus onClose={closeCompletionStatus} />
                 }
 
                 {showStudents &&

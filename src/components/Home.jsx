@@ -22,9 +22,9 @@ function Home(signedIn, setSignedIn) {
   useEffect(() => {
     const jwt = localStorage.getItem('token')
     console.log('jwt', jwt)
-    const baseUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com` : `http://localhost:3001`
+    const baseUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students` : `http://localhost:3001/students`
 
-    axios.get(`${baseUrl}/students`, {
+    axios.get(`${baseUrl}/get_old_students`, {
       headers: {
         'Content-Type': 'application/json',
         // 'origin': 'http://localhost:3000',
@@ -53,7 +53,7 @@ function Home(signedIn, setSignedIn) {
       <div className="container-fluid homepage__gradient">
         <div className="row justify-content-center  bg-white " style={{ marginTop: 0 }}>
           {/* <div className="col-lg-7"> */}
-          <p className="a" style={{ color: 'blue' }}> The C Learning Hub</p>
+          <p className="a" style={{ color: '#4221B9' }}> The C Learning Hub</p>
 
         </div>
         <div className="row">
@@ -73,8 +73,8 @@ function Home(signedIn, setSignedIn) {
 
 
         <div className="row col-8 offset-2 py-5 d-flex text-center">
-          <div className="b" style={{ margin: 'auto', color: 'blue' }}>
-            We shall be launching our first batch from this platform in March 2024.
+          <div className="b" style={{ margin: 'auto', color: '#4221B9' }}>
+            We shall be launching our first batch from this platform in the last week of March 2024.
             Watch out for the starting date announcement.
           </div>
         </div>
@@ -144,17 +144,18 @@ function Home(signedIn, setSignedIn) {
             <p className="a text-center  mt-5">Course Content</p>
             <div className=" card-full my-3" style={{ backgroundColor: 'white', color: 'black', height: 900 }}>
               <div className="b" style={{ margin: 'auto' }}>
-                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Introduction to Programming</p>
-                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Features of C Language</p>
-                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Fundamentals of C</p>
-                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Control Flow Statement - If .. else, etc.</p>
-                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Loops</p>
-                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Arrays</p>
-                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Pointers</p>
-                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Functions</p>
-                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Storage Classes</p>
-                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>Structures</p>
-                <p><i className="material-icons" style={{ fontSize: 24, color: 'red' }}>arrow_forward_ios</i>File Handling</p>
+                {/* arrow_forward_ios */}
+                <p><i className="material-icons" style={{ fontSize: 36, color: '#4221B9' }}>check</i>Introduction to Programming</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: '#4221B9' }}>check</i>Features of C Language</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: '#4221B9' }}>check</i>Fundamentals of C</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: '#4221B9' }}>check</i>Control Flow Statement - If .. else, etc.</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: '#4221B9' }}>check</i>Loops</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: '#4221B9' }}>check</i>Arrays</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: '#4221B9' }}>check</i>Pointers</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: '#4221B9' }}>check</i>Functions</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: '#4221B9' }}>check</i>Storage Classes</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: '#4221B9' }}>check</i>Structures</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: '#4221B9' }}>check</i>File Handling</p>
               </div>
               <div style={{ margin: 'auto' }}>
                 <NavLink to="/StudentSignup" className="btn btn-success cta" >Enroll Now</NavLink>
@@ -194,13 +195,13 @@ function Home(signedIn, setSignedIn) {
               <div className="b" style={{ margin: 'auto' }}>
                 {/* <div className="mx-auto"> <i className="material-icons" style={{ fontSize: 60, color: 'blue' }}>cloud</i></div> */}
                 {/* <div className="card-full-content text-center" style={{ fontSize: 64 }}> How does it work </div> */}
-                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>Register on line</p>
-                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>We will announce the starting date of the next batch</p>
-                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>We will also inform the registered students by email</p>
-                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>Join the course paying fee online</p>
-                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>We will send a zoom link to all those who join </p>
-                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>Join the class using the given link</p>
-                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>keyboard_double_arrow_right</i>Browse your Dashboard for all the activity that starts happening</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Register on line</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>We will announce the starting date of the next batch</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>We will also inform the registered students by email</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Join the course paying fee online</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>We will send a zoom link to all those who join </p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Join the class using the given link</p>
+                <p><i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Browse your Dashboard for all the activity that starts happening</p>
               </div>
             </div>
           </div>
