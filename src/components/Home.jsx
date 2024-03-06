@@ -74,7 +74,7 @@ function Home(signedIn, setSignedIn) {
 
         <div className="row col-8 offset-2 py-5 d-flex text-center">
           <div className="b" style={{ margin: 'auto', color: '#4221B9' }}>
-            We shall be launching our first batch from this platform in the last week of March 2024.
+            We shall be launching our first batch from this platform in the last week of April 2024.
             Watch out for the starting date announcement.
           </div>
         </div>
