@@ -58,11 +58,11 @@ function Home(signedIn, setSignedIn) {
         </div>
         <div className="row">
 
-          <div className="col-sm-6 px-5" style={{ height: 400, color: 'black' }}>
+          <div className="col-sm-6 px-5" style={{ height: 300, color: 'black' }}>
             {/* "Master C Programming Online" */}
             <p className="header-1 text-left">Learn C Language Programming from Scratch</p>
 
-            <p className="header-2 text-left " >Discover the world of programming through C with our interactive course</p>
+            <p className="header-2 text-left " >Discover the world of programming through 'C' with our interactive course</p>
 
 
           </div>
