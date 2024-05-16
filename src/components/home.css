@@ -568,6 +568,10 @@ p.a {
 
     }
 
+    .testimonial-content {
+        font-weight: 600;
+    }
+
     .cta {
         font-size: 16px;
         font-weight: 600;
