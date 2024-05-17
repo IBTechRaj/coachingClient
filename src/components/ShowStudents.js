@@ -69,9 +69,9 @@ export default function ShowStudents(props) {
                     <h3 className='text-center'>List of Students</h3>
                     <ul>
                         {studentsData &&
-                            studentsData.map(({ id, first_name, last_name, email }) => (
+                            studentsData.map(({ id, first_name, last_name, email, mobile, activated }) => (
                                 <li key={id}>
-                                    <p> First Name: {first_name},  {'   '} Last Name: {last_name}, {'   '} Email: {email} <Button onClick={() => handleDelete(id)}>Delete</Button>
+                                    <p> First Name: {first_name},  {'   '} Last Name: {last_name}, {'   '} Email: {email}, {' '} Mobile: {mobile}, {''} Active: {activated ? 'True' : 'False'} <Button onClick={() => handleDelete(id)}>Delete</Button>
                                     </p>
                                 </li>
 

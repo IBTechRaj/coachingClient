@@ -21,6 +21,7 @@ export default function AdminPage(props) {
     const [showStudents, setShowStudents] = useState(false)
     const [showCourse, setShowCourse] = useState(false)
     const [showBatch, setShowBatch] = useState(false)
+    const [showProfile, setShowProfile] = useState(false)
 
     const closeStatus = () => {
         setShowStatus(false)
@@ -45,6 +46,11 @@ export default function AdminPage(props) {
     const closeCourse = () => {
         setShowCourse(false)
     };
+
+    const closeProfile = () => {
+        setShowProfile(false)
+    };
+
     return (
         <div>
             <Container className="container">
@@ -150,6 +156,22 @@ export default function AdminPage(props) {
                     >
                         Program Exercises
                     </Button>
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2, mr: 5, ml: 5 }}
+                        onClick={() => {
+                            // setShowAddAreas(true)
+                            // setShowServices(false)
+                            // setShowBookings(false)
+                            // setShowServiceAgents(false)
+                            setShowProfile(true)
+                        }}
+                    >
+                        ProfileViewUpdate
+                    </Button>
+
                 </ButtonGroup>
 
 
@@ -175,6 +197,11 @@ export default function AdminPage(props) {
                 {showPrograms &&
                     <Programs onClose={closePrograms} />
                 }
+
+                {showProfile &&
+                    <Programs onClose={closeProfile} />
+                }
+
             </Container>
         </div >
     )
