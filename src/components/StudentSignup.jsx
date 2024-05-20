@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import axios from 'axios'
 // import { ClassNames } from '@emotion/react';
 import PasswordChecklist from "react-password-checklist";
+import './studentsignup.css'
 
 
 const StudentSignup = ({ signedIn, setSignedIn }) => {
@@ -27,13 +28,6 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
     function handleSetMatchPassword(event) {
         setMatchPassword(event.target.value);
     }
-    // axios.get(servicesUrl, {
-    //     headers: { Authorization: `Bearer ${jwt}` },
-    // })
-    //     .then(response => {
-    //         // console.log('res.dat', response.data)
-    //         setServiceData(response.data)
-    //     })
 
     const handleClick = () => {
         const jwt = localStorage.getItem('token')
@@ -59,26 +53,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                 console.error(error);
             });
     };
-    // function handlePassword(event) {
-    //     // let new_pass = event.target.value;
-    //     setPassword(event.target.value);
 
-    //     // regular expressions to validate password
-    //     var lowerCase = /[a-z]/g;
-    //     var upperCase = /[A-Z]/g;
-    //     var numbers = /[0-9]/g;
-    //     if (!password.match(lowerCase)) {
-    //         setErrorMessage("Password should contains lowercase letters!");
-    //     } else if (!password.match(upperCase)) {
-    //         setErrorMessage("Password should contain uppercase letters!");
-    //     } else if (!password.match(numbers)) {
-    //         setErrorMessage("Password should contains numbers also!");
-    //     } else if (password.length < 8) {
-    //         setErrorMessage("Password length should be more than 10.");
-    //     } else {
-    //         setErrorMessage("Password is strong!");
-    //     }
-    // }
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -132,31 +107,34 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
         return (
             <>
                 {/* style={{ maxWidth: 600, marginLeft: 100, padding: 20 }}  <br /> */}
-                <div className="row py-5 justify-content-center">
-                    <h3> You are almost there!</h3>
+                <div className="row py-5 px-5 justify-content-center " style={{ marginTop: 80 }}>
+                    <div className="msgsize" > You are almost there!</div>
                 </div>
-                <div className="row py-5 justify-content-center" style={{ marginTop: 30, marginLeft: 300, marginRight: 300 }}>
-                    <h3> Please check your email to verify and complete your sign up.
+                <div className="row py-5 px-5 justify-content-center " >
+                    <div className="msgsize"> Please check your email to verify and complete your sign up.
 
 
                         If you don't see it,  you may need to check your spam folder.
                         Still can't find the email?
-                    </h3>
+                    </div>
                 </div >
-                <div className="row py-5 justify-content-center" style={{ marginTop: 0, marginLeft: 300, marginRight: 300 }}>
-                    <h3>
+                <div className="row py-5 px-5 justify-content-center" style={{ marginBottom: 45 }}>
+                    <div className="msgsize py-2 px-5">
                         Click here to   <Link to="#" onClick={handleClick}>Resend Email</Link>
 
-                    </h3>
+                    </div>
+                    <div className='py-2 px-5'>  If still facing problem, please send email to us at krs30018@gmail.com.</div>
 
-                    <div> <p className='text-center' style={{ color: 'green', fontSize: 24, fontWeight: 600 }}> {message}</p></div>
+                    {/* <div> <p className='text-center' style={{ color: 'green', fontSize: 24, fontWeight: 600 }}> {message}</p></div> */}
                 </div >
+
                 {
                     setTimeout(() => {
                         setSignedIn(false)
                     }
-                        , 30000)
+                        , 60000)
                 }
+
             </>
         )
     else
@@ -172,7 +150,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                         <h3 className='py-5 text-center'>Signup</h3>
                         <p className='text-center' style={{ fontSize: 18 }}>Create Your Account as a Student</p>
                         <div> <p className='text-center' style={{ color: 'red' }}> {errorMessage}</p></div>
-                        <form onSubmit={handleSubmit} action={<Link to="/login" />}>
+                        <form className='px-3' onSubmit={handleSubmit} action={<Link to="/login" />}>
                             <Stack spacing={2} direction="row" sx={{ marginBottom: 3 }}>
                                 {/* <div> */}
 

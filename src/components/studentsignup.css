@@ -1,4 +1,4 @@
-.app {
+/* .app {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,4 +34,18 @@ button {
     cursor: pointer;
     margin-top: 15px;
     margin-bottom: 30px;
+} */
+
+.msgsize {
+
+    font-size: 28px;
+
+}
+
+@media screen and (max-width: 680px) {
+    .msgsize {
+
+        font-size: 20px;
+
+    }
 }

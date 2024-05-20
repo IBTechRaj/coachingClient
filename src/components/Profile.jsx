@@ -15,7 +15,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
     const [email, setEmail] = useState("")
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
-    const [mobile, setMobile] = useState("")
+    const [mobile, setMobile] = useState(9999999999)
     const [city, setCity] = useState("")
     const [country, setCountry] = useState("")
     const [uniqid, setUniqid] = useState("")
@@ -25,6 +25,10 @@ const Profile = ({ signedIn, setSignedIn }) => {
     const [office, setOffice] = useState('')
     const [id, setId] = useState(0)
     const [image, setImage] = useState({ preview: '', raw: '' })
+
+    const [isError, setIsError] = useState(false);
+    const pattern = new RegExp(/^(\d{10})$/);
+
     const onImageChange = (event) => {
         setImage({
             preview: URL.createObjectURL(event.target.files[0]),
@@ -73,44 +77,51 @@ const Profile = ({ signedIn, setSignedIn }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        if (!isDisabled) {
-            console.log('updating', student.id)
-            const formData = new FormData();
-            formData.append('mobile', mobile)
-            formData.append('city', city)
-            formData.append('country', country)
-            formData.append('study', study)
-            formData.append('institution', institution)
-            formData.append('work', work)
-            formData.append('office', office)
-            if (image.raw)
-                formData.append('image', image.raw)
-            console.log('formdata', formData)
+        console.log('err-m', isError)
+        if (!isError) {
+            if (!isDisabled) {
+                console.log('updating', student.id)
+                const formData = new FormData();
+                formData.append('mobile', mobile)
+                formData.append('city', city)
+                formData.append('country', country)
+                formData.append('study', study)
+                formData.append('institution', institution)
+                formData.append('work', work)
+                formData.append('office', office)
+                if (image.raw)
+                    formData.append('image', image.raw)
+                console.log('formdata', formData)
 
-            const jwt = localStorage.getItem('token');
+                const jwt = localStorage.getItem('token');
 
-            const studentsUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students/${student.id}` : `http://localhost:3001/students/${student.id}`
+                const studentsUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students/${student.id}` : `http://localhost:3001/students/${student.id}`
 
-            fetch(studentsUrl, {
-                headers: {
-                    "Authorization": `Bearer ${jwt}`,
-                    "Accept": "application/json"
-                },
-                method: 'PATCH',
-                body: formData
-            })
-                .then((res) => res.json())
-                .then((res) => {
-                    console.log('res', res)
-                    alert(res.meta.message)
-
-                    setIsDisabled(!isDisabled)
-                    // navigate('/dashboard', { replace: true });
+                fetch(studentsUrl, {
+                    headers: {
+                        "Authorization": `Bearer ${jwt}`,
+                        "Accept": "application/json"
+                    },
+                    method: 'PATCH',
+                    body: formData
                 })
-                .catch((err) => alert(err));
+                    .then((res) => res.json())
+                    .then((res) => {
+                        console.log('res', res)
+                        alert(res.meta.message)
+
+                        setIsDisabled(!isDisabled)
+                        // navigate('/dashboard', { replace: true });
+                    })
+                    .catch((err) => alert(err));
+            }
+            else {
+                setIsDisabled(!isDisabled)
+            }
         }
         else {
-            setIsDisabled(!isDisabled)
+            alert('Please enter valid info')
+            setIsError(false)
         }
     }
     return (
@@ -201,14 +212,22 @@ const Profile = ({ signedIn, setSignedIn }) => {
                                 <div className="form-group">
                                     <label className="col-sm-2 control-label">Mobile </label>
                                     <div className="col-sm-10">
-                                        <input type="tel"
+                                        <input type="number"
                                             className="form-control"
                                             readOnly={isDisabled}
                                             variant='outlined'
                                             color='secondary'
                                             // label="Mobile"
-                                            onChange={event => setMobile(event.target.value)}
+
                                             value={mobile}
+                                            onChange={(event) => {
+                                                setMobile(event.target.value);
+                                                if (!pattern.test(event.target.value))
+                                                    setIsError(true);
+                                                else setIsError(false);
+                                                if (mobile.toString().length !== 10)
+                                                    setIsError(true)
+                                            }}
                                             required
                                         />
                                     </div>
@@ -216,14 +235,19 @@ const Profile = ({ signedIn, setSignedIn }) => {
                                 <div className="form-group">
                                     <label className="col-sm-2 control-label">City </label>
                                     <div className="col-sm-10">
-                                        <input type="tel"
+                                        <input type="text"
+
+                                            value={city}
                                             className="form-control"
                                             readOnly={isDisabled}
                                             variant='outlined'
                                             color='secondary'
                                             // label="City"
-                                            onChange={event => setCity(event.target.value)}
-                                            value={city}
+                                            onChange={(event) => {
+                                                setCity(event.target.value);
+                                                if (event.target.value.toString().length < 1)
+                                                    setIsError(true)
+                                            }}
                                             required
                                         />
                                     </div>
@@ -231,14 +255,19 @@ const Profile = ({ signedIn, setSignedIn }) => {
                                 <div className="form-group">
                                     <label className="col-sm-2 control-label">Country </label>
                                     <div className="col-sm-10">
-                                        <input type="tel"
+                                        <input type="text"
+
+                                            value={country}
                                             className="form-control"
                                             readOnly={isDisabled}
                                             variant='outlined'
                                             color='secondary'
                                             // label="Country"
-                                            onChange={event => setCountry(event.target.value)}
-                                            value={country}
+                                            onChange={(event) => {
+                                                setCountry(event.target.value);
+                                                if (event.target.value.toString().length < 1)
+                                                    setIsError(true)
+                                            }}
                                             required
                                         />
                                     </div>
@@ -247,13 +276,18 @@ const Profile = ({ signedIn, setSignedIn }) => {
                                     <label className="col-sm-3 control-label">Study/Job Role </label>
                                     <div className="col-sm-10">
                                         <input type="text"
+
+                                            value={study}
                                             className="form-control"
                                             readOnly={isDisabled}
                                             variant='outlined'
                                             color='secondary'
                                             // label="Country"
-                                            onChange={event => setStudy(event.target.value)}
-                                            value={study}
+                                            onChange={(event) => {
+                                                setStudy(event.target.value);
+                                                if (event.target.value.toString().length < 1)
+                                                    setIsError(true)
+                                            }}
                                             required
                                         />
                                     </div>
@@ -262,13 +296,18 @@ const Profile = ({ signedIn, setSignedIn }) => {
                                     <label className="col-sm-2 control-label">College/Office </label>
                                     <div className="col-sm-10">
                                         <input type="text"
+
+                                            value={institution}
                                             className="form-control"
                                             readOnly={isDisabled}
                                             variant='outlined'
                                             color='secondary'
                                             // label="Country"
-                                            onChange={event => setInstitution(event.target.value)}
-                                            value={institution}
+                                            onChange={(event) => {
+                                                setInstitution(event.target.value);
+                                                if (event.target.value.toString().length < 1)
+                                                    setIsError(true)
+                                            }}
                                             required
                                         />
                                     </div>

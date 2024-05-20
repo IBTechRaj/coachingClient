@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { NavLink } from "react-router-dom";
 import { TextField, Button } from "@mui/material";
 import { useSearchParams } from 'react-router-dom'
+import './StudentEmailVerified.css'
 // import queryString from 'query-string'
 
 const StudentEmailVerified = (props) => {
@@ -24,8 +25,8 @@ const StudentEmailVerified = (props) => {
     <>
 
       {console.log('token', searchParams.get('token'))}
-      <div className='row   justify-content-center' style={{ margin: 100 }}>
-        <h1 style={{ fontSize: 36, color: 'green', margin: 110 }}> Email Verification Sucess !</h1>
+      <div className='row   justify-content-center' style={{ marginTop: 100 }}>
+        <div className='msgsize text-align-center px-1' style={{ color: 'green', margin: '80 20' }}> Email Verification Success !</div>
         <h3>
           {/* <NavLink className="nav-link" to="/Profile"
             style={{
@@ -38,10 +39,10 @@ const StudentEmailVerified = (props) => {
         </h3>
       </div>
 
-      <div className='row  justify-content-center' style={{ margin: 120 }}>
-        <NavLink className="nav-link" to="/CreateProfile" state={tokenData}
+      <div className='row  justify-content-center msgSize' style={{ margin: 100 }}>
+        <NavLink className="nav-link msgsize" to="/CreateProfile" state={tokenData}
           style={{
-            fontSize: 36, color: 'white', backgroundColor: 'blue', borderRadius: 8,
+            color: 'white', backgroundColor: 'blue', borderRadius: 8,
             padding: '0.2em 1em', textDecoration: 'none'
           }}>
           Continue
