@@ -83,7 +83,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                         setSignedIn(true)
                         setFirstName('')
                         setLastName('')
-                        setEmail('')
+                        // setEmail('')
                         setPassword('')
                         setPasswordAgain('')
                         localStorage.setItem("token", res.meta.token);

@@ -18,7 +18,7 @@ import ChangePassword from "./ChangePassword";
 const NavPage = () => {
     return (
         <React.Fragment>
-            <section className=' py-5 text-center' style={{ height: '600px' }} >
+            <section className=' py-5 text-center' style={{ height: '100vh' }} >
 
                 <h5 className="py-5"> Dashboard</h5>
                 <Routes>

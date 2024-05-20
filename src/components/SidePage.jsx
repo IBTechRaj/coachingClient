@@ -8,7 +8,7 @@ const SidePage = () => {
 
     return (
         <React.Fragment>
-            <section className=' py-3' style={{ height: '600px', backgroundColor: '#6811CA' }}>
+            <section className=' py-3' style={{ height: '100vh', backgroundColor: '#6811CA' }}>
                 {/* <h1> This is sidepage</h1> */}
                 <div >
                     {

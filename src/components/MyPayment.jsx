@@ -61,7 +61,7 @@ function MyPayment() {
     //     })
     // }
     return (
-        <Container className="py-2">
+        <Container className="py-2" style={{ height: '100vh' }}>
             {console.log('ss', student.student_status)}
             <h3 style={{ color: student.student_status == 1 ? 'green' : 'red' }}> Payment Status : {student.student_status == 1 ? 'Paid' : 'Unpaid'} </h3>
 
@@ -83,6 +83,9 @@ function MyPayment() {
                 <div className="text-center mx-2">
                     <h5>Paypal : +91 98495 78298 RajaSekhar K</h5>
                 </div>
+                {/* <Row>
+                    <p className="fst-italic my-5"> In case of any problem please contact krs30018@gmail.com</p>
+                </Row> */}
                 {/* <label className=" my-5">
                     <input type="file"
                         accept="image/*"
@@ -93,9 +96,9 @@ function MyPayment() {
                     <img style={{ height: '150px', width: '100px' }} src={image.preview} alt="Upload Image" />
                 </label> */}
             </Row>
-            <Row>
+            {/* <Row>
                 <p className="fst-italic my-5"> In case of any problem please contact krs30018@gmail.com</p>
-            </Row>
+            </Row> */}
         </Container>
     );
 }
