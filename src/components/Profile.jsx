@@ -5,7 +5,7 @@ import axios from 'axios'
 import './style.css'
 
 const Profile = ({ signedIn, setSignedIn }) => {
-    console.log('profile', signedIn)
+    // console.log('profile', signedIn)
 
 
     const navigate = useNavigate();
@@ -77,6 +77,10 @@ const Profile = ({ signedIn, setSignedIn }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        if (mobile.toString().length !== 10 || city.toString().length < 1 || country.toString().length < 1 || study.toString().length < 1 || institution.toString().length < 1)
+            // if (!city || !country || !study || !institution)
+            setIsError(true)
+        console.log('vals', city, country, study, institution)
         console.log('err-m', isError)
         if (!isError) {
             if (!isDisabled) {
@@ -121,7 +125,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
         }
         else {
             alert('Please enter valid info')
-            setIsError(false)
+            // setIsError(false)
         }
     }
     return (
@@ -129,7 +133,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
 
             <form onSubmit={handleSubmit} >
                 <div className="container  py-5">
-                    {console.log(isDisabled)}
+                    {/* {console.log(isDisabled)} */}
                     <div className="row">
                         <div className="col-12">
                             <div className="panel panel-default">
@@ -225,7 +229,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
                                                 if (!pattern.test(event.target.value))
                                                     setIsError(true);
                                                 else setIsError(false);
-                                                if (mobile.toString().length !== 10)
+                                                if (event.target.value.toString().length !== 10)
                                                     setIsError(true)
                                             }}
                                             required
@@ -247,6 +251,8 @@ const Profile = ({ signedIn, setSignedIn }) => {
                                                 setCity(event.target.value);
                                                 if (event.target.value.toString().length < 1)
                                                     setIsError(true)
+                                                else
+                                                    setIsError(false)
                                             }}
                                             required
                                         />
@@ -267,6 +273,8 @@ const Profile = ({ signedIn, setSignedIn }) => {
                                                 setCountry(event.target.value);
                                                 if (event.target.value.toString().length < 1)
                                                     setIsError(true)
+                                                else
+                                                    setIsError(false)
                                             }}
                                             required
                                         />
@@ -287,6 +295,8 @@ const Profile = ({ signedIn, setSignedIn }) => {
                                                 setStudy(event.target.value);
                                                 if (event.target.value.toString().length < 1)
                                                     setIsError(true)
+                                                else
+                                                    setIsError(false)
                                             }}
                                             required
                                         />
@@ -307,6 +317,8 @@ const Profile = ({ signedIn, setSignedIn }) => {
                                                 setInstitution(event.target.value);
                                                 if (event.target.value.toString().length < 1)
                                                     setIsError(true)
+                                                else
+                                                    setIsError(false)
                                             }}
                                             required
                                         />
