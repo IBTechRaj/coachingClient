@@ -77,9 +77,9 @@ const Profile = ({ signedIn, setSignedIn }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        // if (mobile.toString().length !== 10 || city.toString().length < 1 || country.toString().length < 1 || study.toString().length < 1 || institution.toString().length < 1)
-        // if (!city || !country || !study || !institution)
-        // setIsError(true)
+        if (mobile.toString().length !== 10 || city.toString().length < 1 || country.toString().length < 1 || study.toString().length < 1 || institution.toString().length < 1)
+            // if (!city || !country || !study || !institution)
+            setIsError(true)
         console.log('vals', city, country, study, institution)
         console.log('err-m', isError)
         if (!isError) {
