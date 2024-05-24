@@ -255,6 +255,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
                             />
                             <img style={{ borderRadius: '50%', borderStyle: '5px solid red' }} src={image.preview} alt="Upload Image" />
                         </label>
+                        <p style={{ color: 'blue' }}>Please upload your photo or some picture as your profile image</p>
                         {/* <Checkbox /> I agree to Terms and Conditions<br></br> */}
                         <Button variant="contained" style={{ backgroundColor: '#4E1CBE', color: 'white' }} type="submit">Create Profile</Button>
                     </form>

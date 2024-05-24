@@ -8,7 +8,7 @@ import './studentsignup.css'
 
 
 const StudentSignup = ({ signedIn, setSignedIn }) => {
-    console.log('signup', signedIn)
+    // console.log('signup', signedIn)
 
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
