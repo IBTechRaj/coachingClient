@@ -97,9 +97,9 @@ function MyProgs() {
     return (
         <Container className="py-2">
             <h3 color="blue">My Programs</h3>
-            <Row>
+            {/* <Row>
                 <Col>Task</Col><Col>Code</Col>
-            </Row>
+            </Row> */}
             <hr></hr>
 
             <Row className="justify-content-center">

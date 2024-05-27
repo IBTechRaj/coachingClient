@@ -6,7 +6,8 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 // import ServiceDetails from './ServiceDetails'
 // import ServiceAgents from './ServiceAgents'
-import ShowStudents from './ShowStudents'
+import ShowOldStudents from './ShowOldStudents'
+import ShowNewStudents from './ShowNewStudents'
 import UpdateStatus from './UpdateStatus'
 import UpdateCompletionStatus from './UpdateCompletionStatus'
 import Batch from './Batch'
@@ -18,7 +19,8 @@ export default function AdminPage(props) {
     const [showStatus, setShowStatus] = useState(false)
     const [showCompletionStatus, setShowCompletionStatus] = useState(false)
     const [showPrograms, setShowPrograms] = useState(false)
-    const [showStudents, setShowStudents] = useState(false)
+    const [showNewStudents, setShowNewStudents] = useState(false)
+    const [showOldStudents, setShowOldStudents] = useState(false)
     const [showCourse, setShowCourse] = useState(false)
     const [showBatch, setShowBatch] = useState(false)
     const [showProfile, setShowProfile] = useState(false)
@@ -31,8 +33,12 @@ export default function AdminPage(props) {
         setShowCompletionStatus(false)
     };
 
-    const closeStudents = () => {
-        setShowStudents(false)
+    const closeOldStudents = () => {
+        setShowOldStudents(false)
+    };
+
+    const closeNewStudents = () => {
+        setShowNewStudents(false)
     };
 
     const closePrograms = () => {
@@ -68,11 +74,88 @@ export default function AdminPage(props) {
                 <ButtonGroup variant="contained" size="large" aria-label="outlined primary button group">
 
 
+
+
+
                     <Button
                         type="submit"
                         fullWidth
                         variant="contained"
-                        sx={{ mt: 3, mb: 2, mr: 5, ml: 5 }}
+                        sx={{ mt: 3, mb: 2, mr: 4, ml: 4 }}
+                        onClick={() => {
+                            setShowOldStudents(true)
+                            // setShowServices(false)
+                            // setShowBookings(false)
+                            // setShowServiceAgents(false)
+                        }}
+                    >
+                        List of Old Students
+                    </Button>
+
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2, mr: 4, ml: 4 }}
+                        onClick={() => {
+                            setShowNewStudents(true)
+                            // setShowServices(false)
+                            // setShowBookings(false)
+                            // setShowServiceAgents(false)
+                        }}
+                    >
+                        List of New Students
+                    </Button>
+
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2, mr: 4, ml: 4 }}
+                        onClick={() => {
+                            setShowBatch(true)
+                            // setShowServices(false)
+                            // setShowServiceAgents(false)
+                            // setShowStudents(false)
+                        }}
+                    >
+                        Create Batch
+                    </Button>
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2, mr: 4, ml: 4 }}
+                        onClick={() => {
+                            setShowCourse(true)
+                            // setShowServices(false)
+                            // setShowServiceAgents(false)
+                            // setShowStudents(false)
+                        }}
+                    >
+                        Create Course
+                    </Button>
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2, mr: 4, ml: 4 }}
+                        onClick={() => {
+                            // setShowAddAreas(true)
+                            // setShowServices(false)
+                            // setShowBookings(false)
+                            // setShowServiceAgents(false)
+                            setShowPrograms(true)
+                        }}
+                    >
+                        Program Exercises
+                    </Button>
+
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2, mr: 4, ml: 4 }}
                         onClick={() => {
                             // setShowServices(true)
                             // setShowBookings(false)
@@ -87,7 +170,7 @@ export default function AdminPage(props) {
                         type="submit"
                         fullWidth
                         variant="contained"
-                        sx={{ mt: 3, mb: 2, mr: 5, ml: 5 }}
+                        sx={{ mt: 3, mb: 2, mr: 4, ml: 4 }}
                         onClick={() => {
                             // setShowServices(true)
                             // setShowBookings(false)
@@ -98,65 +181,7 @@ export default function AdminPage(props) {
                         Update Course Completion
                     </Button>
 
-
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        sx={{ mt: 3, mb: 2, mr: 5, ml: 5 }}
-                        onClick={() => {
-                            setShowStudents(true)
-                            // setShowServices(false)
-                            // setShowBookings(false)
-                            // setShowServiceAgents(false)
-                        }}
-                    >
-                        List Users
-                    </Button>
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        sx={{ mt: 3, mb: 2, mr: 5, ml: 5 }}
-                        onClick={() => {
-                            setShowBatch(true)
-                            // setShowServices(false)
-                            // setShowServiceAgents(false)
-                            // setShowStudents(false)
-                        }}
-                    >
-                        Create Batch
-                    </Button>
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        sx={{ mt: 3, mb: 2, mr: 5, ml: 5 }}
-                        onClick={() => {
-                            setShowCourse(true)
-                            // setShowServices(false)
-                            // setShowServiceAgents(false)
-                            // setShowStudents(false)
-                        }}
-                    >
-                        Create Course
-                    </Button>
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        sx={{ mt: 3, mb: 2, mr: 5, ml: 5 }}
-                        onClick={() => {
-                            // setShowAddAreas(true)
-                            // setShowServices(false)
-                            // setShowBookings(false)
-                            // setShowServiceAgents(false)
-                            setShowPrograms(true)
-                        }}
-                    >
-                        Program Exercises
-                    </Button>
-                    <Button
+                    {/* <Button
                         type="submit"
                         fullWidth
                         variant="contained"
@@ -170,7 +195,7 @@ export default function AdminPage(props) {
                         }}
                     >
                         ProfileViewUpdate
-                    </Button>
+                    </Button> */}
 
                 </ButtonGroup>
 
@@ -183,9 +208,14 @@ export default function AdminPage(props) {
                     <UpdateCompletionStatus onClose={closeCompletionStatus} />
                 }
 
-                {showStudents &&
-                    <ShowStudents onClose={closeStudents} />
+                {showOldStudents &&
+                    <ShowOldStudents onClose={closeOldStudents} />
                 }
+
+                {showNewStudents &&
+                    <ShowNewStudents onClose={closeNewStudents} />
+                }
+
                 {showBatch &&
                     <Batch onClose={closeBatch} />
                 }
@@ -198,9 +228,9 @@ export default function AdminPage(props) {
                     <Programs onClose={closePrograms} />
                 }
 
-                {showProfile &&
+                {/* {showProfile &&
                     <Programs onClose={closeProfile} />
-                }
+                } */}
 
             </Container>
         </div >
