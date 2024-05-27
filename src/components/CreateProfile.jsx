@@ -60,7 +60,9 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
         formData.append('institution', institution)
         formData.append('work', work)
         formData.append('office', office)
-        formData.append('image', image.raw)
+        if (image.raw)
+            formData.append('image', image.raw)
+        // formData.append('image', image.raw)
 
 
         const jwt = localStorage.getItem('token');

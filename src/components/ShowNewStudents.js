@@ -20,7 +20,7 @@ export default function ShowNewStudents(props) {
 
     // const usersUrl = (process.env.REACT_APP_SERVER) ? `https://motorwash-backend-lfxt.onrender.com/list_users/` : `http://localhost:3001/list_users/`
     const studentsUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students/get_new_students` : `http://localhost:3001/students/get_new_students`
-    // const studentDelUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students/` : `http://localhost:3001/students/`
+    const studentDelUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students/` : `http://localhost:3001/students/`
 
     const getUsers = () => {
         axios.get(studentsUrl,)
@@ -37,17 +37,17 @@ export default function ShowNewStudents(props) {
 
     const theme = createTheme();
 
-    // const handleDelete = async (id) => {
-    //     try {
-    //         const response = await axios.delete(
-    //             studentDelUrl + id
-    //         );
-    //         getUsers()
-    //     } catch (err) {
-    //         console.log('e', err.message)
-    //         // setError(err.message);
-    //     }
-    // }
+    const handleDelete = async (id) => {
+        try {
+            const response = await axios.delete(
+                studentDelUrl + id
+            );
+            getUsers()
+        } catch (err) {
+            console.log('e', err.message)
+            // setError(err.message);
+        }
+    }
 
     return (
         <ThemeProvider theme={theme}>
@@ -103,6 +103,7 @@ export default function ShowNewStudents(props) {
                                             <td>{stu.study}</td>
                                             <td>{stu.institution}</td>
                                             <td>{stu.activated ? 'Yes' : 'No'}</td>
+                                            <Button onClick={() => handleDelete(stu.id)}>Delete</Button>
                                             {/* <td><textarea type="text"
                                                 rows="6"
                                                 className="form-control"
