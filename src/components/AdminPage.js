@@ -61,8 +61,8 @@ export default function AdminPage(props) {
         <div>
             <Container className="container">
                 <Row className="row text-right">
-                    <div className="section-header">
-                        <h5 className=" text-right " style={{ color: 'black' }}>Logged In: {props.clientName}</h5>
+                    <div className="section-header py-5">
+                        <h5 className=" text-center " style={{ color: 'black' }}>Logged In: {props.clientName}</h5>
                     </div>
                 </Row>
                 <Row className="row">
