@@ -103,7 +103,7 @@ export default function ShowNewStudents(props) {
                                             <td>{stu.study}</td>
                                             <td>{stu.institution}</td>
                                             <td>{stu.activated ? 'Yes' : 'No'}</td>
-                                            <Button onClick={() => handleDelete(stu.id)}>Delete</Button>
+                                            {/* <Button onClick={() => handleDelete(stu.id)}>Delete</Button> */}
                                             {/* <td><textarea type="text"
                                                 rows="6"
                                                 className="form-control"
