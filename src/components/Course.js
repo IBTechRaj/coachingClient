@@ -18,7 +18,8 @@ export default function Course(props) {
     // const { spSalonId } = props
     const [sessionNumber, setSessionNumber] = useState("")
     const [sessionDate, setSessionDate] = useState("")
-    const [topics, setTopics] = useState("0")
+    const [topics, setTopics] = useState("")
+    const [lessonVideo, setLessonVideo] = useState()
     const [courseData, setCourseData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -54,6 +55,7 @@ export default function Course(props) {
         session_number: sessionNumber,
         session_date: sessionDate,
         topics: topics,
+        lesson_video: lessonVideo,
     }
 
     const handleDelete = async (id) => {
@@ -87,6 +89,7 @@ export default function Course(props) {
                     setSessionNumber('')
                     setSessionDate('')
                     setTopics('')
+                    setLessonVideo('')
                     getCourses()
                 }
             })
@@ -139,9 +142,9 @@ export default function Course(props) {
                     <Typography component="div" variant="subtitle1">
                         <ul>
                             {courseData &&
-                                courseData.map(({ id, session_number, session_date, topics }) => (
+                                courseData.map(({ id, session_number, session_date, topics, lesson_video }) => (
                                     <li key={id}>
-                                        <h5> Session: {session_number},  Date: {session_date} ,{'   '} topics: {topics} <Button onClick={() => handleDelete(id)}>Delete</Button></h5>
+                                        <h5> Session: {session_number},  Date: {session_date} ,{'   '} topics: {topics},{' '} video link: {lesson_video} <Button onClick={() => handleDelete(id)}>Delete</Button></h5>
                                     </li>
 
                                 ))}
@@ -186,6 +189,18 @@ export default function Course(props) {
                                 value={topics}
                                 onChange={event => {
                                     setTopics(event.target.value)
+                                }}
+                            />
+                        </Grid>
+                        <Grid item xs={24} sm={12} md={8}>
+                            <TextField
+                                required
+                                fullWidth
+                                // id="price"
+                                label="Lesson Video Link"
+                                value={lessonVideo}
+                                onChange={event => {
+                                    setLessonVideo(event.target.value)
                                 }}
                             />
                         </Grid>

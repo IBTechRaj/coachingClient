@@ -4,6 +4,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from "axios";
 import './sessionStyle.css'
+import './Lecture'
+import Lecture from "./Lecture";
+import CourseBook from "./CourseBook"
 
 function MyClasses() {
 
@@ -12,6 +15,7 @@ function MyClasses() {
     const [sessionNumber, setSessionNumber] = useState("")
     const [sessionDate, setSessionDate] = useState("")
     const [topics, setTopics] = useState("0")
+    const [lessonId, setLessonId] = useState()
 
     useEffect(() => {
         const jwt = localStorage.getItem('token')
@@ -62,6 +66,8 @@ function MyClasses() {
                                 <th>Session No.</th>
                                 <th>Session Date</th>
                                 <th>Topics</th>
+                                <th>CourseBook</th>
+                                <th>LessonVideo</th>
                                 {/* <th>Email</th> */}
                             </tr>
                         </thead>
@@ -72,6 +78,9 @@ function MyClasses() {
                                         <td>{session.session_number}</td>
                                         <td>{session.session_date}</td>
                                         <td>{session.topics}</td>
+                                        <td><CourseBook /></td>
+                                        <td><Lecture lessonId={session.lesson_video} /></td>
+                                        {/* <td> <Button onClick={() => showVideo(stu.id)}>View Lecture</Button></td> */}
                                         {/* <td>{session.password}</td> */}
                                         {/* <td>{session.email}</td> */}
                                     </tr>
