@@ -59,6 +59,7 @@ export default function Batch(props) {
     const data = {
         email: email,
         student_batch: batch,
+        student_status: 1,
     }
     const handleUpdate = async (e) => {
         e.preventDefault()
