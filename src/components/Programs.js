@@ -93,11 +93,12 @@ export default function Programs(props) {
                     }
                 );
                 if (response.status === 500) {
-                    console.log("no email found");
+                    alert('This program already sent')
                 } else {
                     console.log(response.data);
                 }
             } catch (error) {
+                alert('This program already sent')
                 console.log("no email found ", i);
             }
             console.log("axios request done");
@@ -150,7 +151,15 @@ export default function Programs(props) {
                     setTask('')
                     getPrograms()
                 }
-            })
+                else {
+                    alert('Program number should be unique')
+                }
+            }).catch((error) => {
+                if (error.response) {
+                    alert('Program number should be unique')
+                    // console.log('err', error.response.data); // => the response payload 
+                }
+            });
 
     };
 
