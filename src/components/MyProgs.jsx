@@ -30,7 +30,7 @@ function MyProgs() {
                 .then(response => {
                     console.log('resst', response.data);
                     setStudent(response.data)
-                    if (response.data.student_status === 0) {
+                    if (response.data.student_status === 1) {
                         console.log('stu', student)
                         axios.get(`${baseUrl}/student_programs/get_my_progs/${response.data.id}`, {
                             headers: {

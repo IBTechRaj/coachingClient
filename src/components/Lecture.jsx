@@ -7,7 +7,7 @@ export default function Lecture({ lessonId }) {
     return (
 
         <div className="App">
-            <h5>Lesson Video</h5>
+            {/* <h5> </h5> */}
             <Video embedId={lessonId} />
             {console.log(' Lsrc', { lessonId })}
         </div>

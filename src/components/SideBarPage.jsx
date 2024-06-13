@@ -29,7 +29,7 @@ function App() {
     return (
         <div
             id="app"
-            style={({ height: "100vh" }, { display: "flex", flexDirection: "row" })}
+            style={({ height: "auto" }, { display: "flex", flexDirection: "row" })}
         >
             <Sidebar
                 breakPoint="sm"

@@ -54,7 +54,7 @@ function MyClasses() {
     }, [])
 
     return (
-        <Container className="py-2">
+        <Container className="py-2" style={{ height: 'auto' }}>
             <h3 color="blue">My Classes</h3>
             <Row>
 

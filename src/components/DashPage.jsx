@@ -62,10 +62,10 @@ const DashPage = (signedIn, setSignedIn) => {
     }, [])
 
     return (
-        <Container fluid>
+        <Container fluid style={{ height: 'auto' }}>
 
             <Row>
-                <Col xs={3} className="py-3" style={{ height: '100%' }}>
+                <Col xs={3} className="py-3" style={{ height: 'auto' }}>
 
                     <div style={{ minHeight: '600px' }}>
 
@@ -80,7 +80,7 @@ const DashPage = (signedIn, setSignedIn) => {
                     </div>
                 </Col>
 
-                <Col xs={9} >
+                <Col xs={9} style={{ height: 'auto' }} >
 
                     <NavPage />
                 </Col>
