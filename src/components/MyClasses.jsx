@@ -10,7 +10,7 @@ import CourseBook from "./CourseBook"
 
 function MyClasses() {
 
-    const [student, setStudent] = useState('Unpaid')
+    const [student, setStudent] = useState("")
     const [sessionsData, setSessionsData] = useState()
     const [sessionNumber, setSessionNumber] = useState("")
     const [sessionDate, setSessionDate] = useState("")
@@ -31,26 +31,39 @@ function MyClasses() {
                 },
             })
                 .then(response => {
-                    // console.log('ress', response.data);
-                    setStudent(response.data)
+                    console.log('ress', response.data);
+                    setStudent(response.data);
 
-                    console.log('ss', student)
+                    console.log('ss', response.data.student_status);
+                    if (response.data.student_status === 1) {
+                        axios.get(`${baseUrl}/courses/`, {
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'token': `${jwt}`,
+                                Authorization: `Bearer ${jwt}`
+                            },
+                        }).then(res => {
+                            console.log('clsdat', res.data)
+                            setSessionsData(res.data)
+                        })
+                    }
                 })
                 .catch(error => {
                     console.error(error);
                 })
         }
-        if (student.student_status === 1)
-            axios.get(`${baseUrl}/courses/`, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'token': `${jwt}`,
-                    Authorization: `Bearer ${jwt}`
-                },
-            }).then(res => {
-                console.log('clsdat', res.data)
-                setSessionsData(res.data)
-            })
+        //     if (student.student_status === 1) {
+        //         axios.get(`${baseUrl}/courses/`, {
+        //             headers: {
+        //                 'Content-Type': 'application/json',
+        //                 'token': `${jwt}`,
+        //                 Authorization: `Bearer ${jwt}`
+        //             },
+        //         }).then(res => {
+        //             console.log('clsdat', res.data)
+        //             setSessionsData(res.data)
+        //         })
+        // }
     }, [])
 
     return (

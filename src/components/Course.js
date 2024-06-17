@@ -42,9 +42,9 @@ export default function Course(props) {
             headers: { Authorization: `Bearer ${jwt}` },
         })
             .then(response => {
-                console.log('cou.dat', response.data)
+                // console.log('cou.dat', response.data)
                 setCourseData(response.data)
-                console.log('course', courseData)
+                // console.log('course', courseData)
             })
     }
     useEffect(() => {

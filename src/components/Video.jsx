@@ -11,7 +11,7 @@ const Video = ({ embedId }) => (
             allowFullScreen
             title="Embedded youtube"
         />
-        {console.log('src', { embedId })}
+        {/* {console.log('src', { embedId })} */}
     </div>
 );
 

@@ -5,7 +5,7 @@ import axios from 'axios'
 import './style.css'
 
 const CreateProfile = ({ signedIn, setSignedIn }) => {
-    console.log('cre Prof', signedIn)
+    // console.log('cre Prof', signedIn)
 
 
     const navigate = useNavigate();
@@ -39,7 +39,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
     const [image, setImage] = useState({ preview: '', raw: '' })
     const location = useLocation()
     const token = location.state
-    console.log('t', token)
+    // console.log('t', token)
     if (token) {
         localStorage.setItem("token", token.token);
     }
@@ -51,7 +51,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
     }
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log('h', student.id)
+        // console.log('h', student.id)
         const formData = new FormData();
         formData.append('mobile', mobile)
         formData.append('city', city)
@@ -89,7 +89,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
 
     useEffect(() => {
         const jwt = localStorage.getItem('token')
-        console.log('jwt', jwt)
+        // console.log('jwt', jwt)
         const baseUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com` : `http://localhost:3001`
 
         axios.get(`${baseUrl}/students/send_names`, {
@@ -102,7 +102,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
             },
         })
             .then(response => {
-                console.log('ress', response.data);
+                // console.log('ress', response.data);
                 setStudent(response.data)
                 setSignedIn(true)
             })
@@ -208,7 +208,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
                             type="text"
                             variant='outlined'
                             color='secondary'
-                            label="If study - course name/if work - job role"
+                            label="If study - Course Name/if work - Job Role"
                             onChange={e => setStudy(e.target.value)}
                             value={student.study}
                             required
@@ -219,7 +219,7 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
                             type="text"
                             variant='outlined'
                             color='secondary'
-                            label="if study - college name and Place/if work - office name and Place"
+                            label="if study - College Name/if work - Company Name"
                             onChange={e => setInstitution(e.target.value)}
                             value={student.institution}
                             required

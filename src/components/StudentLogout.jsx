@@ -26,12 +26,12 @@ const StudentLogout = ({ signedIn, setSignedIn }) => {
         })
             .then((res) => res.json())
             .then(res => {
-                console.log('res', res)
+                // console.log('res', res)
                 // if (res.ok) {
                 setSignedIn(false)
                 setShowMessage(true)
                 localStorage.clear()
-                console.log('logout')
+                // console.log('logout')
                 // } else {
                 // setErrorMessage(res.errors)
                 // console.log(res.errors); // Process the response data here
@@ -71,7 +71,7 @@ const StudentLogout = ({ signedIn, setSignedIn }) => {
                             </div>
                         )
                     }
-                    {console.log('aft', signedIn)}
+                    {/* {console.log('aft', signedIn)} */}
                     <div className="py-5">
                         {/* <h5 ><Link to="/StudentLogin" style={{ color: 'blue' }}>Login again</Link></h5> */}
                     </div>

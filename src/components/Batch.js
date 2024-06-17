@@ -40,8 +40,8 @@ export default function Batch(props) {
 
         })
             .then(response => {
-                console.log('rr', response)
-                console.log('batch.dat', response.data)
+                // console.log('rr', response)
+                // console.log('batch.dat', response.data)
                 setBatchData(response.data)
                 // console.log('course', courseData)
             })
@@ -63,7 +63,7 @@ export default function Batch(props) {
     }
     const handleUpdate = async (e) => {
         e.preventDefault()
-        console.log('e b', email, batch)
+        // console.log('e b', email, batch)
         const response = await axios.patch(
             batchUpdUrl, data,
             {
@@ -71,7 +71,7 @@ export default function Batch(props) {
             })
             .then(response => {
                 setEmail('')
-                console.log('res', response.data)
+                // console.log('res', response.data)
             }).catch(error => {
                 alert('Please check email')
                 console.error();

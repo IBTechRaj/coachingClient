@@ -41,7 +41,7 @@ function ChangePassword() {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log('pr', data)
+                    // console.log('pr', data)
                     if (data) {
                         alert(data.message)
                         // navigate('/StudentLogin')
