@@ -59,7 +59,7 @@ export default function Batch(props) {
     const data = {
         email: email,
         student_batch: batch,
-        student_status: 1,
+        // student_status: 1,
     }
     const handleUpdate = async (e) => {
         e.preventDefault()
@@ -72,6 +72,9 @@ export default function Batch(props) {
             .then(response => {
                 setEmail('')
                 console.log('res', response.data)
+            }).catch(error => {
+                alert('Please check email')
+                console.error();
             })
 
         getBatch()
@@ -111,6 +114,17 @@ export default function Batch(props) {
                             setBatch(event.target.value)
                         }}
                     />
+                    <Button variant="contained"
+                        sx={{ mt: 3, mb: 2 }} onClick={() => getBatch()}>Show Present Students</Button>
+                    {/* <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2 }}
+                    >
+                        Show Students
+                    </Button> */}
+
                     <Typography component="div" variant="subtitle1">
                         <ul>
                             {batchData &&
@@ -157,7 +171,7 @@ export default function Batch(props) {
 
 
                     </Grid>
-                    {console.log('e b', email, batch)}
+                    {/* {console.log('e b', email, batch)} */}
                     <Button
                         type="submit"
                         fullWidth

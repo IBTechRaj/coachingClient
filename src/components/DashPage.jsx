@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const DashPage = (signedIn, setSignedIn) => {
-    console.log('dash page', signedIn)
+    // console.log('dash page', signedIn)
     const navigate = useNavigate();
     const [student, setStudent] = useState({})
     const [email, setEmail] = useState("")

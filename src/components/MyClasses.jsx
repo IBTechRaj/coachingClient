@@ -19,7 +19,7 @@ function MyClasses() {
 
     useEffect(() => {
         const jwt = localStorage.getItem('token')
-        console.log('jwt=p', jwt)
+        // console.log('jwt=p', jwt)
         const baseUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com` : `http://localhost:3001`
 
         if (jwt !== null) {
@@ -31,7 +31,7 @@ function MyClasses() {
                 },
             })
                 .then(response => {
-                    console.log('ress', response.data);
+                    // console.log('ress', response.data);
                     setStudent(response.data)
 
                     console.log('ss', student)
@@ -40,7 +40,7 @@ function MyClasses() {
                     console.error(error);
                 })
         }
-        if (student.student_status !== 1)
+        if (student.student_status === 1)
             axios.get(`${baseUrl}/courses/`, {
                 headers: {
                     'Content-Type': 'application/json',

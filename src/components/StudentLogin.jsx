@@ -30,10 +30,10 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
             setPasswordError(true)
         }
 
-        if (email && password) {
-            console.log(email, password)
-        }
-        console.log('Log in')
+        // if (email && password) {
+        //     console.log(email, password)
+        // }
+        // console.log('Log in')
         const loginUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students/login` : `http://localhost:3001/students/login`
         fetch(loginUrl, {
             method: "post",
@@ -50,11 +50,11 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
             .then((res) => res.json())
             .then(res => {
                 setLoggingIn(false)
-                console.log('res', res)
+                // console.log('res', res)
                 if (res.data) {
                     setSignedIn(true)
                     localStorage.setItem("token", res.meta.token);
-                    console.log('login token', res.meta.token, email);
+                    // console.log('login token', res.meta.token, email);
 
                     if (email === 'krs30018@gmail.com')
                         navigate('/AdminPage', { replace: true })

@@ -80,6 +80,7 @@ export default function UpdateStatus(props) {
                 </Box>
                 <div>
                     <h3 className='text-center'>Update Payment</h3>
+                    <h5 className='text-center py-5 fw-bolder'>This will update payment status and student status is set 1 (student in the current batch)</h5>
                     <ul>
                         {studentsData &&
                             studentsData.map(({ id, first_name, last_name, email, student_status }) => (

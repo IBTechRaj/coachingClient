@@ -14,12 +14,12 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-export default function ShowNewStudents(props) {
+export default function ShowRegdStudents(props) {
 
     const [studentsData, setStudentsData] = useState(null);
 
     // const usersUrl = (process.env.REACT_APP_SERVER) ? `https://motorwash-backend-lfxt.onrender.com/list_users/` : `http://localhost:3001/list_users/`
-    const studentsUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students/get_new_students` : `http://localhost:3001/students/get_new_students`
+    const studentsUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students/get_regd_students` : `http://localhost:3001/students/get_regd_students`
     const studentDelUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students/` : `http://localhost:3001/students/`
 
     const getUsers = () => {
@@ -66,7 +66,7 @@ export default function ShowNewStudents(props) {
                 >
 
                 </Box>
-                <Row className="justify-content-center"> <h3 className='text-center'>List of New Students</h3>
+                <Row className="justify-content-center"> <h3 className='text-center'>List of Regd Students</h3>
                     {studentsData ?
 
                         (<table>

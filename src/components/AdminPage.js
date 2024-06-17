@@ -8,6 +8,7 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 // import ServiceAgents from './ServiceAgents'
 import ShowOldStudents from './ShowOldStudents'
 import ShowNewStudents from './ShowNewStudents'
+import ShowRegdStudents from './ShowRegdStudents'
 import UpdateStatus from './UpdateStatus'
 import UpdateCompletionStatus from './UpdateCompletionStatus'
 import Batch from './Batch'
@@ -15,12 +16,13 @@ import Course from './Course'
 import Programs from './Programs'
 
 export default function AdminPage(props) {
-    console.log('prop', props)
+    // console.log('prop', props)
     const [showStatus, setShowStatus] = useState(false)
     const [showCompletionStatus, setShowCompletionStatus] = useState(false)
     const [showPrograms, setShowPrograms] = useState(false)
     const [showNewStudents, setShowNewStudents] = useState(false)
     const [showOldStudents, setShowOldStudents] = useState(false)
+    const [showRegdStudents, setShowRegdStudents] = useState(false)
     const [showCourse, setShowCourse] = useState(false)
     const [showBatch, setShowBatch] = useState(false)
     const [showProfile, setShowProfile] = useState(false)
@@ -39,6 +41,10 @@ export default function AdminPage(props) {
 
     const closeNewStudents = () => {
         setShowNewStudents(false)
+    };
+
+    const closeRegdStudents = () => {
+        setShowRegdStudents(false)
     };
 
     const closePrograms = () => {
@@ -61,20 +67,17 @@ export default function AdminPage(props) {
         <div>
             <Container className="container">
                 <Row className="row text-right">
-                    <div className="section-header py-5">
-                        <h5 className=" text-center " style={{ color: 'black' }}>Logged In: {props.clientName}</h5>
+                    <div className="section-header">
+                        <h5 className=" text-right " style={{ color: 'black' }}>Logged In: {props.clientName}</h5>
                     </div>
                 </Row>
-                <Row className="row">
+                <Row className="row py-5">
                     <div className="section-header">
                         <h2 className="section-title text-center wow fadeInDown mt-5" style={{ color: 'black' }}>Admin Dashboard</h2>
                     </div>
                 </Row>
 
                 <ButtonGroup variant="contained" size="large" aria-label="outlined primary button group">
-
-
-
 
 
                     <Button
@@ -113,6 +116,21 @@ export default function AdminPage(props) {
                         variant="contained"
                         sx={{ mt: 3, mb: 2, mr: 4, ml: 4 }}
                         onClick={() => {
+                            setShowRegdStudents(true)
+                            // setShowServices(false)
+                            // setShowBookings(false)
+                            // setShowServiceAgents(false)
+                        }}
+                    >
+                        List of Regd Students
+                    </Button>
+
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2, mr: 4, ml: 4 }}
+                        onClick={() => {
                             setShowBatch(true)
                             // setShowServices(false)
                             // setShowServiceAgents(false)
@@ -121,6 +139,9 @@ export default function AdminPage(props) {
                     >
                         Create Batch
                     </Button>
+                </ButtonGroup>
+
+                <ButtonGroup variant="contained" size="large" aria-label="outlined primary button group">
                     <Button
                         type="submit"
                         fullWidth
@@ -210,6 +231,10 @@ export default function AdminPage(props) {
 
                 {showOldStudents &&
                     <ShowOldStudents onClose={closeOldStudents} />
+                }
+
+                {showRegdStudents &&
+                    <ShowRegdStudents onClose={closeRegdStudents} />
                 }
 
                 {showNewStudents &&
