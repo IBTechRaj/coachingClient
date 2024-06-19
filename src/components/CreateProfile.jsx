@@ -49,6 +49,11 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
             raw: event.target.files[0]
         })
     }
+
+    const emdata = {
+        email: student.email
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault()
         // console.log('h', student.id)
@@ -79,13 +84,74 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
         })
             .then((res) => res.json())
             .then((res) => {
-                alert("Your profile created successfully!")
+                alert("Your profile created successfully! View the email we sent you")
                 navigate('/dashpage', { replace: true });
             })
             .catch((err) => alert(err));
+
+
+
+
+        const inviteEmailUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/invite_email` : `http://localhost:3001/invite_email`
+
+        try {
+            fetch(inviteEmailUrl, {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(emdata)
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log('e_i', data)
+                    if (data.message) {
+                        // setMessage(data.message)
+                        console.log('e_msg', data)
+                    } else {
+                        console.log('err', data.errors)
+                        // setErrorMessage(data.errors)
+                    }
+
+                })
+        }
+        catch (error) {
+            // console.log('Err: ', error);
+        }
+
     }
 
 
+
+    // const handleSubmitInviteEmail = async (event) => {
+    //     event.preventDefault();
+    //     const inviteEmailUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/invite_email` : `http://localhost:3001/invite_email`
+
+    //     try {
+    //         fetch(inviteEmailUrl, {
+    //             method: "post",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //             },
+    //             body: JSON.stringify(emdata)
+    //         })
+    //             .then((res) => res.json())
+    //             .then((data) => {
+    //                 console.log('e_i', data)
+    //                 if (data.message) {
+    //                     // setMessage(data.message)
+    //                     console.log('e_msg', data)
+    //                 } else {
+    //                     console.log('err', data.errors)
+    //                     // setErrorMessage(data.errors)
+    //                 }
+
+    //             })
+    //     }
+    //     catch (error) {
+    //         // console.log('Err: ', error);
+    //     }
+    // }
 
     useEffect(() => {
         const jwt = localStorage.getItem('token')

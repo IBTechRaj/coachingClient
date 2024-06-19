@@ -120,7 +120,7 @@ function MyProgs() {
                                 return (
 
                                     <tr key={prog.program_number}>
-                                        {console.log(prog.id)}
+                                        {/* {console.log(prog.id)} */}
                                         <td>{prog.program_number}</td>
                                         <td>{prog.task}</td>
                                         <td>{prog.solution}</td>
