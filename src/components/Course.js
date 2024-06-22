@@ -1,21 +1,17 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react'
 import axios from 'axios';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import MiscellaneousServicesOutlinedIcon from '@mui/icons-material/MiscellaneousServicesOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
 export default function Course(props) {
-    // console.log('ssser', props)
-    // const { spSalonId } = props
     const [sessionNumber, setSessionNumber] = useState("")
     const [sessionDate, setSessionDate] = useState("")
     const [topics, setTopics] = useState("")
@@ -24,15 +20,9 @@ export default function Course(props) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    // const servicesUrl = (process.env.REACT_APP_SERVER) ? `https://groomwell-backend.onrender.com/services/${spSalonId}` : `http://localhost:3001/services/${spSalonId}`
-    // const serviceDelUrl = (process.env.REACT_APP_SERVER) ? `https://groomwell-backend.onrender.com/services/` : `http://localhost:3001/services/`
     const coursesUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/courses/` : `http://localhost:3001/courses/`
     const courseAddUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/courses/` : `http://localhost:3001/courses/`
     const courseDelUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/courses/` : `http://localhost:3001/courses/`
-    // const serviceDelUrl = 'https://groomserver.herokuapp.com/services/'
-    // const servicesUrl = `https://groomserver.herokuapp.com/services/${props.salonId}`
-    // const serviceDelUrl = 'http://localhost:3001/services/'
-    // const servicesUrl = `http://localhost:3001/services/${props.salonId}`
 
 
     const jwt = localStorage.getItem('token');
@@ -42,9 +32,7 @@ export default function Course(props) {
             headers: { Authorization: `Bearer ${jwt}` },
         })
             .then(response => {
-                // console.log('cou.dat', response.data)
                 setCourseData(response.data)
-                // console.log('course', courseData)
             })
     }
     useEffect(() => {
@@ -63,12 +51,9 @@ export default function Course(props) {
             const response = await axios.delete(
                 courseDelUrl + id
             );
-            // setServiceData(response.data);
-            // console.log('del', response)
             getCourses()
             setError(null);
         } catch (err) {
-            // console.log('e', err.message)
             setError(err.message);
         } finally {
             setLoading(false);
@@ -76,16 +61,12 @@ export default function Course(props) {
     }
     const handleCourseSubmit = (e) => {
         e.preventDefault();
-        // console.log('servicesData', service)
-
-        // const servicesUrl = (process.env.REACT_APP_SERVER) ? `https://groomserver.herokuapp.com/services` : `http://localhost:3001/services`
 
         axios.post(courseAddUrl, course, {
             headers: { Authorization: `Bearer ${jwt}` },
         })
             .then(response => {
                 if (response.status === 201) {
-                    // console.log('Service Added')
                     setSessionNumber('')
                     setSessionDate('')
                     setTopics('')
@@ -96,25 +77,6 @@ export default function Course(props) {
 
     };
 
-    // const [showServices, setShowServices]=useState(true)
-
-    // const closeChild = () => {
-    //     setShowServices(false)
-    // };
-
-    // const handleDelete = async (id) => {
-    //     try {
-    //         const response = await axios.delete(
-    //             serviceDelUrl + id
-    //         );
-    //         getServices()
-    //         setError(null);
-    //     } catch (err) {
-    //         setError(err.message);
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // }
 
     const theme = createTheme();
 

@@ -64,7 +64,7 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
                     }
                 } else {
                     setErrorMessage(res.errors)
-                    console.log(res.errors); // Process the response data here
+                    console.log('err', res.errors); // Process the response data here
                 }
             })
             .catch(error => {
