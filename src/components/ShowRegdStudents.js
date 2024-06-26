@@ -96,6 +96,7 @@ export default function ShowRegdStudents(props) {
                                             <td className="text-center my-1">
                                                 <img style={{ borderRadius: '50%', borderStyle: '5px solid red', width: "80px", height: "80px" }} src={stu.get_image_url} alt="NoImg" />
                                             </td>
+                                            <td>{stu.id}</td>
                                             <td>{stu.first_name}</td>
                                             <td>{stu.last_name}</td>
                                             <td>{stu.email}</td>
