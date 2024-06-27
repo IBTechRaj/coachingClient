@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Route, Routes, Redirec, NavLink } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+// import { Route, Routes, Redirec, NavLink } from "react-router-dom";
 // import sidebarData from './sidebarData'
 // import Apple from './components/MyClasses'
 // import Bat from './components/MyProgs'
@@ -25,6 +26,7 @@ import {
   ChangePassword
 
 } from "./components";
+import VerificationFailed from "./components/VerificationFailed";
 
 export default function App() {
   const [signedIn, setSignedIn] = useState(false)
@@ -37,6 +39,7 @@ export default function App() {
         <Route path="/AdminPage" element={<AdminPage />} />
         <Route path="/StudentSignup" element={<StudentSignup signedIn={signedIn} setSignedIn={setSignedIn} />} />
         <Route path="/StudentEmailVerified" element={<StudentEmailVerified />} />
+        <Route path="/VerificationFailed" element={<VerificationFailed />} />
         <Route path="/StudentLogin" element={<StudentLogin signedIn={signedIn} setSignedIn={setSignedIn} />} />
         <Route path="/StudentLogout" element={<StudentLogout signedIn={signedIn} setSignedIn={setSignedIn} />} />
         <Route path="/CreateProfile" element={<CreateProfile signedIn={signedIn} setSignedIn={setSignedIn} />} />

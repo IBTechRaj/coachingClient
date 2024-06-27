@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import './home.css';
 import './navbar.css'
 import axios from 'axios'
-import feedbackData from "../feedbackData";
+// import feedbackData from "../feedbackData";
 // import '../index.css'
-import { TextField, Stack, Button, Checkbox } from "@mui/material";
+// import { TextField, Stack, Button, Checkbox } from "@mui/material";
 // import Grid from '@mui/material/Grid'
 import Grid from '@mui/material/Unstable_Grid2'
-import { blue } from "@mui/material/colors";
+// import { blue } from "@mui/material/colors";
 import img1 from '../assets/images/image1.webp'
 import instructor from '../assets/images/instructor.jpg'
-import { Bloodtype, StrikethroughS, StrikethroughSTwoTone } from "@mui/icons-material";
+// import { Bloodtype, StrikethroughS, StrikethroughSTwoTone } from "@mui/icons-material";
 import Spinner from './Spinner'
 import { NavLink } from "react-router-dom";
 

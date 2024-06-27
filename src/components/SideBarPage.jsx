@@ -6,10 +6,10 @@ import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import sidebarData from '../sidebarData'
+// import sidebarData from '../sidebarData'
 
 import { NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 function App() {
     const { collapseSidebar, toggleSidebar, collapsed, toggled, broken, rtl } =

@@ -19,6 +19,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
     // const [passwordConfirmation, setPasswordConfirmation] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
     const [message, setMessage] = useState('')
+    const [submitted, setSubmitted] = useState(false)
 
     const [matchPassword, setMatchPassword] = useState("");
     // const [errorMessage, setErrorMessage] = useState("");
@@ -57,6 +58,8 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
 
     function handleSubmit(event) {
         event.preventDefault();
+        setSubmitted(true)
+        event.target.disabled = true;
         setErrorMessage('')
         // console.log(firstName, lastName, email, password)
 
@@ -90,6 +93,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                         console.log('s', res.meta.token);
                     } else {
                         setErrorMessage(res.errors)
+                        setSubmitted(false)
                         console.log(res.errors); // Process the response data here
                     }
                 })
@@ -147,11 +151,11 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
 
                     <div className='col-md-6'>
 
-                        <h3 className='py-5 text-center'>Signup</h3>
+                        <h3 className='py-3 text-center'>Signup</h3>
                         <p className='text-center' style={{ fontSize: 18 }}>Create Your Account as a Student</p>
                         <div> <p className='text-center' style={{ color: 'red' }}> {errorMessage}</p></div>
                         <form className='px-3' onSubmit={handleSubmit} action={<Link to="/login" />}>
-                            <Stack spacing={2} direction="row" sx={{ marginBottom: 3 }}>
+                            <Stack spacing={1} direction="row" sx={{ marginBottom: 1 }}>
                                 {/* <div> */}
 
                                 {/* <button onClick={fetchData}>Fetch Data</button> */}
@@ -188,7 +192,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                                 value={email}
                                 fullWidth
                                 required
-                                sx={{ mb: 3 }}
+                                sx={{ mb: 1 }}
                             />
                             <TextField
                                 type="password"
@@ -199,7 +203,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                                 // value={password}
                                 required
                                 fullWidth
-                                sx={{ mb: 3 }}
+                                sx={{ mb: 1 }}
                             />
                             <TextField
                                 type="password"
@@ -210,7 +214,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                                 // value={passwordConfirmation}
                                 required
                                 fullWidth
-                                sx={{ mb: 3 }}
+                                sx={{ mb: 1 }}
                             />
                             <PasswordChecklist
                                 rules={["capital", "match", "specialChar", "minLength", "number"]}
@@ -220,7 +224,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                                 onChange={(isValid) => { }}
                             />
                             <Checkbox /> I agree to Terms and Conditions<br></br>
-                            <Button variant="contained" style={{ backgroundColor: '#4E1CBE', color: 'white' }} type="submit">Sign up</Button>
+                            <Button variant="contained" style={{ backgroundColor: submitted ? '#807b7a' : '#4E1CBE', color: 'white' }} type="submit">Sign up</Button>
                         </form>
                         <small>Already have an account? <Link to="/StudentLogin" style={{ color: 'blue' }}>Login Here</Link></small>
                     </div>

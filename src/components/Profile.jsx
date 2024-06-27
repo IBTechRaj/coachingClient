@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { TextField, Stack, Button, Checkbox } from "@mui/material";
-import { Link, useLocation, useNavigate } from "react-router-dom"
+// import { TextField, Stack, Button, Checkbox } from "@mui/material";
+import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 import './style.css'
 
@@ -18,7 +18,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
     const [mobile, setMobile] = useState(9999999999)
     const [city, setCity] = useState("")
     const [country, setCountry] = useState("")
-    const [uniqid, setUniqid] = useState("")
+    // const [uniqid, setUniqid] = useState("")
     const [study, setStudy] = useState('')
     const [institution, setInstitution] = useState('')
     const [work, setWork] = useState('')

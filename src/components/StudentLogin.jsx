@@ -33,7 +33,7 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
         // if (email && password) {
         //     console.log(email, password)
         // }
-        // console.log('Log in')
+        console.log('Log in', process.env.REACT_APP_SERVER)
         const loginUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students/login` : `http://localhost:3001/students/login`
         fetch(loginUrl, {
             method: "post",

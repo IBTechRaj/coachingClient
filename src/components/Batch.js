@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import axios from 'axios';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -31,9 +31,9 @@ export default function Batch(props) {
     const jwt = localStorage.getItem('token');
 
     const getBatch = () => {
-        const get_data = {
-            student_batch: batch,
-        }
+        // const get_data = {
+        //     student_batch: batch,
+        // }
         axios.get(batchUrl, {
             headers: { Authorization: `Bearer ${jwt}` },
             params: { student_batch: batch, }

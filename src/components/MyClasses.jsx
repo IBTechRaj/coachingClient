@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+// import Col from 'react-bootstrap/Col';
 import axios from "axios";
 import './sessionStyle.css'
 import './Lecture'
@@ -12,10 +12,10 @@ function MyClasses() {
 
     const [student, setStudent] = useState("")
     const [sessionsData, setSessionsData] = useState()
-    const [sessionNumber, setSessionNumber] = useState("")
-    const [sessionDate, setSessionDate] = useState("")
-    const [topics, setTopics] = useState("0")
-    const [lessonId, setLessonId] = useState()
+    // const [sessionNumber, setSessionNumber] = useState("")
+    // const [sessionDate, setSessionDate] = useState("")
+    // const [topics, setTopics] = useState("0")
+    // const [lessonId, setLessonId] = useState()
 
     useEffect(() => {
         const jwt = localStorage.getItem('token')

@@ -25,7 +25,7 @@ export default function AdminPage(props) {
     const [showRegdStudents, setShowRegdStudents] = useState(false)
     const [showCourse, setShowCourse] = useState(false)
     const [showBatch, setShowBatch] = useState(false)
-    const [showProfile, setShowProfile] = useState(false)
+    // const [showProfile, setShowProfile] = useState(false)
 
     const closeStatus = () => {
         setShowStatus(false)
@@ -59,9 +59,9 @@ export default function AdminPage(props) {
         setShowCourse(false)
     };
 
-    const closeProfile = () => {
-        setShowProfile(false)
-    };
+    // const closeProfile = () => {
+    //     setShowProfile(false)
+    // };
 
     return (
         <div>

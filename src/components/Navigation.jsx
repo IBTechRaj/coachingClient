@@ -3,27 +3,27 @@ import { NavLink } from "react-router-dom";
 import axios from 'axios'
 import './navbar.css'
 
-import profile from "../assets/images/users/blank_profile.png";
-import user1 from "../assets/images/users/user4.jpg";
+// import profile from "../assets/images/users/blank_profile.png";
+// import user1 from "../assets/images/users/user4.jpg";
 import {
-  Navbar,
-  Collapse,
-  Nav,
-  NavItem,
-  NavbarBrand,
-  UncontrolledDropdown,
+  // Navbar,
+  // Collapse,
+  // Nav,
+  // NavItem,
+  // NavbarBrand,
+  // UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
   Dropdown,
-  Button,
+  // Button,
 } from "reactstrap";
-import { CheckBoxOutlineBlank } from "@mui/icons-material";
+// import { CheckBoxOutlineBlank } from "@mui/icons-material";
 
 // import { ReactComponent as Logo } from './Logo.jpeg'
 
 const Navigation = ({ signedIn, setSignedIn }) => {
-  console.log('nav', signedIn)
+  // console.log('nav', signedIn)
   const [isOpen, setIsOpen] = useState(false);
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -53,7 +53,7 @@ const Navigation = ({ signedIn, setSignedIn }) => {
 
   useEffect(() => {
     const jwt = localStorage.getItem('token')
-    console.log('jwt', (jwt !== null))
+    // console.log('jwt', (jwt !== null))
     const baseUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com` : `http://localhost:3001`
 
     if (signedIn && jwt !== null) {

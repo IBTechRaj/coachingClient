@@ -2,15 +2,15 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios';
-import Avatar from '@mui/material/Avatar';
+// import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
+// import TextField from '@mui/material/TextField';
 import Row from 'react-bootstrap/Row';
-import Grid from '@mui/material/Grid';
+// import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import MiscellaneousServicesOutlinedIcon from '@mui/icons-material/MiscellaneousServicesOutlined';
-import Typography from '@mui/material/Typography';
+// import MiscellaneousServicesOutlinedIcon from '@mui/icons-material/MiscellaneousServicesOutlined';
+// import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -107,7 +107,7 @@ export default function ShowNewStudents(props) {
                                             <td>{stu.activated ? 'Yes' : 'No'}</td>
                                             <td>{stu.student_status}</td>
                                             <td>{stu.student_batch}</td>
-                                            {/* <Button onClick={() => handleDelete(stu.id)}>Delete</Button> */}
+                                            <Button onClick={() => handleDelete(stu.id)}>Delete</Button>
                                             {/* <td><textarea type="text"
                                                 rows="6"
                                                 className="form-control"

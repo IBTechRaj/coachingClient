@@ -1,12 +1,12 @@
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+// import Container from 'react-bootstrap/Container';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
 import React, { useState } from 'react'
 import { TextField, Button } from "@mui/material";
 
 import PasswordChecklist from "react-password-checklist";
-import { useSearchParams, useNavigate } from "react-router-dom";
+// import { useSearchParams, useNavigate } from "react-router-dom";
 
 function ChangePassword() {
 
