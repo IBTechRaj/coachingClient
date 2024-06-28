@@ -38,7 +38,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
 
     useEffect(() => {
         const jwt = localStorage.getItem('token')
-        console.log('jwt=p', jwt)
+        // console.log('jwt=p', jwt)
         const baseUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com` : `http://localhost:3001`
 
         if (jwt !== null) {
@@ -50,7 +50,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
                 },
             })
                 .then(response => {
-                    console.log('ress', response.data);
+                    // console.log('ress', response.data);
                     setStudent(response.data)
                     setFirstName(response.data.first_name)
                     setLastName(response.data.last_name)
@@ -80,11 +80,11 @@ const Profile = ({ signedIn, setSignedIn }) => {
         // if (mobile.toString().length !== 10 || city.toString().length < 1 || country.toString().length < 1 || study.toString().length < 1 || institution.toString().length < 1)
         // if (!city || !country || !study || !institution)
         // setIsError(true)
-        console.log('vals', city, country, study, institution)
-        console.log('err-m', isError)
+        // console.log('vals', city, country, study, institution)
+        // console.log('err-m', isError)
         if (!isError) {
             if (!isDisabled) {
-                console.log('updating', student.id)
+                // console.log('updating', student.id)
                 const formData = new FormData();
                 formData.append('mobile', mobile)
                 formData.append('city', city)
@@ -95,7 +95,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
                 formData.append('office', office)
                 if (image.raw)
                     formData.append('image', image.raw)
-                console.log('formdata', formData)
+                // console.log('formdata', formData)
 
                 const jwt = localStorage.getItem('token');
 
@@ -111,7 +111,7 @@ const Profile = ({ signedIn, setSignedIn }) => {
                 })
                     .then((res) => res.json())
                     .then((res) => {
-                        console.log('res', res)
+                        // console.log('res', res)
                         alert(res.meta.message)
 
                         setIsDisabled(!isDisabled)

@@ -33,7 +33,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
     const handleClick = () => {
         const jwt = localStorage.getItem('token')
         const baseUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com` : `http://localhost:3001`
-        console.log('em', email)
+        // console.log('em', email)
         const payload = {
             "email": email,
         }
@@ -46,7 +46,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
         })
             .then(response => {
                 // Handle successful response
-                console.log(response.data);
+                // console.log(response.data);
                 setMessage(response.data.message)
             })
             .catch(error => {
@@ -64,7 +64,7 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
         // console.log(firstName, lastName, email, password)
 
         if (password === passwordAgain) {
-            console.log('signing up')
+            // console.log('signing up')
             const signUpUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students` : `http://localhost:3001/students`
             fetch(signUpUrl, {
                 method: "post",
@@ -90,11 +90,11 @@ const StudentSignup = ({ signedIn, setSignedIn }) => {
                         setPassword('')
                         setPasswordAgain('')
                         localStorage.setItem("token", res.meta.token);
-                        console.log('s', res.meta.token);
+                        // console.log('s', res.meta.token);
                     } else {
                         setErrorMessage(res.errors)
                         setSubmitted(false)
-                        console.log(res.errors); // Process the response data here
+                        // console.log(res.errors); // Process the response data here
                     }
                 })
                 .catch(error => {

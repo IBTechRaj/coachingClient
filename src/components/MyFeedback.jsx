@@ -8,7 +8,7 @@ function MyFeedback() {
 
     useEffect(() => {
         const jwt = localStorage.getItem('token')
-        console.log('jwt=p', jwt)
+        // console.log('jwt=p', jwt)
         const baseUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com` : `http://localhost:3001`
 
         if (jwt !== null) {
@@ -20,7 +20,7 @@ function MyFeedback() {
                 },
             })
                 .then(response => {
-                    console.log('fdb', response.data);
+                    // console.log('fdb', response.data);
                     setStudent(response.data)
                     setId(response.data.id)
 
@@ -58,7 +58,7 @@ function MyFeedback() {
         })
             .then((res) => res.json())
             .then((res) => {
-                console.log('res', res)
+                // console.log('res', res)
                 alert('Feedback submitted successfully')
                 // alert(res.meta.message)
 

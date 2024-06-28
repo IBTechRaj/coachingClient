@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -11,13 +11,15 @@ function MyProgs() {
     const [solution, setSolution] = useState()
     const [sessionDate, setSessionDate] = useState("")
     const [topics, setTopics] = useState("0")
+    // const [, forceUpdate] = useReducer(x => x + 1, 0);
+
 
 
     const baseUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com` : `http://localhost:3001`
 
     useEffect(() => {
         const jwt = localStorage.getItem('token')
-        console.log('jwt=p', jwt)
+        // console.log('jwt=p', jwt)
 
         if (jwt !== null) {
             axios.get(`${baseUrl}/students/profile`, {
@@ -28,10 +30,11 @@ function MyProgs() {
                 },
             })
                 .then(response => {
-                    console.log('resst', response.data);
+                    // console.log('resst', response.data);
                     setStudent(response.data)
                     if (response.data.student_status === 1) {
-                        console.log('stu', student)
+                        // console.log('stu', student)
+                        // console.log('r stu', response.data.id)
                         axios.get(`${baseUrl}/student_programs/get_my_progs/${response.data.id}`, {
                             headers: {
                                 'Content-Type': 'application/json',
@@ -39,22 +42,22 @@ function MyProgs() {
                                 Authorization: `Bearer ${jwt}`
                             },
                         }).then(res => {
-                            console.log('prgdat', res.data)
+                            // console.log('prgdat1', res.data)
                             setProgsData(res.data)
 
                             setSolution(res.data.solution)
                         })
                     }
-                    console.log('ss', student)
+                    // console.log('ss', student)
                 })
                 .catch(error => {
-                    console.log('err', error);
+                    // console.log('err', error);
                 })
         }
 
     }, [])
 
-    const handleSubmit = (event, id) => {
+    const handleUpdate = (event, id) => {
         // event.preventDefault()
         const jwt = localStorage.getItem('token');
         const formData = new FormData();
@@ -75,7 +78,8 @@ function MyProgs() {
         })
             .then((res) => res.json())
             .then((res) => {
-                console.log('res', res)
+                // console.log('res', res)
+                // forceUpdate()
                 // alert('Your Code updated successfully')
 
             })
@@ -87,8 +91,9 @@ function MyProgs() {
                 Authorization: `Bearer ${jwt}`
             },
         }).then(res => {
-            console.log('prgdat', res.data)
+            // console.log('prgdat2', res.data)
             setProgsData(res.data)
+
 
             setSolution('')
         })
@@ -116,33 +121,36 @@ function MyProgs() {
                             </tr>
                         </thead>
                         <tbody>
-                            {progsData && progsData.map(prog => {
-                                return (
+                            {/* {progsData.sort((a, b) => (a.program_number > b.program_number) ? 1 : -1)} */}
+                            {progsData &&
 
-                                    <tr key={prog.program_number}>
-                                        {/* {console.log(prog.id)} */}
-                                        <td>{prog.program_number}</td>
-                                        <td>{prog.task}</td>
-                                        <td>{prog.solution}</td>
-                                        <td><textarea type="text"
-                                            rows="6"
-                                            className="form-control"
+                                progsData.sort((a, b) => (a.program_number > b.program_number) ? 1 : -1).map(prog => {
+                                    return (
 
-                                            variant='outlined'
-                                            color='secondary'
-                                            name='solution'
-                                            // label="your solution"
-                                            onChange={event => setSolution(event.target.value)}
-                                            value={solution}
-                                        // required
-                                        /></td>
-                                        <td><button type="submit" onClick={event => handleSubmit(event, prog.id)}>Update</button></td>
-                                        {/* <td>{session.topics}</td> */}
-                                        {/* <td>{session.password}</td> */}
-                                        {/* <td>{session.email}</td> */}
-                                    </tr>
-                                );
-                            })}
+                                        <tr key={prog.id}>
+                                            {/* {console.log(prog.id)} */}
+                                            <td>{prog.program_number}</td>
+                                            <td>{prog.task}</td>
+                                            <td>{prog.solution}</td>
+                                            <td><textarea type="text"
+                                                rows="6"
+                                                className="form-control"
+
+                                                variant='outlined'
+                                                color='secondary'
+                                                name='solution'
+                                                // label="your solution"
+                                                onChange={event => setSolution(event.target.value)}
+                                                value={solution}
+                                            // required
+                                            /></td>
+                                            <td><button type="submit" onClick={event => handleUpdate(event, prog.id)}>Update</button></td>
+                                            {/* <td>{session.topics}</td> */}
+                                            {/* <td>{session.password}</td> */}
+                                            {/* <td>{session.email}</td> */}
+                                        </tr>
+                                    );
+                                })}
                         </tbody>
                     </table>
                     ) : (

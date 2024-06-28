@@ -49,17 +49,17 @@ const ForgotPassword = () => {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log('res', data)
+                    // console.log('res', data)
                     if (data.message) {
                         setMessage(data.message)
-                        console.log('msg', data)
+                        // console.log('msg', data)
                         // console.log("forgot email posted", res)
                         // alert('Password reset link sent to your email');
                         // history.push('/')
 
                         // return res.json();
                     } else {
-                        console.log('err', data.errors)
+                        // console.log('err', data.errors)
                         setErrorMessage(data.errors)
                         // alert(res.errors);
                         // history.push('/')

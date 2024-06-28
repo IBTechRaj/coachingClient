@@ -31,10 +31,10 @@ function MyClasses() {
                 },
             })
                 .then(response => {
-                    console.log('ress', response.data);
+                    // console.log('ress', response.data);
                     setStudent(response.data);
 
-                    console.log('ss', response.data.student_status);
+                    // console.log('ss', response.data.student_status);
                     if (response.data.student_status === 1) {
                         axios.get(`${baseUrl}/courses/`, {
                             headers: {
@@ -43,7 +43,7 @@ function MyClasses() {
                                 Authorization: `Bearer ${jwt}`
                             },
                         }).then(res => {
-                            console.log('clsdat', res.data)
+                            // console.log('clsdat', res.data)
                             setSessionsData(res.data)
                         })
                     }

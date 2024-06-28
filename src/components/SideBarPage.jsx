@@ -18,10 +18,10 @@ function App() {
     const toggle = () => {
         toggleSidebar();
         if (toggled) {
-            console.log(true);
+            // console.log(true);
             collapseSidebar();
         } else {
-            console.log(false);
+            // console.log(false);
             collapseSidebar();
         }
     };

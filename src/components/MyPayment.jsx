@@ -11,7 +11,7 @@ function MyPayment() {
 
     useEffect(() => {
         const jwt = localStorage.getItem('token')
-        console.log('jwt=p', jwt)
+        // console.log('jwt=p', jwt)
         const baseUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com` : `http://localhost:3001`
 
         if (jwt !== null) {
@@ -23,10 +23,10 @@ function MyPayment() {
                 },
             })
                 .then(response => {
-                    console.log('ress', response.data);
+                    // console.log('ress', response.data);
                     setStudent(response.data)
 
-                    console.log('ss', student)
+                    // console.log('ss', student)
                 })
                 .catch(error => {
                     console.error(error);
@@ -62,7 +62,7 @@ function MyPayment() {
     // }
     return (
         <Container className="py-2" style={{ height: '100vh' }}>
-            {console.log('ss', student.student_status)}
+            {/* {console.log('ss', student.student_status)} */}
             <h3 style={{ color: student.student_status == 1 ? 'green' : 'red' }}> Payment Status : {student.student_status == 1 ? 'Paid' : 'Unpaid'} </h3>
 
             <hr></hr>

@@ -49,12 +49,12 @@ const InviteEmail = () => {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log('res', data)
+                    // console.log('res', data)
                     if (data.message) {
                         setMessage(data.message)
-                        console.log('msg', data)
+                        // console.log('msg', data)
                     } else {
-                        console.log('err', data.errors)
+                        // console.log('err', data.errors)
                         setErrorMessage(data.errors)
                     }
 

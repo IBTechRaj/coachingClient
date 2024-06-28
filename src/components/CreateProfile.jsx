@@ -104,12 +104,12 @@ const CreateProfile = ({ signedIn, setSignedIn }) => {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log('e_i', data)
+                    // console.log('e_i', data)
                     if (data.message) {
                         // setMessage(data.message)
-                        console.log('e_msg', data)
+                        // console.log('e_msg', data)
                     } else {
-                        console.log('err', data.errors)
+                        // console.log('err', data.errors)
                         // setErrorMessage(data.errors)
                     }
 

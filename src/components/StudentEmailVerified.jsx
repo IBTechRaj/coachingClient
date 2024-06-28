@@ -24,7 +24,7 @@ const StudentEmailVerified = (props) => {
 
     <>
 
-      {console.log('token', searchParams.get('token'))}
+      {/* {console.log('token', searchParams.get('token'))} */}
       <div className='row   justify-content-center' style={{ marginTop: 100 }}>
         <div className='msgsize text-align-center px-1' style={{ color: 'green', margin: '80 20' }}> Email Verification Success !</div>
         <h3>

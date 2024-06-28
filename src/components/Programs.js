@@ -42,8 +42,8 @@ export default function Programs(props) {
 
         })
             .then(response => {
-                console.log('rr', response)
-                console.log('batch.dat', response.data)
+                // console.log('rr', response)
+                // console.log('batch.dat', response.data)
                 setBatchData(response.data)
                 // console.log('course', courseData)
             })
@@ -53,9 +53,9 @@ export default function Programs(props) {
             headers: { Authorization: `Bearer ${jwt}` },
         })
             .then(response => {
-                console.log('prog.dat', response.data)
+                // console.log('prog.dat', response.data)
                 setProgramData(response.data)
-                console.log('prog', programData)
+                // console.log('prog', programData)
             })
     }
     useEffect(() => {
@@ -95,13 +95,13 @@ export default function Programs(props) {
                 if (response.status === 500) {
                     alert('This program already sent')
                 } else {
-                    console.log(response.data);
+                    // console.log(response.data);
                 }
             } catch (error) {
                 alert('This program already sent')
-                console.log("no email found ", i);
+                // console.log("no email found ", i);
             }
-            console.log("axios request done");
+            // console.log("axios request done");
         }
     };
     // const handleSendTask = async (id) => {

@@ -22,7 +22,7 @@ const ResetPassword = (props) => {
     const tokenData = {
         token: searchParams.get('token')
     }
-    console.log('tk', searchParams.get('token'))
+    // console.log('tk', searchParams.get('token'))
     localStorage.setItem("token", searchParams.get('token'));
     // const location = useLocation()
     // const token = location.state
@@ -68,7 +68,7 @@ const ResetPassword = (props) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log('pr', data)
+                    // console.log('pr', data)
                     if (data) {
                         alert('Password Reset Successful!')
                         navigate('/StudentLogin')
@@ -88,7 +88,7 @@ const ResetPassword = (props) => {
     return (
         <>
             <h1 className='text-center'>Reset Password</h1>
-            {console.log('token', searchParams.get('token'))}
+            {/* {console.log('token', searchParams.get('token'))} */}
             <div className="row py-5">
                 <div className="col-md-4"></div>
 

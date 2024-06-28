@@ -24,7 +24,7 @@ const VerificationFailed = (props) => {
 
     <>
 
-      {console.log('token', searchParams.get('token'))}
+      {/* {console.log('token', searchParams.get('token'))} */}
       <div className='row   justify-content-center' style={{ marginTop: 100 }}>
         <div className='msgsize text-align-center px-1' style={{ color: 'red', margin: '80 20' }}> Email Verification Failed !</div>
         <h3>

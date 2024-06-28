@@ -33,7 +33,7 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
         // if (email && password) {
         //     console.log(email, password)
         // }
-        console.log('Log in', process.env.REACT_APP_SERVER)
+        // console.log('Log in', process.env.REACT_APP_SERVER)
         const loginUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students/login` : `http://localhost:3001/students/login`
         fetch(loginUrl, {
             method: "post",
@@ -59,12 +59,12 @@ const StudentLogin = ({ signedIn, setSignedIn }) => {
                     if (email === 'krs30018@gmail.com')
                         navigate('/AdminPage', { replace: true })
                     else {
-                        alert("Login success")
+                        // alert("Login success")
                         navigate('/DashPage', { replace: true })
                     }
                 } else {
                     setErrorMessage(res.errors)
-                    console.log('err', res.errors); // Process the response data here
+                    // console.log('err', res.errors); // Process the response data here
                 }
             })
             .catch(error => {

@@ -39,7 +39,7 @@ const StudentLogout = ({ signedIn, setSignedIn }) => {
             })
             .catch(error => {
                 // Handle error
-                console.log('error');
+                // console.log('error');
             });
 
     }
@@ -55,7 +55,7 @@ const StudentLogout = ({ signedIn, setSignedIn }) => {
                     {/* {setSignedIn(false)} */}
                     {/* <h3>Are you sure to logout ?</h3> */}
 
-                    {console.log('pre', signedIn)}
+                    {/* {console.log('pre', signedIn)} */}
                     {(signedIn) ?
                         (<h3>Are you sure to logout ?</h3>) :
                         null}

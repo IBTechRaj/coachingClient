@@ -25,7 +25,7 @@ export default function ShowRegdStudents(props) {
     const getUsers = () => {
         axios.get(studentsUrl,)
             .then(response => {
-                console.log('users.dat', response.data)
+                // console.log('users.dat', response.data)
                 setStudentsData(response.data)
             })
     }
@@ -44,7 +44,7 @@ export default function ShowRegdStudents(props) {
             );
             getUsers()
         } catch (err) {
-            console.log('e', err.message)
+            // console.log('e', err.message)
             // setError(err.message);
         }
     }

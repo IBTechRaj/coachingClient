@@ -24,7 +24,7 @@ export default function UpdateStatus(props) {
     const getUsers = () => {
         axios.get(studentsUrl,)
             .then(response => {
-                console.log('users.dat', response.data)
+                // console.log('users.dat', response.data)
                 setStudentsData(response.data)
             })
     }
@@ -56,7 +56,7 @@ export default function UpdateStatus(props) {
 
 
         } catch (err) {
-            console.log('e', err.message)
+            // console.log('e', err.message)
             // setError(err.message);
         }
     }

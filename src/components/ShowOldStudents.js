@@ -27,7 +27,7 @@ export default function ShowOldStudents(props) {
             { headers: { "Authorization": `Bearer ${jwt}` } }
         )
             .then(response => {
-                console.log('users.dat', response.data)
+                // console.log('users.dat', response.data)
                 setStudentsData(response.data)
             })
     }

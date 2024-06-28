@@ -65,7 +65,7 @@ const Navigation = ({ signedIn, setSignedIn }) => {
         },
       })
         .then(response => {
-          console.log('ress', response.data);
+          // console.log('ress', response.data);
           setStudent(response.data)
           setFirstName(response.data.first_name)
           setLastName(response.data.last_name)

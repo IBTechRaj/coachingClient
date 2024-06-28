@@ -21,7 +21,7 @@ function Home(signedIn, setSignedIn) {
   let content = '';
   useEffect(() => {
     const jwt = localStorage.getItem('token')
-    console.log('jwt', jwt)
+    // console.log('jwt', jwt)
     const baseUrl = (process.env.REACT_APP_SERVER) ? `https://coaching-q9o7.onrender.com/students` : `http://localhost:3001/students`
 
     axios.get(`${baseUrl}/get_old_students`, {
@@ -34,7 +34,7 @@ function Home(signedIn, setSignedIn) {
       },
     })
       .then(response => {
-        console.log('students', response.data);
+        // console.log('students', response.data);
         setStudents(response.data)
 
       })
@@ -44,10 +44,10 @@ function Home(signedIn, setSignedIn) {
   }, [])
 
   const handleSubmit = () => {
-    console.log('submitted')
+    // console.log('submitted')
   }
   // console.log('hom', signedIn) 
-  console.log('stu', students)
+  // console.log('stu', students)
   return (
     <div id="header">
       <div className="container-fluid homepage__gradient">
