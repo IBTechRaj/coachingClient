@@ -80,7 +80,7 @@ function MyClasses() {
                                 <th>Session Date</th>
                                 <th>Topics</th>
                                 <th>CourseBook</th>
-                                <th>LessonVideo</th>
+                                <th>LessonVideo(on request)</th>
                                 {/* <th>Email</th> */}
                             </tr>
                         </thead>
