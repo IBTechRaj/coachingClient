@@ -89,7 +89,7 @@ function MyFeedback() {
 
 
                     <div className="form-group">
-                        <label className="col-sm-4 control-label">Feedback</label>
+                        <label className="col-sm-4 control-label">Please click in the box below and write your feedback and then click Submit</label>
                         <div className="col-sm-10 offset-1 my-5">
                             <textarea type="text"
                                 rows="6"
