@@ -95,8 +95,10 @@ function MyFeedback() {
                             <textarea type="text"
                                 rows="6"
                                 className="form-control"
+                                placeholder="Please leave your feedback here"
 
                                 variant='outlined'
+
                                 color='secondary'
                                 // label="Country"
                                 onChange={event => setFeedback(event.target.value)}
