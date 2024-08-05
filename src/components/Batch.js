@@ -128,9 +128,9 @@ export default function Batch(props) {
                     <Typography component="div" variant="subtitle1">
                         <ul>
                             {batchData &&
-                                batchData.map(({ id, student_batch, email, first_name }) => (
+                                batchData.map(({ id, student_batch, email, student_status }) => (
                                     <li key={id}>
-                                        <h5>    {email} {'           '} {student_batch} </h5>
+                                        <h5>    {email} {'           '} {student_batch}{' '} {student_status} </h5>
                                         {/* <Button onClick={() => handleUpdate(id)}>Update Batch</Button> */}
                                     </li>
 
