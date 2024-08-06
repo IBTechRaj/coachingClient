@@ -80,7 +80,7 @@ function MyClasses() {
                                 <th>Session Date</th>
                                 <th>Topics</th>
                                 <th>CourseBook</th>
-                                <th>LessonVideo(on request)</th>
+                                {/* <th>LessonVideo(on request)</th> */}
                                 {/* <th>Email</th> */}
                             </tr>
                         </thead>
@@ -92,7 +92,7 @@ function MyClasses() {
                                         <td>{session.session_date}</td>
                                         <td>{session.topics}</td>
                                         <td><CourseBook /></td>
-                                        <td><Lecture lessonId={session.lesson_video} /></td>
+                                        {/* <td><Lecture lessonId={session.lesson_video} /></td> */}
                                         {/* <td> <Button onClick={() => showVideo(stu.id)}>View Lecture</Button></td> */}
                                         {/* <td>{session.password}</td> */}
                                         {/* <td>{session.email}</td> */}

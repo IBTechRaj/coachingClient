@@ -80,6 +80,7 @@ export default function UpdateCompletionStatus(props) {
                 </Box>
                 <div>
                     <h3 className='text-center'>Update Completion</h3>
+                    <p>This will set student_status to 2</p>
                     <ul>
                         {studentsData &&
                             studentsData.map(({ id, first_name, last_name, email, student_status }) => (
