@@ -266,19 +266,20 @@ function Home(signedIn, setSignedIn) {
                   <Spinner />
                 </div> : (
                   students.map((student, index) => {
-                    return (
-                      <div key={index}>
-                        <div className="testimonial-card " style={{ marginTop: 50 }}>
-                          <div className="text-center my-1">
-                            <img style={{ borderRadius: '50%', borderStyle: '5px solid red', width: "80px", height: "80px" }} src={student.get_image_url} alt="NoImg" />
+                    if (student.feedback !== null)
+                      return (
+                        <div key={index}>
+                          <div className="testimonial-card " style={{ marginTop: 50 }}>
+                            <div className="text-center my-1">
+                              <img style={{ borderRadius: '50%', borderStyle: '5px solid red', width: "80px", height: "80px" }} src={student.get_image_url} alt="NoImg" />
+                            </div>
+                            <p className="testimonial-content" >{student.first_name + ' ' + student.last_name}</p>
+                            <span>{student.study}</span>
+                            <span>{student.institution}</span>
+                            <div style={{ margin: 50 }}>"{student.feedback}"</div>
                           </div>
-                          <p className="testimonial-content" >{student.first_name + ' ' + student.last_name}</p>
-                          <span>{student.study}</span>
-                          <span>{student.institution}</span>
-                          <div style={{ margin: 50 }}>"{student.feedback}"</div>
                         </div>
-                      </div>
-                    )
+                      )
                   })
 
                 )}
