@@ -123,10 +123,10 @@ function Home(signedIn, setSignedIn) {
                 <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>
                   Beginner-friendly lessons for all skill levels</p>
                 <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Hands-on coding exercises</p>
-                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Experienced instructors who simplify the concepts</p>
+                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Experienced instructor who simplifies the concepts</p>
                 <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Support to  develop own logic to write programs</p>
                 <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Flexible scheduling to fit your busy life</p>
-                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Students are encouraged to clarify doubts</p>
+                <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Students are encouraged to clarify every single doubt</p>
                 <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Live supervision while students work with programs</p>
               </div>
               <div style={{ margin: 'auto' }}>

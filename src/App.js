@@ -23,9 +23,14 @@ import {
   // Alerts,
   ForgotPassword,
   ResetPassword,
-  ChangePassword
+  ChangePassword,
+  PrivacyPolicy,
+  AboutUs,
+  Terms
 
 } from "./components";
+
+// import PrivacyPolicy from "./components";
 import VerificationFailed from "./components/VerificationFailed";
 
 export default function App() {
@@ -44,6 +49,9 @@ export default function App() {
         <Route path="/StudentLogout" element={<StudentLogout signedIn={signedIn} setSignedIn={setSignedIn} />} />
         <Route path="/CreateProfile" element={<CreateProfile signedIn={signedIn} setSignedIn={setSignedIn} />} />
         <Route path="/Profile" element={<Profile signedIn={signedIn} setSignedIn={setSignedIn} />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/Terms" element={<Terms />} />
+        <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
         {/* <Route path="/dashboard" element={<Dashboard signedIn={signedIn} setSignedIn={setSignedIn} />} /> */}
         <Route path="/DashPage/*" element={<DashPage signedIn={signedIn} setSignedIn={setSignedIn} />} />
         <Route path="/ForgotPassword" element={<ForgotPassword />} />

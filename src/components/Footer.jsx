@@ -1,5 +1,6 @@
 import React from "react";
 
+import { NavLink } from "react-router-dom";
 function Footer() {
   return (
     <div className="footer" style={{ display: 'flex', flexDirection: 'column' }}>
@@ -9,6 +10,9 @@ function Footer() {
             Copyright &copy;The C Learning Hub
           </p>
         </div>
+        <div> <p className="text-center" ><NavLink to="/PrivacyPolicy" >Privacy Policy</NavLink></p>
+          <p className="text-center" ><NavLink to="/AboutUs" >About Us</NavLink></p>
+          <p className="text-center" ><NavLink to="/Terms" >Terms  & Conditions</NavLink></p></div>
       </footer>
     </div>
   );
