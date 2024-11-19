@@ -32,12 +32,12 @@ function MyPayment() {
                 },
             })
                 .then(response => {
-                    console.log('ue ress', response.data.student_status);
+                    // console.log('ue ress', response.data.student_status);
                     setStudent(response.data)
                     setStudentStatus(response.data.student_status);
                     setDisabled(response.data.student_status);
 
-                    console.log('ue ss', student.student_status)
+                    // console.log('ue ss', student.student_status)
                 })
                 .catch(error => {
                     console.error(error);
@@ -47,9 +47,9 @@ function MyPayment() {
         //     setStudentStatus(response.data.student_status);
         //     setDisabled(response.data.student_status);
         // }
-        console.log('ue ss,s.ss', studentStatus, student.student_status)
+        // console.log('ue ss,s.ss', studentStatus, student.student_status)
 
-        console.log('ue dd,d.dd', disabled, student.student_status)
+        // console.log('ue dd,d.dd', disabled, student.student_status)
     }, [])
 
 
@@ -61,7 +61,7 @@ function MyPayment() {
 
             const response = await axios.post(`${baseUrl}/api/v1/payments`, { amount, email: student.email, name: student.first_name + ' ' + student.last_name, mobile: student.mobile });
             const { order_id, key, currency } = response.data;
-            console.log('resp', response)
+            // console.log('resp', response)
 
 
 
@@ -79,7 +79,7 @@ function MyPayment() {
                 //     alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}`);
                 // },
                 handler: async function (response) {
-                    console.log('raz res', response)
+                    // console.log('raz res', response)
 
                     alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}`);
                     const jwt = localStorage.getItem('token');
@@ -88,8 +88,8 @@ function MyPayment() {
                         { student_status: 1 },
                         { headers: { "Authorization": `Bearer ${jwt}` } }
                     )
-                    console.log('upd', updresp)
-                    console.log('updresp', updresp.data.data.attributes.student_status)
+                    // console.log('upd', updresp)
+                    // console.log('updresp', updresp.data.data.attributes.student_status)
                     setStudentStatus(updresp.data.data.attributes.student_status)
                     setDisabled(updresp.data.data.attributes.student_status)
                     // const updresp = await axios.patch(
@@ -140,8 +140,7 @@ function MyPayment() {
     return (
         <Container className="py-2" style={{ height: '100vh' }}>
 
-            {
-                console.log('ss', student)}
+            {/* {                console.log('ss', student)} */}
 
 
             {/* <h3 style={{ color: student.student_status == 1 ? 'green' : 'red' }}> Payment Status : {student.student_status == 1 ? 'Paid' : 'Unpaid'} </h3> */}
