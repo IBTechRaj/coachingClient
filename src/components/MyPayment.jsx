@@ -13,7 +13,7 @@ function MyPayment() {
     const jwt = localStorage.getItem('token')
     // Razorpay code below
 
-    const [amount, setAmount] = useState(3000);
+    const [amount, setAmount] = useState(0);
     const [orderId, setOrderId] = useState('');
     const [studentStatus, setStudentStatus] = useState(student?.student_status || null)
     const [disabled, setDisabled] = useState(student?.student_status || null)
@@ -70,7 +70,7 @@ function MyPayment() {
 
             const options = {
                 key,
-                amount: 3000 * 100,
+                amount: amount * 100,
                 currency,
                 name: student.name,
                 description: "C Course Fee",
@@ -140,7 +140,7 @@ function MyPayment() {
     return (
         <Container className="py-2" style={{ height: '100vh' }}>
 
-            {/* {                console.log('ss', student)} */}
+            {console.log('ss', student)}
 
 
             {/* <h3 style={{ color: student.student_status == 1 ? 'green' : 'red' }}> Payment Status : {student.student_status == 1 ? 'Paid' : 'Unpaid'} </h3> */}
@@ -219,10 +219,9 @@ function MyPayment() {
             </div>
             <input
                 type="number"
-                placeholder="Rs.3000"
-                value={3000}
-                readOnly={true}
-                // onChange={(e) => setAmount(3000)}
+                // placeholder="Enter amount"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
                 className="py-2"
             />
             <hr></hr>
