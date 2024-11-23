@@ -226,7 +226,7 @@ function MyPayment() {
             />
             <hr></hr>
             <div><h5>You can choose the payment option in the next screen.</h5>
-                <h5> If you want to use PayPal, choose 'Pay Later' in the next screen</h5>
+                <h5> If you want to use PayPal, choose 'Pay Later' in the next screen.</h5>
             </div>
             <div className="row justify-content-center">
 

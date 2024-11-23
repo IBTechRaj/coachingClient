@@ -14,6 +14,7 @@ import UpdateCompletionStatus from './UpdateCompletionStatus'
 import Batch from './Batch'
 import Course from './Course'
 import Programs from './Programs'
+import ShowData from './ShowData'
 
 export default function AdminPage(props) {
     // console.log('prop', props)
@@ -25,7 +26,7 @@ export default function AdminPage(props) {
     const [showRegdStudents, setShowRegdStudents] = useState(false)
     const [showCourse, setShowCourse] = useState(false)
     const [showBatch, setShowBatch] = useState(false)
-    // const [showProfile, setShowProfile] = useState(false)
+    const [showData, setShowData] = useState(false)
 
     const closeStatus = () => {
         setShowStatus(false)
@@ -59,9 +60,9 @@ export default function AdminPage(props) {
         setShowCourse(false)
     };
 
-    // const closeProfile = () => {
-    //     setShowProfile(false)
-    // };
+    const closeData = () => {
+        setShowData(false)
+    };
 
     return (
         <div>
@@ -202,21 +203,18 @@ export default function AdminPage(props) {
                         Update Course Completion
                     </Button>
 
-                    {/* <Button
+                    <Button
                         type="submit"
                         fullWidth
                         variant="contained"
                         sx={{ mt: 3, mb: 2, mr: 5, ml: 5 }}
                         onClick={() => {
-                            // setShowAddAreas(true)
-                            // setShowServices(false)
-                            // setShowBookings(false)
-                            // setShowServiceAgents(false)
-                            setShowProfile(true)
+
+                            setShowData(true)
                         }}
                     >
-                        ProfileViewUpdate
-                    </Button> */}
+                        Data View
+                    </Button>
 
                 </ButtonGroup>
 
@@ -253,9 +251,9 @@ export default function AdminPage(props) {
                     <Programs onClose={closePrograms} />
                 }
 
-                {/* {showProfile &&
-                    <Programs onClose={closeProfile} />
-                } */}
+                {showData &&
+                    <ShowData onClose={closeData} />
+                }
 
             </Container>
         </div >
