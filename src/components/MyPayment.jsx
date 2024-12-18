@@ -13,7 +13,7 @@ function MyPayment() {
     const jwt = localStorage.getItem('token')
     // Razorpay code below
 
-    const [amount, setAmount] = useState(0);
+    const [amount, setAmount] = useState(3000);
     const [orderId, setOrderId] = useState('');
     const [studentStatus, setStudentStatus] = useState(student?.student_status || null)
     const [disabled, setDisabled] = useState(student?.student_status || null)
@@ -217,13 +217,13 @@ function MyPayment() {
                 </div>
                 <div className="col-1"></div>
             </div>
-            <input
+            {/* <input
                 type="number"
                 // placeholder="Enter amount"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
                 className="py-2"
-            />
+            /> */}
             <hr></hr>
             <div><h5>You can choose the payment option in the next screen.</h5>
                 <h5> If you want to use PayPal, choose 'Pay Later' in the next screen.</h5>
