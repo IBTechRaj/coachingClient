@@ -59,7 +59,11 @@ function MyPayment() {
         try {
 
 
-            const response = await axios.post(`${baseUrl}/api/v1/payments`, { amount, email: student.email, name: student.first_name + ' ' + student.last_name, mobile: student.mobile });
+            const response = await axios.post(`${baseUrl}/api/v1/payments`,
+                {
+                    amount, email: student.email, name: student.first_name + ' ' +
+                        student.last_name, mobile: student.mobile
+                });
             const { order_id, key, currency } = response.data;
             // console.log('resp', response)
 
