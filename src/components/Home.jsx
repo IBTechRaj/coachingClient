@@ -77,6 +77,9 @@ function Home(signedIn, setSignedIn) {
             We are starting a new batch shortly. To learn C Programming and get confident in writing programs independently, sign up today and we will inform you the exact date.
 
           </div>
+          <div className="b" style={{ margin: 'auto', color: '#de24d8' }}>
+            You can attend first two classes free. If convinced, pay the fee on the third day.
+          </div>
         </div>
 
 
