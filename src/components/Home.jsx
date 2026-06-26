@@ -74,7 +74,7 @@ function Home(signedIn, setSignedIn) {
 
         <div className="row col-8 offset-2 py-5 d-flex text-center">
           <div className="b" style={{ margin: 'auto', color: '#4221B9' }}>
-            We are starting a new batch shortly. To learn C Programming and get confident in writing programs independently, sign up today and we will inform you the exact date.
+            New batch starting 29th June 2026. To learn C Programming and get confident in writing programs independently, sign up today.
 
           </div>
           <div className="b" style={{ margin: 'auto', color: '#de24d8' }}>
