@@ -88,7 +88,7 @@ p.a {
 
 .cta {
     font-family: 'lato', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     width: 200px;
     height: 60px;
@@ -307,11 +307,11 @@ p.a {
     }
 
     .cta {
-        font-size: 22px;
+        font-size: 16px;
         font-weight: 600;
         width: 180px;
         height: 50px;
-        padding: 8px 25px;
+        padding: 8px 15px;
         float: right;
         /* margin-right: 300px; */
         color: white;

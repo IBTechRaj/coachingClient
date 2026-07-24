@@ -74,7 +74,7 @@ function Home(signedIn, setSignedIn) {
 
         <div className="row col-8 offset-2 py-5 d-flex text-center">
           <div className="b" style={{ margin: 'auto', color: '#4221B9' }}>
-            New batch is starting on 29th June 2026 7:00 PM - 8:30 PM. To learn C Programming and get confident in writing programs independently, sign up today.
+            Next batch is starting August 2026. To learn C Programming and get confident in writing programs independently, sign up today. We will inform you the exact date and time.
 
           </div>
           <div className="b" style={{ margin: 'auto', color: '#de24d8' }}>
@@ -133,8 +133,8 @@ function Home(signedIn, setSignedIn) {
                 <p className="mx-auto"> <i className="material-icons" style={{ fontSize: 36, color: 'red' }}>check</i>Live supervision while students work with programs</p>
               </div>
               <div style={{ margin: 'auto' }}>
-                <NavLink to="/StudentSignup" className="btn btn-success cta" >Enroll Now</NavLink>
-                {/* <button className="btn btn-success cta" onClick={handleSubmit}>Enroll Now</button> */}
+                <NavLink to="/StudentSignup" className="btn btn-success cta" >Register Now</NavLink>
+                {/* <button className="btn btn-success cta" onClick={handleSubmit}>Register Now</button> */}
               </div>
             </div>
           </div>
@@ -161,7 +161,7 @@ function Home(signedIn, setSignedIn) {
                 <p><i className="material-icons" style={{ fontSize: 36, color: '#4221B9' }}>check</i>File Handling</p>
               </div>
               <div style={{ margin: 'auto' }}>
-                <NavLink to="/StudentSignup" className="btn btn-success cta" >Enroll Now</NavLink>
+                <NavLink to="/StudentSignup" className="btn btn-success cta" >Register Now</NavLink>
                 {/* <button className="btn btn-success cta" onClick={handleSubmit}>Enroll Now</button> */}
               </div>
             </div>
@@ -352,7 +352,7 @@ function Home(signedIn, setSignedIn) {
                 <h3 className="text-center" style={{ fontWeight: 600 }}>Introductory offer Rs.3000</h3>
               </div>
               <div style={{ margin: 'auto' }}>
-                <NavLink to="/StudentSignup" className="btn btn-success cta" >Enroll Now</NavLink>
+                <NavLink to="/StudentSignup" className="btn btn-success cta" >Register Now</NavLink>
                 {/* <button className="btn btn-success cta" onClick={handleSubmit}>Enroll Now</button> */}
               </div>
             </div>
@@ -374,7 +374,7 @@ function Home(signedIn, setSignedIn) {
 
               </div>
               <div style={{ margin: 'auto' }}>
-                <NavLink to="/StudentSignup" className="btn btn-success cta" >Enroll Now</NavLink>
+                <NavLink to="/StudentSignup" className="btn btn-success cta" >Register Now</NavLink>
                 {/* <NavLink to="/StudentSignup" style={{ color: 'blue' }}>Register here</NavLink> */}
               </div>
             </div>
