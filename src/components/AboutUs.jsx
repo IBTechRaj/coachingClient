@@ -21,8 +21,8 @@ function PrivacyPolicy() {
                 <div className="row col-6 py-5 mx-3 d-flex justify-content-left">
                     <h5>
 
-                        <p><p className="fw-bold">Raja Sekhar Katakamsetty,</p> is a freelance full stack developer with four years of experience
-                            in designing, developing and deploying full stack web applications using Rails and React. You can know from the LinkedIn link give below.  </p>
+                        <p><p className="fw-bold">Raja Sekhar Katakamsetty,</p> is a freelance full stack developer with six years of experience
+                            in designing, developing and deploying full stack web applications using Rails and React. You can view his profile on LinkedIn link give below.  </p>
                         <p>https://www.linkedin.com/in/rajkatakamsetty/</p>
 
                     </h5>
